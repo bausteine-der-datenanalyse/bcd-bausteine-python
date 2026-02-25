@@ -1,0 +1,3252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>53&nbsp; Übung Hooke’sches Gesetz – Vorlesung Ingenieurinformatik</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../books/m-sensordatenanalyse/skript/kalibrierung.html" rel="next">
+<link href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" rel="prev">
+<link href="../../../books/shared-media/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e22fbe6e69edb8577f7b7bd0719516f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/index.html">a-energiedatenanalyse</a></li><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/skript/übung-hooke.html"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Übung Hooke’sches Gesetz</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../books/shared-media/logo/logo_with_text.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Vorlesung Ingenieurinformatik</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../../../Vorlesung-Ingenieurinformatik.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übersicht</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-pseudocode</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pseudocode/Pseudocode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Werkzeugbaustein Pseudocode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-minimal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datentypen verstehen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entscheidungen und Wiederholungen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/listen_iterationen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mehrere Werte speichern</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/funktionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wiederverwendbarer Code mit Funktionen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/lesen_schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Arbeiten mit Dateien</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/daswichtigste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Wichtigste</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/funktionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Flusskontrolle</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/sammeltypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/daswichtigste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Das Wichtigste</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-numpy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein NumPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Einführung NumPy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_creation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Erstellen von NumPy arrays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Größe, Struktur und Typ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Rechnen mit Arrays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_slicing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Slicing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_manipulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Array Manipulation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_read_n_write.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lesen und Schreiben von Dateien</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_images.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Arbeiten mit Bildern</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lernzielkontrolle</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/uebungen/uebung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Übung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/klausurfragen/klausurfragen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Klausurfragen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-matplotlib</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/basic_plot_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/adapting_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/advanced_techniques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-pandas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Pandas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/operationen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Operationen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Grafikerstellung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/datetime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Zeitreihen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/dateien.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-numerik</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/skript/intro_integrale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/skript/intro_ableitungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Differentiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-einlesen-strukturierter-datensätze</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-einlesen-strukturierter-datensätze/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Einlesen strukturierter Datensätze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-datenfitting-und-optimierung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Datenfitting und Datenoptimierung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Interpolation – Lücken schließen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/splines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Splines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/glaetten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Trendglättung – Rauschen reduzieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/uebungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Übungen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-energiedatenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Sensordatenanalyse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Das Prinzip von Messungen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/normalverteilung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Die Normalverteilung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/lineare-parameterschätzung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Lineare Parameterschätzung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Fehlerrechnung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/übung-hooke.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Übung Hooke’sches Gesetz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/kalibrierung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Kalibrierung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/beispiel-eiskochen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Beispiel Eis kochen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-energiedatenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-energiedatenanalyse/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-energiedatenanalyse/skript/energiedatenanalyse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Energiedatenanalyse</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-auswertung-fds-daten</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Einführung in ASET</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/aset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Verfügbare sichere Evakuierungszeit (ASET)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/fdsreader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Fdsreader</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/uebungen/uebung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">uebung.html</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/klausurfragen/klausurfragen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">klausurfragen.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#sec-dateien-einlesen" id="toc-sec-dateien-einlesen" class="nav-link active" data-scroll-target="#sec-dateien-einlesen"><span class="header-section-number">53.1</span> Dateien einlesen</a></li>
+  <li><a href="#sec-aufgabe-einlesen" id="toc-sec-aufgabe-einlesen" class="nav-link" data-scroll-target="#sec-aufgabe-einlesen"><span class="header-section-number">53.2</span> Aufgabe Dateien einlesen</a></li>
+  <li><a href="#sec-lösung-datenaufbereitung" id="toc-sec-lösung-datenaufbereitung" class="nav-link" data-scroll-target="#sec-lösung-datenaufbereitung"><span class="header-section-number">53.3</span> Musterlösung Daten aufbereiten</a></li>
+  <li><a href="#sec-lösung-federkonstanten" id="toc-sec-lösung-federkonstanten" class="nav-link" data-scroll-target="#sec-lösung-federkonstanten"><span class="header-section-number">53.4</span> Musterlösung Federkonstanten bestimmen</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik/blob/main/books/m-sensordatenanalyse/skript/übung-hooke.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/index.html">a-energiedatenanalyse</a></li><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/skript/übung-hooke.html"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Übung Hooke’sches Gesetz</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Übung Hooke’sches Gesetz</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Häufig liegen Sensordaten in mehreren Dateien vor. Mögliche Gründe dafür können sein, dass die Messung</p>
+<ul>
+<li>von unterschiedlichen Personen,</li>
+<li>an unterschiedlichen Standorten,</li>
+<li>zu unterschiedlichen Zeiten,</li>
+<li>mit verschiedenen Geräten oder</li>
+<li>für unterschiedliche Messgrößen durchgeführt wurden.</li>
+</ul>
+<p>Im Ordner ‘01-daten/hooke’ liegen mehrere txt-Dateien mit Messdaten zur Federausdehnung. In diesem Kapitel sollen Sie das bisher Gelernte anwenden und die folgenden Fragen beantworten.</p>
+<ol type="1">
+<li>Liegen ungültige Messungen vor?</li>
+<li>Welche Werte können für die Federkonstanten ermittelt werden?</li>
+<li>Wurden die Messungen mit der gleichen Feder (oder mit Federn mit gleicher Federkonstante) durchgeführt, wenn als Vertrauenswahrscheinlichkeit 90 % bzw. 95 % angenommen werden soll?</li>
+</ol>
+<p>Im Abschnitt <a href="#sec-dateien-einlesen" class="quarto-xref"><span class="quarto-unresolved-ref">sec-dateien-einlesen</span></a> finden Sie Hinweise und im Abschnitt <a href="#sec-aufgabe-einlesen" class="quarto-xref"><span class="quarto-unresolved-ref">sec-aufgabe-einlesen</span></a> eine Musterlösung zum Einlesen der Dateien. Anschließend sollen Sie die Aufgabenstellung eigenständig bearbeiten. In Abschnitt <a href="#sec-lösung-datenaufbereitung" class="quarto-xref"><span class="quarto-unresolved-ref">sec-lösung-datenaufbereitung</span></a> finden Sie eine Musterlösung für die Aufbereitung der Daten. In <a href="#sec-lösung-federkonstanten" class="quarto-xref"><span class="quarto-unresolved-ref">sec-lösung-federkonstanten</span></a> die Musterlösung zur Bestimmung der Federkonstanten.</p>
+<p><em>Hinweis: Je nach gewähltem Vorgehen können sich unterschiedliche Ergebnisse ergeben (etwa bei der Bewertung von und dem Umgang mit Extremwerten / Ausreißern).</em></p>
+<section id="sec-dateien-einlesen" class="level2" data-number="53.1">
+<h2 data-number="53.1" class="anchored" data-anchor-id="sec-dateien-einlesen"><span class="header-section-number">53.1</span> Dateien einlesen</h2>
+<p>Für das Einlesen der Dateien können Sie das Modul glob verwenden (siehe <a href="https://bausteine-der-datenanalyse.github.io/m-sensordatenanalyse/output/book/">Methodenbaustein Einlesen strukturierter Datensätze</a>).</p>
+<p>Zunächst kann der Funktion <code>glob.glob()</code> das Argument <code>pathname = *</code> übergeben werden. Der Platzhalter <code>*</code> steht für eine beliebige Zeichenfolge (außer Dateipfadelemente wie <code>/</code> oder <code>.</code>), sodass die Namen aller im angegebenen Ordner gespeicherten Dateien ausgelesen werden. Auf diese Weise kann die Anzahl der Dateien und die Dateiendung bestimmt werden, falls dies noch unbekannt ist.</p>
+<div id="1ca942b7" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ordnerpfad <span class="op">=</span> <span class="st">'01-daten/hooke'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pfadliste <span class="op">=</span> glob.glob(pathname <span class="op">=</span> <span class="st">'*'</span>, root_dir <span class="op">=</span> ordnerpfad, recursive <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pfadliste)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Anzahl Dateien: </span><span class="sc">{</span><span class="bu">len</span>(pfadliste)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['team_kreativkoepfe.txt', 'team_ma.txt', 'team_fabi.txt', 'team_die_ahnungslosen.txt']
+Anzahl Dateien: 4</code></pre>
+</div>
+</div>
+<p>Mit den Dateipfaden können die Dateien mit Hilfe einer Schleife in eine Liste eingelesen werden. Zunächst werden nur die jeweils ersten 3 Zeilen eingelesen, um einen Eindruck vom Aufbau der Dateien zu erhalten.</p>
+<div id="b66dfe5d" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pfad <span class="kw">in</span> pfadliste:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  zwischenspeicher <span class="op">=</span> pd.read_csv(filepath_or_buffer <span class="op">=</span> ordnerpfad <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> pfad, nrows <span class="op">=</span> <span class="dv">3</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(pfad, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, zwischenspeicher, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, sep <span class="op">=</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>team_kreativkoepfe.txt
+   10:33:02\t109.64 cm\t0
+0  10:33:05\t109.62 cm\t0
+1  10:33:08\t109.64 cm\t0
+2  10:33:11\t109.62 cm\t0
+
+team_ma.txt
+   10:09:38\t109.26 cm\t0
+0  10:09:41\t109.26 cm\t0
+1  10:09:44\t109.28 cm\t0
+2  10:09:47\t109.18 cm\t0
+
+team_fabi.txt
+   09:17:54\t110.31 cm\t0
+0  09:17:57\t110.29 cm\t0
+1  09:18:03\t110.74 cm\t0
+2  09:18:06\t109.95 cm\t0
+
+team_die_ahnungslosen.txt
+   11:03:23\t109.66 cm\t0
+0  11:03:23\t109.62 cm\t0
+1  11:03:23\t109.73 cm\t0
+2  11:03:23\t109.55 cm\t0
+</code></pre>
+</div>
+</div>
+<p>Die Dateien beinhalten keine Spaltenbeschriftung und verwenden den Tabulator ‘\t’ als Trennzeichen. Die erste Spalte enthält einen Zeitstempel, die zweite die gemessene Federausdehnung und die dritte (vermutlich) das angehängte Gewicht.</p>
+</section>
+<section id="sec-aufgabe-einlesen" class="level2" data-number="53.2">
+<h2 data-number="53.2" class="anchored" data-anchor-id="sec-aufgabe-einlesen"><span class="header-section-number">53.2</span> Aufgabe Dateien einlesen</h2>
+<p>Lesen Sie die Dateien nun ein. Prüfen Sie dabei:</p>
+<ul>
+<li>ob die Datentypen korrekt eingelesen werden und</li>
+<li>auf fehlende Werte.</li>
+</ul>
+<p>Sie können:</p>
+<ol type="a">
+<li>Jede Datei einzeln einlesen.</li>
+<li>Mit dem Modul glob die Dateien automatisch einlesen und jeweils in einem separaten Objekt speichern (<em>Hinweis:</em> Dieses Vorgehen wird im <a href="https://bausteine-der-datenanalyse.github.io/m-sensordatenanalyse/output/book/">Methodenbaustein Einlesen strukturierter Datensätze</a> gezeigt).</li>
+<li>Die Dateien mit dem Modul glob automatisch einlesen und in einem Objekt zusammenführen.</li>
+</ol>
+<p>Die verschiedenen Möglichkeiten sind mit zunehmend mehr Aufwand beim Programmieren verbunden. Je mehr separate Dateien Sie auswerten möchten, desto mehr Automatisierung ist gefragt. Da bei der Auswertung von Sensordaten häufig zahlreiche Dateien ausgewertet werden müssen, wird in der Musterlösung Variante c) gezeigt.</p>
+<div id="tip-schrittweise" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;53.1: Schrittweises Vorgehen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Das Einlesen der Dateien wird voraussichtlich der aufwändigste und fehleranfälligste Arbeitsschritt sein. Entwickeln Sie Ihre Lösung Schritt für Schritt. Beginnen Sie mit der Variante a). Wenn Sie die Dateien eingelesen haben, können Sie sich durch die Weiterentwicklung zur Variante b) mit dem Modul glob vertraut machen. Darauf aufbauend können Sie mit der Variante c) die Automatisierung für beliebig viele Dateien umsetzen.</p>
+</div>
+</div>
+</div>
+<div id="tip-muster-dateien" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;53.2: Musterlösung Dateien einlesen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Der erste Versuch, die Dateien einzulesen, scheitert mit einer Fehlermeldung. Die Anweisungen werden deshalb in die Struktur zur Ausnahmebehandlung eingebettet und die verursachende Datei abgefangen. (Sollten mehrere Dateien Fehler erzeugen, müssten die Dateien in einer Liste gespeichert und später - falls möglich - mit einer Schleife weiter behandelt werden.)</p>
+<div id="0ca1ddc4" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hooke <span class="op">=</span> pd.DataFrame(columns <span class="op">=</span> [<span class="st">'Zeit'</span>, <span class="st">'Abstand'</span>, <span class="st">'Gewicht'</span>, <span class="st">'Team'</span>]) <span class="co"># ein leerer DataFrame</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> pfad <span class="kw">in</span> pfadliste:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    zwischenspeicher <span class="op">=</span> pd.read_csv(filepath_or_buffer <span class="op">=</span> ordnerpfad <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> pfad, sep <span class="op">=</span> <span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, names <span class="op">=</span> [<span class="st">'Zeit'</span>, <span class="st">'Abstand'</span>, <span class="st">'Gewicht'</span>])</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Dateiname als Spalte einfügen</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    zwischenspeicher[<span class="st">'Team'</span>] <span class="op">=</span> pfad[<span class="dv">5</span>:<span class="op">-</span><span class="dv">4</span>] <span class="co"># 'team_' und die Dateiendung abschneiden </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    hooke <span class="op">=</span> pd.concat([hooke, zwischenspeicher], ignore_index <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Pfad der Problemdatei: "</span>, pfad, error, sep <span class="op">=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    pfad_problem_datei <span class="op">=</span> pfad</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.info(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erfolgreich einglesen:</span><span class="ch">\n</span><span class="st">"</span>, hooke[<span class="st">'Team'</span>].unique(), sep <span class="op">=</span> <span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pfad der Problemdatei: 
+team_ma.txt
+Error tokenizing data. C error: Expected 3 fields in line 135, saw 4
+
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 359 entries, 0 to 358
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   Zeit     355 non-null    object 
+ 1   Abstand  355 non-null    object 
+ 2   Gewicht  355 non-null    float64
+ 3   Team     359 non-null    object 
+dtypes: float64(1), object(3)
+memory usage: 11.3+ KB
+None 
+
+Erfolgreich einglesen:
+['kreativkoepfe' 'fabi' 'die_ahnungslosen']</code></pre>
+</div>
+</div>
+<p>Der Fehlermeldung zufolge besteht Zeile 135 aus 4 statt aus 3 Spalten. Die fehlerverursachende Datei wird deshalb zeilenweise durchlaufen und jede Zeile ausgegeben, die mehr als 3 Einträge hat. Zur Kontrolle werden auch die ersten 5 Zeilen ausgegeben.</p>
+<div id="c9a38d84" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># einen leeren DataFrame mit 3 Spalten erstellen</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data <span class="op">=</span> [], columns <span class="op">=</span> [<span class="st">'Zeit'</span>, <span class="st">'Abstand'</span>, <span class="st">'Gewicht'</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dateiobjekt_problem_datei <span class="op">=</span> <span class="bu">open</span>(<span class="bu">file</span> <span class="op">=</span> ordnerpfad <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> pfad_problem_datei, mode <span class="op">=</span> <span class="st">'r'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zeile <span class="kw">in</span> dateiobjekt_problem_datei:</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    zwischenspeicher <span class="op">=</span> zeile.split(sep <span class="op">=</span> <span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(zwischenspeicher) <span class="op">&gt;</span> <span class="dv">3</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">"Index ="</span>, index, <span class="st">":"</span>, zwischenspeicher)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> index <span class="op">&lt;=</span> <span class="dv">5</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(zeile)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(error)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>dateiobjekt_problem_datei.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10:09:38    109.26 cm   0
+
+
+
+10:09:41    109.26 cm   0
+
+
+
+10:09:44    109.28 cm   0
+
+
+
+Index = 134 : ['10:29:27', '105.49 cm', '300', '\n']</code></pre>
+</div>
+</div>
+<p>Jede zweite Zeile ist leer. In Zeile 134 wird ein Zeilenumbruch ‘\n’ eingelesen. Die Datei wird deshalb mit einer angepassten Schleife erneut durchlaufen. Aus der betreffenden Zeile wird der zusätzliche Zeilenumbruch ‘\n’ entfernt. Leere Zeilen werden übersprungen. Die korrekten Zeilen werden an den DataFrame hooke angefügt.</p>
+<div id="c4fd3707" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dateiobjekt_problem_datei <span class="op">=</span> <span class="bu">open</span>(<span class="bu">file</span> <span class="op">=</span> ordnerpfad <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> pfad_problem_datei, mode <span class="op">=</span> <span class="st">'r'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> zeile <span class="kw">in</span> dateiobjekt_problem_datei:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span>:</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    zwischenspeicher <span class="op">=</span> zeile.split(sep <span class="op">=</span> <span class="st">"</span><span class="ch">\t</span><span class="st">"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">len</span>(zwischenspeicher) <span class="op">&gt;</span> <span class="dv">3</span>:</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      zwischenspeicher <span class="op">=</span> zwischenspeicher[:<span class="dv">3</span>]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">len</span>(zwischenspeicher) <span class="op">&lt;</span> <span class="dv">3</span>: <span class="co"># leere Zeilen überspringen</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="cf">continue</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Teamnamen als 4. Spalte anfügen</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    zwischenspeicher.append(pfad_problem_datei[<span class="dv">5</span>:<span class="op">-</span><span class="dv">4</span>]) <span class="co"># 'team_' und die Dateiendung abschneiden </span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    hooke.loc[<span class="bu">len</span>(hooke)] <span class="op">=</span> pd.Series(zwischenspeicher).values</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> error:</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(error)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pd.Series(zwischenspeicher).values)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>dateiobjekt_problem_datei.close()</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erfolgreich einglesen:</span><span class="ch">\n</span><span class="st">"</span>, hooke[<span class="st">'Team'</span>].unique(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Erfolgreich einglesen:
+['kreativkoepfe' 'fabi' 'die_ahnungslosen' 'ma']
+
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 537 entries, 0 to 536
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   Zeit     533 non-null    object
+ 1   Abstand  533 non-null    object
+ 2   Gewicht  533 non-null    object
+ 3   Team     537 non-null    object
+dtypes: object(4)
+memory usage: 21.0+ KB
+None</code></pre>
+</div>
+</div>
+<p>Anschließend werden zum einen die Zeilen mit Nullwerten betrachtet …</p>
+<div id="6adce5b1" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.loc[hooke.<span class="bu">apply</span>(pd.isna).<span class="bu">any</span>(axis <span class="op">=</span> <span class="dv">1</span>), :])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Zeit Abstand Gewicht              Team
+3    NaN     NaN     NaN     kreativkoepfe
+23   NaN     NaN     NaN     kreativkoepfe
+28   NaN     NaN     NaN     kreativkoepfe
+322  NaN     NaN     NaN  die_ahnungslosen</code></pre>
+</div>
+</div>
+<p>… und entfernt.</p>
+<div id="174eb4e2" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>hooke.drop(np.where(hooke.<span class="bu">apply</span>(pd.isna).<span class="bu">any</span>(axis <span class="op">=</span> <span class="dv">1</span>))[<span class="dv">0</span>], inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Zum anderen werden die Datentypen kontrolliert.</p>
+<ul>
+<li>Die Zeit kann als string stehen bleiben, da sie für die Auswertung nicht benötigt wird.</li>
+<li>Der gemessene Abstand ist mit ’ cm’ notiert - diese Zeichenkette wird entfernt. Anschließend sollte die Spalte als numerisch erkannt werden.</li>
+<li>Das Gewicht sollte numerische Werte enthalten, wird aber als Datentyp object eingelesen und muss weiter untersucht werden.</li>
+<li>Der Spalte Team könnte der <a href="https://pandas.pydata.org/docs/user_guide/categorical.html">Pandas Datentyp category</a> zugewiesen werden, notwendig ist es aber nicht.</li>
+</ul>
+<p>String ’ cm’ entfernen.</p>
+<div id="5b618545" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>hooke.replace(<span class="st">' cm'</span>, <span class="st">''</span>, regex <span class="op">=</span> <span class="va">True</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ob alle Elemente einer Zelle numerisch sind, kann mit der Pandas-Methode <code>pd.Series.str.isnumeric()</code> überprüft werden. Ein Blick auf die Daten zeigt die Ursache.</p>
+<div id="e0cd79d7" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke[<span class="st">'Gewicht'</span>].<span class="bu">str</span>.isnumeric().<span class="bu">sum</span>())</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke[<span class="st">'Gewicht'</span>].head())</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke[<span class="st">'Gewicht'</span>].tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1
+0    0.0
+1    0.0
+2    0.0
+4    0.0
+5    0.0
+Name: Gewicht, dtype: object
+532    850\n
+533    850\n
+534    850\n
+535    850\n
+536    850\n
+Name: Gewicht, dtype: object</code></pre>
+</div>
+</div>
+<p>Die Zeilenumbrüche werden ebenfalls entfernt.</p>
+<div id="4191967a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hooke.replace(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, <span class="st">''</span>, regex <span class="op">=</span> <span class="va">True</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke[<span class="st">'Gewicht'</span>].<span class="bu">str</span>.isnumeric().<span class="bu">sum</span>())</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke[<span class="st">'Gewicht'</span>].tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>178
+532    850
+533    850
+534    850
+535    850
+536    850
+Name: Gewicht, dtype: object</code></pre>
+</div>
+</div>
+<div id="6f35acd0" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.info(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># explizite Zuweisung</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'Abstand'</span>] <span class="op">=</span> hooke[<span class="st">'Abstand'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'Gewicht'</span>] <span class="op">=</span> hooke[<span class="st">'Gewicht'</span>].astype(<span class="st">'float'</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 533 entries, 0 to 536
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype 
+---  ------   --------------  ----- 
+ 0   Zeit     533 non-null    object
+ 1   Abstand  533 non-null    object
+ 2   Gewicht  533 non-null    object
+ 3   Team     533 non-null    object
+dtypes: object(4)
+memory usage: 20.8+ KB
+None 
+
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 533 entries, 0 to 536
+Data columns (total 4 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   Zeit     533 non-null    object 
+ 1   Abstand  533 non-null    float64
+ 2   Gewicht  533 non-null    float64
+ 3   Team     533 non-null    object 
+dtypes: float64(2), object(2)
+memory usage: 20.8+ KB
+None</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Das Ergebnis könnte so aussehen:</p>
+<div id="5b8e5cf7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>hooke.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Gewicht</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="12" data-quarto-table-cell-role="th" data-valign="top">kreativkoepfe</td>
+<td data-quarto-table-cell-role="th">0.0</td>
+<td>9.0</td>
+<td>109.676667</td>
+<td>0.053619</td>
+<td>109.62</td>
+<td>109.6400</td>
+<td>109.640</td>
+<td>109.7300</td>
+<td>109.74</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50.0</td>
+<td>8.0</td>
+<td>108.557500</td>
+<td>0.489949</td>
+<td>107.84</td>
+<td>108.2325</td>
+<td>108.495</td>
+<td>108.8675</td>
+<td>109.33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">100.0</td>
+<td>10.0</td>
+<td>107.093000</td>
+<td>0.922726</td>
+<td>106.30</td>
+<td>106.3800</td>
+<td>106.875</td>
+<td>107.2700</td>
+<td>109.11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">150.0</td>
+<td>10.0</td>
+<td>105.934000</td>
+<td>0.599967</td>
+<td>104.87</td>
+<td>105.6125</td>
+<td>106.020</td>
+<td>106.3075</td>
+<td>106.84</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">200.0</td>
+<td>10.0</td>
+<td>105.453000</td>
+<td>1.618278</td>
+<td>103.52</td>
+<td>104.0750</td>
+<td>105.035</td>
+<td>106.7700</td>
+<td>108.27</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">250.0</td>
+<td>10.0</td>
+<td>102.527000</td>
+<td>0.796228</td>
+<td>101.10</td>
+<td>102.1700</td>
+<td>102.410</td>
+<td>102.7625</td>
+<td>103.89</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">300.0</td>
+<td>10.0</td>
+<td>101.236000</td>
+<td>0.702095</td>
+<td>100.29</td>
+<td>100.7625</td>
+<td>101.010</td>
+<td>101.8350</td>
+<td>102.45</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">350.0</td>
+<td>10.0</td>
+<td>98.804000</td>
+<td>1.471629</td>
+<td>97.43</td>
+<td>97.5725</td>
+<td>98.155</td>
+<td>100.3600</td>
+<td>100.84</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">400.0</td>
+<td>9.0</td>
+<td>96.827778</td>
+<td>1.036783</td>
+<td>95.80</td>
+<td>95.8900</td>
+<td>96.900</td>
+<td>97.4100</td>
+<td>98.78</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">450.0</td>
+<td>9.0</td>
+<td>95.515556</td>
+<td>1.115954</td>
+<td>93.91</td>
+<td>94.6300</td>
+<td>95.750</td>
+<td>95.8300</td>
+<td>97.24</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">500.0</td>
+<td>8.0</td>
+<td>95.336250</td>
+<td>1.564298</td>
+<td>93.30</td>
+<td>94.4575</td>
+<td>95.140</td>
+<td>96.5625</td>
+<td>97.69</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">550.0</td>
+<td>9.0</td>
+<td>93.155556</td>
+<td>0.352956</td>
+<td>92.76</td>
+<td>92.8700</td>
+<td>92.950</td>
+<td>93.4000</td>
+<td>93.76</td>
+</tr>
+<tr class="odd">
+<td rowspan="10" data-quarto-table-cell-role="th" data-valign="top">fabi</td>
+<td data-quarto-table-cell-role="th">0.0</td>
+<td>10.0</td>
+<td>110.366000</td>
+<td>0.253693</td>
+<td>109.95</td>
+<td>110.2900</td>
+<td>110.310</td>
+<td>110.5800</td>
+<td>110.74</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50.0</td>
+<td>12.0</td>
+<td>110.425833</td>
+<td>0.210992</td>
+<td>110.22</td>
+<td>110.3050</td>
+<td>110.310</td>
+<td>110.6225</td>
+<td>110.77</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">101.0</td>
+<td>9.0</td>
+<td>108.238889</td>
+<td>0.231163</td>
+<td>107.96</td>
+<td>107.9900</td>
+<td>108.410</td>
+<td>108.4200</td>
+<td>108.47</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">152.0</td>
+<td>10.0</td>
+<td>106.902000</td>
+<td>0.335685</td>
+<td>106.45</td>
+<td>106.6000</td>
+<td>106.980</td>
+<td>106.9950</td>
+<td>107.43</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">201.0</td>
+<td>10.0</td>
+<td>105.253000</td>
+<td>1.052416</td>
+<td>102.30</td>
+<td>105.4600</td>
+<td>105.470</td>
+<td>105.5775</td>
+<td>105.90</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">253.0</td>
+<td>11.0</td>
+<td>104.279091</td>
+<td>0.466036</td>
+<td>103.55</td>
+<td>103.9400</td>
+<td>104.100</td>
+<td>104.6600</td>
+<td>104.91</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">302.0</td>
+<td>12.0</td>
+<td>102.650000</td>
+<td>0.390943</td>
+<td>102.09</td>
+<td>102.4650</td>
+<td>102.560</td>
+<td>103.0100</td>
+<td>103.35</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">353.0</td>
+<td>11.0</td>
+<td>100.673636</td>
+<td>0.199613</td>
+<td>100.50</td>
+<td>100.5500</td>
+<td>100.580</td>
+<td>100.7800</td>
+<td>101.03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">403.0</td>
+<td>14.0</td>
+<td>99.447143</td>
+<td>0.424815</td>
+<td>98.97</td>
+<td>99.1025</td>
+<td>99.410</td>
+<td>99.5900</td>
+<td>100.26</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">455.0</td>
+<td>11.0</td>
+<td>97.839091</td>
+<td>0.228099</td>
+<td>97.51</td>
+<td>97.6200</td>
+<td>97.880</td>
+<td>98.0350</td>
+<td>98.15</td>
+</tr>
+<tr class="odd">
+<td rowspan="10" data-quarto-table-cell-role="th" data-valign="top">die_ahnungslosen</td>
+<td data-quarto-table-cell-role="th">0.0</td>
+<td>10.0</td>
+<td>109.759000</td>
+<td>0.180705</td>
+<td>109.55</td>
+<td>109.6300</td>
+<td>109.730</td>
+<td>109.7925</td>
+<td>110.09</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50.0</td>
+<td>8.0</td>
+<td>108.912500</td>
+<td>0.180930</td>
+<td>108.53</td>
+<td>108.8800</td>
+<td>108.930</td>
+<td>109.0250</td>
+<td>109.11</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">100.0</td>
+<td>12.0</td>
+<td>107.725833</td>
+<td>0.704446</td>
+<td>106.76</td>
+<td>107.1975</td>
+<td>107.735</td>
+<td>108.0725</td>
+<td>108.92</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">150.0</td>
+<td>19.0</td>
+<td>106.265789</td>
+<td>0.759505</td>
+<td>104.67</td>
+<td>105.7050</td>
+<td>106.120</td>
+<td>106.7100</td>
+<td>107.87</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">200.0</td>
+<td>18.0</td>
+<td>104.616111</td>
+<td>0.392955</td>
+<td>103.96</td>
+<td>104.2650</td>
+<td>104.590</td>
+<td>104.8150</td>
+<td>105.23</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">250.0</td>
+<td>18.0</td>
+<td>102.906667</td>
+<td>0.221519</td>
+<td>102.35</td>
+<td>102.8025</td>
+<td>102.890</td>
+<td>102.9750</td>
+<td>103.33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">300.0</td>
+<td>11.0</td>
+<td>101.840000</td>
+<td>0.894561</td>
+<td>101.00</td>
+<td>101.3650</td>
+<td>101.460</td>
+<td>101.8150</td>
+<td>104.15</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">350.0</td>
+<td>14.0</td>
+<td>100.264286</td>
+<td>0.265930</td>
+<td>99.98</td>
+<td>100.1475</td>
+<td>100.170</td>
+<td>100.2625</td>
+<td>101.06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">400.0</td>
+<td>11.0</td>
+<td>99.239091</td>
+<td>0.232786</td>
+<td>98.94</td>
+<td>99.0500</td>
+<td>99.130</td>
+<td>99.4150</td>
+<td>99.57</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">450.0</td>
+<td>12.0</td>
+<td>98.042500</td>
+<td>0.468016</td>
+<td>97.51</td>
+<td>97.6750</td>
+<td>97.970</td>
+<td>98.2850</td>
+<td>99.08</td>
+</tr>
+<tr class="odd">
+<td rowspan="18" data-quarto-table-cell-role="th" data-valign="top">ma</td>
+<td data-quarto-table-cell-role="th">0.0</td>
+<td>10.0</td>
+<td>109.258000</td>
+<td>0.042374</td>
+<td>109.18</td>
+<td>109.2600</td>
+<td>109.260</td>
+<td>109.2800</td>
+<td>109.31</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50.0</td>
+<td>10.0</td>
+<td>107.179000</td>
+<td>1.809588</td>
+<td>105.83</td>
+<td>106.0875</td>
+<td>106.185</td>
+<td>107.9575</td>
+<td>110.81</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">100.0</td>
+<td>10.0</td>
+<td>102.101000</td>
+<td>2.958804</td>
+<td>99.37</td>
+<td>99.6725</td>
+<td>101.120</td>
+<td>104.4825</td>
+<td>106.67</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">150.0</td>
+<td>11.0</td>
+<td>106.656364</td>
+<td>4.727985</td>
+<td>100.29</td>
+<td>100.9900</td>
+<td>109.730</td>
+<td>110.1600</td>
+<td>110.60</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">200.0</td>
+<td>9.0</td>
+<td>108.456667</td>
+<td>1.666816</td>
+<td>106.74</td>
+<td>107.2900</td>
+<td>107.740</td>
+<td>110.1700</td>
+<td>111.06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">250.0</td>
+<td>10.0</td>
+<td>106.931000</td>
+<td>0.957838</td>
+<td>105.66</td>
+<td>105.9325</td>
+<td>107.540</td>
+<td>107.6975</td>
+<td>107.80</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">300.0</td>
+<td>10.0</td>
+<td>105.696000</td>
+<td>0.194376</td>
+<td>105.46</td>
+<td>105.5075</td>
+<td>105.715</td>
+<td>105.8650</td>
+<td>105.94</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">350.0</td>
+<td>10.0</td>
+<td>104.838000</td>
+<td>0.530949</td>
+<td>104.10</td>
+<td>104.5150</td>
+<td>104.685</td>
+<td>105.1475</td>
+<td>105.94</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">400.0</td>
+<td>10.0</td>
+<td>104.790000</td>
+<td>0.602974</td>
+<td>104.31</td>
+<td>104.4775</td>
+<td>104.550</td>
+<td>104.6925</td>
+<td>106.09</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">450.0</td>
+<td>10.0</td>
+<td>104.517000</td>
+<td>0.475513</td>
+<td>103.91</td>
+<td>104.2225</td>
+<td>104.510</td>
+<td>104.7125</td>
+<td>105.56</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">500.0</td>
+<td>10.0</td>
+<td>104.456000</td>
+<td>0.569097</td>
+<td>103.65</td>
+<td>104.0925</td>
+<td>104.420</td>
+<td>104.6400</td>
+<td>105.71</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">550.0</td>
+<td>10.0</td>
+<td>103.004000</td>
+<td>0.800475</td>
+<td>101.55</td>
+<td>102.7650</td>
+<td>103.065</td>
+<td>103.5000</td>
+<td>104.20</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">600.0</td>
+<td>10.0</td>
+<td>101.403000</td>
+<td>0.621183</td>
+<td>100.22</td>
+<td>101.5000</td>
+<td>101.580</td>
+<td>101.7800</td>
+<td>101.94</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">650.0</td>
+<td>10.0</td>
+<td>100.109000</td>
+<td>0.082523</td>
+<td>99.97</td>
+<td>100.0475</td>
+<td>100.110</td>
+<td>100.1875</td>
+<td>100.21</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">700.0</td>
+<td>10.0</td>
+<td>98.871000</td>
+<td>0.534155</td>
+<td>98.24</td>
+<td>98.5425</td>
+<td>98.715</td>
+<td>99.1850</td>
+<td>100.02</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">750.0</td>
+<td>9.0</td>
+<td>97.966667</td>
+<td>0.729315</td>
+<td>96.86</td>
+<td>97.5000</td>
+<td>97.980</td>
+<td>98.6800</td>
+<td>98.77</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">800.0</td>
+<td>11.0</td>
+<td>97.115455</td>
+<td>0.540210</td>
+<td>96.19</td>
+<td>96.7000</td>
+<td>97.330</td>
+<td>97.5050</td>
+<td>97.72</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">850.0</td>
+<td>8.0</td>
+<td>95.715000</td>
+<td>0.245822</td>
+<td>95.35</td>
+<td>95.5625</td>
+<td>95.750</td>
+<td>95.8775</td>
+<td>96.07</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="sec-lösung-datenaufbereitung" class="level2" data-number="53.3">
+<h2 data-number="53.3" class="anchored" data-anchor-id="sec-lösung-datenaufbereitung"><span class="header-section-number">53.3</span> Musterlösung Daten aufbereiten</h2>
+<p>Im nächsten Schritt werden die Daten geprüft und ggf. bereinigt. Dies umfasst die Schritte:</p>
+<ul>
+<li>auf Ausreißer prüfen (studentisierte z-Werte und grafisch) und ggf. bereinigen,</li>
+<li>Normierung der Abstandsmessung auf den Nullpunkt und Umrechnung der verwendeten Einheiten in SI-Einheiten und</li>
+<li>grafische Darstellung.</li>
+</ul>
+<div id="wrn-globgroupby" class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;53.1: glob, pd.groupby und SciPy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Ausführung des folgenden Codes kann lokal unterschiedlich ausfallen, je nach dem, in welcher Reihenfolge die Dateien mit dem Modul glob eingelesen wurden. Im Folgenden werden aus einem groupby-Objekt Indexpositionen bestimmt, an denen eine Bedingung wahr ist. Mit diesen Indexpositionen wird dann auf den ursprünglichen DataFrame zugegriffen. Pandas sortiert die Gruppen im groupby-Objekt standardmäßig alphabetisch (<code>sort = True</code>). Wenn die mit glob eingelesenen Dateien nicht in alphabetischer Reihenfolge vorliegen, wird mit falschen Indexpositionen auf den DataFrame zugegriffen.</p>
+<p>Dem kann durch alphabetisches Sortieren der mit glob eingelesenen Dateien bzw. des DataFrames nach den groupby-Kriterien begegnet werden oder, wie im Folgenden, durch das Argument <code>pd.groupby(by = Bedingung, sort = False)</code>. Letztere Variante ist flexibler.</p>
+<p>Auch gibt <code>scipy.stats.zscore()</code> je nach Version eine <code>pd.Series</code> oder ein <code>np.array</code> zurück. Dementsprechend sind die Methoden aus Pandas oder NumPy zu verwenden.</p>
+</div>
+</div>
+<ol type="1">
+<li><strong>Liegen ungültige Messungen vor?</strong></li>
+</ol>
+<section id="auf-ausreißer-prüfen" class="level3" data-number="53.3.1">
+<h3 data-number="53.3.1" class="anchored" data-anchor-id="auf-ausreißer-prüfen"><span class="header-section-number">53.3.1</span> Auf Ausreißer prüfen</h3>
+<p>Auf Ausreißer kann (unter anderem) mit studentisierten z-Werten und grafisch geprüft werden.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Ausreißer bestimmen</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Gemeinsame Ausgabe der Messreihen</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Anzahl der Ausreißer bestimmen und Position ausgeben.</li>
+</ol>
+<div id="f2d7228f" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># z-Werte größer gleich abs(3) finden</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.14.1 (gibt pd.Series zurück)</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">## z_values_ge3_sum = hooke.groupby(by = ['Team', 'Gewicht'])['Abstand'].apply(lambda x: scipy.stats.zscore(x, ddof = 1)).abs().ge(3).sum()</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.15 und neuer (gibt np.array zurück)</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>z_values_ge3_sum <span class="op">=</span> hooke.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].<span class="bu">apply</span>(scipy.stats.zscore, ddof <span class="op">=</span> <span class="dv">1</span>).<span class="bu">apply</span>(np.<span class="bu">abs</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: np.greater_equal(x, <span class="dv">3</span>)).<span class="bu">apply</span>(<span class="bu">sum</span>).<span class="bu">sum</span>()</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Anzahl der studentisierten z-Werte mit Betrag ≥ 3:"</span>, z_values_ge3_sum, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># z-Werte größer gleich abs(2.5) finden</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.14.1 (gibt pd.Series zurück)</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co">## z_values_ge25_sum = hooke.groupby(by = ['Team', 'Gewicht'])['Abstand'].apply(lambda x: scipy.stats.zscore(x, ddof = 1)).abs().ge(2.5).sum()</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.15 und neuer (gibt np.array zurück)</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>z_values_ge25_sum <span class="op">=</span> hooke.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].<span class="bu">apply</span>(scipy.stats.zscore, ddof <span class="op">=</span> <span class="dv">1</span>).<span class="bu">apply</span>(np.<span class="bu">abs</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: np.greater_equal(x, <span class="fl">2.5</span>)).<span class="bu">apply</span>(<span class="bu">sum</span>).<span class="bu">sum</span>()</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Anzahl der studentisierten z-Werte mit Betrag ≥ 2.5:"</span>, z_values_ge25_sum)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Zeilen mit z-Werten größer abs(2.5) ausgeben</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.14.1 (gibt pd.Series zurück)</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co">## bool_index = hooke.groupby(by = ['Team', 'Gewicht'])['Abstand'].apply(lambda x: scipy.stats.zscore(x, ddof = 1)).abs().ge(2.5).values</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.15 und neuer (gibt np.array zurück)</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co">### Schritt 1: Wahrheitswerte abgreifen</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>bool_index <span class="op">=</span> hooke.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].<span class="bu">apply</span>(scipy.stats.zscore, ddof <span class="op">=</span> <span class="dv">1</span>).<span class="bu">apply</span>(np.<span class="bu">abs</span>).<span class="bu">apply</span>(<span class="kw">lambda</span> x: np.greater_equal(x, <span class="fl">2.5</span>)).values</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co">### Schritt 2: Rückgabe in ein eindimensionales Array überführen: </span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>bool_index <span class="op">=</span> np.hstack(bool_index)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">An diesen Indexpositionen liegen die Ausreißer:"</span>, np.nonzero(bool_index))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Anzahl der studentisierten z-Werte mit Betrag ≥ 3: 0 
+
+Anzahl der studentisierten z-Werte mit Betrag ≥ 2.5: 4
+
+An diesen Indexpositionen liegen die Ausreißer: (array([156, 298, 313, 318]),)</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Ausgabe der Zeilen aus den Messreihen</li>
+</ol>
+<div id="d8ab8bb2" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Auswahl der Zeilen mit den z-Werten größer gleich 2.5</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>z_values_ge_25 <span class="op">=</span> hooke.iloc[bool_index , :] <span class="co"># --&gt; Hier muss das Problem liegen</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z_values_ge_25, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Kombinationen aus Gewicht &amp; Team bestimmen</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kombinationen aus Gewicht &amp; Team bestimmen"</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>teams <span class="op">=</span> z_values_ge_25[<span class="st">'Team'</span>].unique()</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co">## teams durchlaufen und jeweils die Gewichte speichern</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>team_gewichte <span class="op">=</span> [] <span class="co"># leere liste</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(teams)):</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(teams[i])</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(z_values_ge_25.loc[z_values_ge_25[<span class="st">'Team'</span>] <span class="op">==</span> teams[i], <span class="st">'Gewicht'</span>], <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  team_gewichte.append(z_values_ge_25.loc[z_values_ge_25[<span class="st">'Team'</span>] <span class="op">==</span> teams[i], <span class="st">'Gewicht'</span>].values)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co"># print("Als Liste von arrays:")</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co"># print(team_gewichte, "\n")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         Zeit  Abstand  Gewicht              Team
+159  09:27:18   102.30    201.0              fabi
+301  11:10:38   102.35    250.0  die_ahnungslosen
+316  11:11:42   104.15    300.0  die_ahnungslosen
+321  11:12:43   101.06    350.0  die_ahnungslosen 
+
+Kombinationen aus Gewicht &amp; Team bestimmen
+fabi
+159    201.0
+Name: Gewicht, dtype: float64 
+
+die_ahnungslosen
+301    250.0
+316    300.0
+321    350.0
+Name: Gewicht, dtype: float64 
+</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Diese Ausgabe dient der Veranschaulichung und Kontrolle.</p>
+<div id="537a2d7e" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Messreihen auswählen</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>messreihen <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(teams)):</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(team_gewichte[i])):</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(teams[i], team_gewichte[i][j])</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    messreihen <span class="op">=</span> pd.concat([messreihen, hooke.loc[ (hooke[<span class="st">'Team'</span>] <span class="op">==</span> teams[i]) <span class="op">&amp;</span> (hooke[<span class="st">'Gewicht'</span>] <span class="op">==</span> team_gewichte[i][j]) ]])</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># studentisierte z-Werte der Messreihen bilden</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.14.1 (gibt pd.Series zurück)</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co">## messreihen_z_scores = messreihen.groupby(by = ['Team', 'Gewicht'])['Abstand'].apply(lambda x: scipy.stats.zscore(x, ddof = 1)).reset_index(drop = True)</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.15 und neuer (gibt np.array zurück)</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co">## Rückgabe zeilenweise in ein eindimensionales Array überführen: </span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>messreihen_z_scores <span class="op">=</span> np.hstack(messreihen.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: scipy.stats.zscore(x, ddof <span class="op">=</span> <span class="dv">1</span>)).reset_index(drop <span class="op">=</span> <span class="va">True</span>))</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="co"># gemeinsame Ausgabe der Daten</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.14.1 (gibt pd.Series zurück)</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="co">## messreihen.insert(loc = 2, column = 'z-Werte Abstand', value = messreihen_z_scores.values)</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="co">## Lösung für SciPy 1.15 und neuer (gibt np.array zurück)</span></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>messreihen.insert(loc <span class="op">=</span> <span class="dv">2</span>, column <span class="op">=</span> <span class="st">'z-Werte Abstand'</span>, value <span class="op">=</span> messreihen_z_scores)</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(messreihen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>fabi 201.0
+die_ahnungslosen 250.0
+die_ahnungslosen 300.0
+die_ahnungslosen 350.0
+         Zeit  Abstand  z-Werte Abstand  Gewicht              Team
+156  09:27:09   105.47         0.206192    201.0              fabi
+157  09:27:12   105.90         0.614776    201.0              fabi
+158  09:27:15   105.54         0.272706    201.0              fabi
+159  09:27:18   102.30        -2.805925    201.0              fabi
+160  09:27:21   105.90         0.614776    201.0              fabi
+161  09:27:24   105.47         0.206192    201.0              fabi
+162  09:27:27   105.44         0.177686    201.0              fabi
+163  09:27:30   105.59         0.320216    201.0              fabi
+164  09:27:33   105.46         0.196690    201.0              fabi
+165  09:27:36   105.46         0.196690    201.0              fabi
+292  11:10:11   102.99         0.376191    250.0  die_ahnungslosen
+293  11:10:13   102.99         0.376191    250.0  die_ahnungslosen
+294  11:10:17   102.93         0.105333    250.0  die_ahnungslosen
+295  11:10:20   102.83        -0.346095    250.0  die_ahnungslosen
+296  11:10:23   103.16         1.143620    250.0  die_ahnungslosen
+297  11:10:26   102.80        -0.481524    250.0  die_ahnungslosen
+298  11:10:29   102.90        -0.030095    250.0  die_ahnungslosen
+299  11:10:32   103.33         1.911049    250.0  die_ahnungslosen
+300  11:10:35   102.78        -0.571810    250.0  die_ahnungslosen
+301  11:10:38   102.35        -2.512954    250.0  die_ahnungslosen
+302  11:10:41   102.93         0.105333    250.0  die_ahnungslosen
+303  11:10:44   102.88        -0.120381    250.0  die_ahnungslosen
+304  11:10:47   102.90        -0.030095    250.0  die_ahnungslosen
+305  11:10:50   102.88        -0.120381    250.0  die_ahnungslosen
+306  11:10:53   102.73        -0.797524    250.0  die_ahnungslosen
+307  11:10:56   102.81        -0.436381    250.0  die_ahnungslosen
+308  11:10:59   102.80        -0.481524    250.0  die_ahnungslosen
+309  11:11:02   103.33         1.911049    250.0  die_ahnungslosen
+310  11:11:24   101.37        -0.525397    300.0  die_ahnungslosen
+311  11:11:27   101.43        -0.458325    300.0  die_ahnungslosen
+312  11:11:30   102.80         1.073152    300.0  die_ahnungslosen
+313  11:11:33   101.72        -0.134144    300.0  die_ahnungslosen
+314  11:11:36   101.36        -0.536576    300.0  die_ahnungslosen
+315  11:11:39   101.46        -0.424789    300.0  die_ahnungslosen
+316  11:11:42   104.15         2.582271    300.0  die_ahnungslosen
+317  11:11:45   101.36        -0.536576    300.0  die_ahnungslosen
+318  11:11:48   101.00        -0.939008    300.0  die_ahnungslosen
+319  11:11:51   101.91         0.078251    300.0  die_ahnungslosen
+320  11:11:54   101.68        -0.178859    300.0  die_ahnungslosen
+321  11:12:43   101.06         2.992196    350.0  die_ahnungslosen
+323  11:12:46   100.17        -0.354551    350.0  die_ahnungslosen
+324  11:12:49    99.98        -1.069025    350.0  die_ahnungslosen
+325  11:12:52   100.07        -0.730590    350.0  die_ahnungslosen
+326  11:12:55   100.21        -0.204135    350.0  die_ahnungslosen
+327  11:12:58   100.21        -0.204135    350.0  die_ahnungslosen
+328  11:13:01   100.14        -0.467363    350.0  die_ahnungslosen
+329  11:13:04   100.17        -0.354551    350.0  die_ahnungslosen
+330  11:13:07   100.28         0.059092    350.0  die_ahnungslosen
+331  11:13:10   100.55         1.074397    350.0  die_ahnungslosen
+332  11:13:13   100.14        -0.467363    350.0  die_ahnungslosen
+333  11:13:16   100.17        -0.354551    350.0  die_ahnungslosen
+334  11:13:19   100.17        -0.354551    350.0  die_ahnungslosen
+335  11:13:22   100.38         0.435131    350.0  die_ahnungslosen</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Die Werte können mit der Pandas-Methode <code>pd.plot()</code> mit wenig Aufwand dargestellt werden. Die Methode ist jedoch nicht so flexibel, wie das Paket matplotlib. So ist das Punktdiagramm (<code>kind = 'scatter'</code>) nur für DataFrames, nicht aber für groupby-Objekte verfügbar. Dies wird durch das Setzen eines Markers und die Einstellung der Liniendicke auf 0 kompensiert.</p>
+<div id="66b54a49" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>messreihen.reset_index(drop <span class="op">=</span> <span class="va">True</span>).groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Gewicht'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].plot(marker <span class="op">=</span> <span class="st">'o'</span>, lw <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Messwert'</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Abstand'</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="übung-hooke_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img" alt="Grafische Darstellung der Messreihen, die studentisierte z-Werte >= 2,5 enthalten."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Die Werte, die betragsmäßig studentisierte z-Werte <span class="math inline">\(\ge\)</span> 2,5 aufweisen, könnten als Ausreißer entfernt werden. In diesem Fall wird darauf verzichtet.</p>
+</section>
+<section id="umwandlung-der-rechengrößen" class="level3" data-number="53.3.2">
+<h3 data-number="53.3.2" class="anchored" data-anchor-id="umwandlung-der-rechengrößen"><span class="header-section-number">53.3.2</span> Umwandlung der Rechengrößen</h3>
+<p>Im nächsten Schritt wird die Abstandsmessung auf den Nullpunkt normiert, um die Federausdehnung abzubilden. Ebenso wird das Gewicht in <span class="math inline">\(g\)</span> in die wirkende Kraft in <span class="math inline">\(N\)</span> umgerechnet.</p>
+<div id="tip-einheiten" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;53.3: Musterlösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="abstandsmessung-auf-meter-und-auf-den-nullpunkt-normieren" class="level4" data-number="53.3.2.1">
+<h4 data-number="53.3.2.1" class="anchored" data-anchor-id="abstandsmessung-auf-meter-und-auf-den-nullpunkt-normieren"><span class="header-section-number">53.3.2.1</span> Abstandsmessung auf Meter und auf den Nullpunkt normieren</h4>
+<p>Abstandsmessung auf den Nullpunkt normieren. Die Spalte Abstand wird in Abständsänderung umbenannt.</p>
+<div id="3fd6d36f" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>nullpunkte <span class="op">=</span> hooke.loc[hooke[<span class="st">'Gewicht'</span>] <span class="op">==</span> <span class="dv">0</span>, : ].groupby(by <span class="op">=</span> <span class="st">'Team'</span>, sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstand'</span>].mean()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nullpunkte"</span>, nullpunkte, sep <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>teams <span class="op">=</span> nullpunkte.index</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(teams)):</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> teams[i] , <span class="st">'Abstand'</span>] <span class="op">=</span> hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> teams[i] , <span class="st">'Abstand'</span>].sub(nullpunkte.values[i]).mul(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>hooke.rename(columns <span class="op">=</span> {<span class="st">'Abstand'</span>: <span class="st">'Abstandsänderung'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'Abstandsänderung'</span>] <span class="op">=</span> hooke[<span class="st">'Abstandsänderung'</span>].div(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Nullpunkte
+Team
+kreativkoepfe       109.676667
+fabi                110.366000
+die_ahnungslosen    109.759000
+ma                  109.258000
+Name: Abstand, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+<section id="gewicht-in-wirkende-kraft-umrechnen" class="level4" data-number="53.3.2.2">
+<h4 data-number="53.3.2.2" class="anchored" data-anchor-id="gewicht-in-wirkende-kraft-umrechnen"><span class="header-section-number">53.3.2.2</span> Gewicht in wirkende Kraft umrechnen</h4>
+<p>Gewicht in <span class="math inline">\(g\)</span> in die wirkende Kraft in <span class="math inline">\(N\)</span> umrechnen. Die Spalte wird in den Datensatz eingefügt.</p>
+<div id="19edd50d" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'Kraft'</span>] <span class="op">=</span> hooke[<span class="st">'Gewicht'</span>].div(<span class="dv">1000</span>).mul(<span class="fl">9.81</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<p>Das Ergebnis könnte so aussehen. Die Spalte Abstand wurde in Abständsänderung umbenannt.</p>
+<div id="4dee9921" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>hooke.groupby(by <span class="op">=</span> [<span class="st">'Team'</span>, <span class="st">'Kraft'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstandsänderung'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Team</th>
+<th data-quarto-table-cell-role="th">Kraft</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="12" data-quarto-table-cell-role="th" data-valign="top">kreativkoepfe</td>
+<td data-quarto-table-cell-role="th">0.00000</td>
+<td>9.0</td>
+<td>7.894196e-17</td>
+<td>0.000536</td>
+<td>-0.000633</td>
+<td>-0.000533</td>
+<td>0.000367</td>
+<td>0.000367</td>
+<td>0.000567</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">0.49050</td>
+<td>8.0</td>
+<td>1.119167e-02</td>
+<td>0.004899</td>
+<td>0.003467</td>
+<td>0.008092</td>
+<td>0.011817</td>
+<td>0.014442</td>
+<td>0.018367</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0.98100</td>
+<td>10.0</td>
+<td>2.583667e-02</td>
+<td>0.009227</td>
+<td>0.005667</td>
+<td>0.024067</td>
+<td>0.028017</td>
+<td>0.032967</td>
+<td>0.033767</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1.47150</td>
+<td>10.0</td>
+<td>3.742667e-02</td>
+<td>0.006000</td>
+<td>0.028367</td>
+<td>0.033692</td>
+<td>0.036567</td>
+<td>0.040642</td>
+<td>0.048067</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1.96200</td>
+<td>10.0</td>
+<td>4.223667e-02</td>
+<td>0.016183</td>
+<td>0.014067</td>
+<td>0.029067</td>
+<td>0.046417</td>
+<td>0.056017</td>
+<td>0.061567</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2.45250</td>
+<td>10.0</td>
+<td>7.149667e-02</td>
+<td>0.007962</td>
+<td>0.057867</td>
+<td>0.069142</td>
+<td>0.072667</td>
+<td>0.075067</td>
+<td>0.085767</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2.94300</td>
+<td>10.0</td>
+<td>8.440667e-02</td>
+<td>0.007021</td>
+<td>0.072267</td>
+<td>0.078417</td>
+<td>0.086667</td>
+<td>0.089142</td>
+<td>0.093867</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3.43350</td>
+<td>10.0</td>
+<td>1.087267e-01</td>
+<td>0.014716</td>
+<td>0.088367</td>
+<td>0.093167</td>
+<td>0.115217</td>
+<td>0.121042</td>
+<td>0.122467</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3.92400</td>
+<td>9.0</td>
+<td>1.284889e-01</td>
+<td>0.010368</td>
+<td>0.108967</td>
+<td>0.122667</td>
+<td>0.127767</td>
+<td>0.137867</td>
+<td>0.138767</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4.41450</td>
+<td>9.0</td>
+<td>1.416111e-01</td>
+<td>0.011160</td>
+<td>0.124367</td>
+<td>0.138467</td>
+<td>0.139267</td>
+<td>0.150467</td>
+<td>0.157667</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4.90500</td>
+<td>8.0</td>
+<td>1.434042e-01</td>
+<td>0.015643</td>
+<td>0.119867</td>
+<td>0.131142</td>
+<td>0.145367</td>
+<td>0.152192</td>
+<td>0.163767</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5.39550</td>
+<td>9.0</td>
+<td>1.652111e-01</td>
+<td>0.003530</td>
+<td>0.159167</td>
+<td>0.162767</td>
+<td>0.167267</td>
+<td>0.168067</td>
+<td>0.169167</td>
+</tr>
+<tr class="odd">
+<td rowspan="10" data-quarto-table-cell-role="th" data-valign="top">fabi</td>
+<td data-quarto-table-cell-role="th">0.00000</td>
+<td>10.0</td>
+<td>1.137111e-16</td>
+<td>0.002537</td>
+<td>-0.003740</td>
+<td>-0.002140</td>
+<td>0.000560</td>
+<td>0.000760</td>
+<td>0.004160</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">0.49050</td>
+<td>12.0</td>
+<td>-5.983333e-04</td>
+<td>0.002110</td>
+<td>-0.004040</td>
+<td>-0.002565</td>
+<td>0.000560</td>
+<td>0.000610</td>
+<td>0.001460</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0.99081</td>
+<td>9.0</td>
+<td>2.127111e-02</td>
+<td>0.002312</td>
+<td>0.018960</td>
+<td>0.019460</td>
+<td>0.019560</td>
+<td>0.023760</td>
+<td>0.024060</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1.49112</td>
+<td>10.0</td>
+<td>3.464000e-02</td>
+<td>0.003357</td>
+<td>0.029360</td>
+<td>0.033710</td>
+<td>0.033860</td>
+<td>0.037660</td>
+<td>0.039160</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1.97181</td>
+<td>10.0</td>
+<td>5.113000e-02</td>
+<td>0.010524</td>
+<td>0.044660</td>
+<td>0.047885</td>
+<td>0.048960</td>
+<td>0.049060</td>
+<td>0.080660</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2.48193</td>
+<td>11.0</td>
+<td>6.086909e-02</td>
+<td>0.004660</td>
+<td>0.054560</td>
+<td>0.057060</td>
+<td>0.062660</td>
+<td>0.064260</td>
+<td>0.068160</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2.96262</td>
+<td>12.0</td>
+<td>7.716000e-02</td>
+<td>0.003909</td>
+<td>0.070160</td>
+<td>0.073560</td>
+<td>0.078060</td>
+<td>0.079010</td>
+<td>0.082760</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3.46293</td>
+<td>11.0</td>
+<td>9.692364e-02</td>
+<td>0.001996</td>
+<td>0.093360</td>
+<td>0.095860</td>
+<td>0.097860</td>
+<td>0.098160</td>
+<td>0.098660</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3.95343</td>
+<td>14.0</td>
+<td>1.091886e-01</td>
+<td>0.004248</td>
+<td>0.101060</td>
+<td>0.107760</td>
+<td>0.109560</td>
+<td>0.112635</td>
+<td>0.113960</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4.46355</td>
+<td>11.0</td>
+<td>1.252691e-01</td>
+<td>0.002281</td>
+<td>0.122160</td>
+<td>0.123310</td>
+<td>0.124860</td>
+<td>0.127460</td>
+<td>0.128560</td>
+</tr>
+<tr class="odd">
+<td rowspan="10" data-quarto-table-cell-role="th" data-valign="top">die_ahnungslosen</td>
+<td data-quarto-table-cell-role="th">0.00000</td>
+<td>10.0</td>
+<td>-1.420088e-16</td>
+<td>0.001807</td>
+<td>-0.003310</td>
+<td>-0.000335</td>
+<td>0.000290</td>
+<td>0.001290</td>
+<td>0.002090</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">0.49050</td>
+<td>8.0</td>
+<td>8.465000e-03</td>
+<td>0.001809</td>
+<td>0.006490</td>
+<td>0.007340</td>
+<td>0.008290</td>
+<td>0.008790</td>
+<td>0.012290</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0.98100</td>
+<td>12.0</td>
+<td>2.033167e-02</td>
+<td>0.007044</td>
+<td>0.008390</td>
+<td>0.016865</td>
+<td>0.020240</td>
+<td>0.025615</td>
+<td>0.029990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1.47150</td>
+<td>19.0</td>
+<td>3.493211e-02</td>
+<td>0.007595</td>
+<td>0.018890</td>
+<td>0.030490</td>
+<td>0.036390</td>
+<td>0.040540</td>
+<td>0.050890</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1.96200</td>
+<td>18.0</td>
+<td>5.142889e-02</td>
+<td>0.003930</td>
+<td>0.045290</td>
+<td>0.049440</td>
+<td>0.051690</td>
+<td>0.054940</td>
+<td>0.057990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2.45250</td>
+<td>18.0</td>
+<td>6.852333e-02</td>
+<td>0.002215</td>
+<td>0.064290</td>
+<td>0.067840</td>
+<td>0.068690</td>
+<td>0.069565</td>
+<td>0.074090</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2.94300</td>
+<td>11.0</td>
+<td>7.919000e-02</td>
+<td>0.008946</td>
+<td>0.056090</td>
+<td>0.079440</td>
+<td>0.082990</td>
+<td>0.083940</td>
+<td>0.087590</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3.43350</td>
+<td>14.0</td>
+<td>9.494714e-02</td>
+<td>0.002659</td>
+<td>0.086990</td>
+<td>0.094965</td>
+<td>0.095890</td>
+<td>0.096115</td>
+<td>0.097790</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3.92400</td>
+<td>11.0</td>
+<td>1.051991e-01</td>
+<td>0.002328</td>
+<td>0.101890</td>
+<td>0.103440</td>
+<td>0.106290</td>
+<td>0.107090</td>
+<td>0.108190</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4.41450</td>
+<td>12.0</td>
+<td>1.171650e-01</td>
+<td>0.004680</td>
+<td>0.106790</td>
+<td>0.114740</td>
+<td>0.117890</td>
+<td>0.120840</td>
+<td>0.122490</td>
+</tr>
+<tr class="odd">
+<td rowspan="18" data-quarto-table-cell-role="th" data-valign="top">ma</td>
+<td data-quarto-table-cell-role="th">0.00000</td>
+<td>10.0</td>
+<td>-7.105997e-17</td>
+<td>0.000424</td>
+<td>-0.000520</td>
+<td>-0.000220</td>
+<td>-0.000020</td>
+<td>-0.000020</td>
+<td>0.000780</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">0.49050</td>
+<td>10.0</td>
+<td>2.079000e-02</td>
+<td>0.018096</td>
+<td>-0.015520</td>
+<td>0.013005</td>
+<td>0.030730</td>
+<td>0.031705</td>
+<td>0.034280</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0.98100</td>
+<td>10.0</td>
+<td>7.157000e-02</td>
+<td>0.029588</td>
+<td>0.025880</td>
+<td>0.047755</td>
+<td>0.081380</td>
+<td>0.095855</td>
+<td>0.098880</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1.47150</td>
+<td>11.0</td>
+<td>2.601636e-02</td>
+<td>0.047280</td>
+<td>-0.013420</td>
+<td>-0.009020</td>
+<td>-0.004720</td>
+<td>0.082680</td>
+<td>0.089680</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1.96200</td>
+<td>9.0</td>
+<td>8.013333e-03</td>
+<td>0.016668</td>
+<td>-0.018020</td>
+<td>-0.009120</td>
+<td>0.015180</td>
+<td>0.019680</td>
+<td>0.025180</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2.45250</td>
+<td>10.0</td>
+<td>2.327000e-02</td>
+<td>0.009578</td>
+<td>0.014580</td>
+<td>0.015605</td>
+<td>0.017180</td>
+<td>0.033255</td>
+<td>0.035980</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2.94300</td>
+<td>10.0</td>
+<td>3.562000e-02</td>
+<td>0.001944</td>
+<td>0.033180</td>
+<td>0.033930</td>
+<td>0.035430</td>
+<td>0.037505</td>
+<td>0.037980</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3.43350</td>
+<td>10.0</td>
+<td>4.420000e-02</td>
+<td>0.005309</td>
+<td>0.033180</td>
+<td>0.041105</td>
+<td>0.045730</td>
+<td>0.047430</td>
+<td>0.051580</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3.92400</td>
+<td>10.0</td>
+<td>4.468000e-02</td>
+<td>0.006030</td>
+<td>0.031680</td>
+<td>0.045655</td>
+<td>0.047080</td>
+<td>0.047805</td>
+<td>0.049480</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">4.41450</td>
+<td>10.0</td>
+<td>4.741000e-02</td>
+<td>0.004755</td>
+<td>0.036980</td>
+<td>0.045455</td>
+<td>0.047480</td>
+<td>0.050355</td>
+<td>0.053480</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4.90500</td>
+<td>10.0</td>
+<td>4.802000e-02</td>
+<td>0.005691</td>
+<td>0.035480</td>
+<td>0.046180</td>
+<td>0.048380</td>
+<td>0.051655</td>
+<td>0.056080</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5.39550</td>
+<td>10.0</td>
+<td>6.254000e-02</td>
+<td>0.008005</td>
+<td>0.050580</td>
+<td>0.057580</td>
+<td>0.061930</td>
+<td>0.064930</td>
+<td>0.077080</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5.88600</td>
+<td>10.0</td>
+<td>7.855000e-02</td>
+<td>0.006212</td>
+<td>0.073180</td>
+<td>0.074780</td>
+<td>0.076780</td>
+<td>0.077580</td>
+<td>0.090380</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6.37650</td>
+<td>10.0</td>
+<td>9.149000e-02</td>
+<td>0.000825</td>
+<td>0.090480</td>
+<td>0.090705</td>
+<td>0.091480</td>
+<td>0.092105</td>
+<td>0.092880</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6.86700</td>
+<td>10.0</td>
+<td>1.038700e-01</td>
+<td>0.005342</td>
+<td>0.092380</td>
+<td>0.100730</td>
+<td>0.105430</td>
+<td>0.107155</td>
+<td>0.110180</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7.35750</td>
+<td>9.0</td>
+<td>1.129133e-01</td>
+<td>0.007293</td>
+<td>0.104880</td>
+<td>0.105780</td>
+<td>0.112780</td>
+<td>0.117580</td>
+<td>0.123980</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7.84800</td>
+<td>11.0</td>
+<td>1.214255e-01</td>
+<td>0.005402</td>
+<td>0.115380</td>
+<td>0.117530</td>
+<td>0.119280</td>
+<td>0.125580</td>
+<td>0.130680</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8.33850</td>
+<td>8.0</td>
+<td>1.354300e-01</td>
+<td>0.002458</td>
+<td>0.131880</td>
+<td>0.133805</td>
+<td>0.135080</td>
+<td>0.136955</td>
+<td>0.139080</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="grafische-darstellung" class="level3" data-number="53.3.3">
+<h3 data-number="53.3.3" class="anchored" data-anchor-id="grafische-darstellung"><span class="header-section-number">53.3.3</span> Grafische Darstellung</h3>
+<p>Da es nur vier Teams gibt, können die Messreihen grafisch dargestellt werden. Eine mögliche Darstellung können Sie dem ersten Reiter, die Zwischenschritte und Schlussfolgerungen den folgenden Reitern entnehmen.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Grafische Darstellung</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Mittelwerte und Standardfehler berechnen</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Auswertung</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="f00152bd" class="cell" data-execution_count="21">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="übung-hooke_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img" alt="Auf der x-Achse ist die Federausdehnung in m, auf der y-Achse die wirkende Kraft in N abgetragen. Zusätzlich zu den Messpunkten sind für jedes Gewicht der Mittelwert mit einem großen X und von dessen Mittelpunkt ausgehend der Bereich des Mittelwerts ± 1 Standardfehler eingezeichnet."></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Die Ausgabe ist aus Platzgründen auf die ersten Zeilen beschränkt.</p>
+<div id="4acce461" class="cell" data-execution_count="22">
+<div class="cell-output cell-output-stdout">
+<pre><code>Mittelwerte der Abstandsänderung nach Team und Kraft:
+Team           Kraft 
+kreativkoepfe  0.0000    7.895401e-17
+               0.4905    1.119167e-02
+               0.9810    2.583667e-02
+               1.4715    3.742667e-02
+               1.9620    4.223667e-02
+Name: Federausdehnung, dtype: float64
+
+Standardfehler der Mittelwerte nach Team und Kraft
+Team           Kraft 
+kreativkoepfe  0.0000    0.000179
+               0.4905    0.001732
+               0.9810    0.002918
+               1.4715    0.001897
+               1.9620    0.005117
+Name: Standardfehler, dtype: float64</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="1633f69a" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwerte der Teams nach Kraft</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>distance_means_by_team_and_force <span class="op">=</span> hooke.groupby(by <span class="op">=</span> [hooke[<span class="st">'Team'</span>], hooke[<span class="st">'Kraft'</span>]], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstandsänderung'</span>].mean()</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>distance_means_by_team_and_force.name <span class="op">=</span> <span class="st">'Federausdehnung'</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mittelwerte der Abstandsänderung nach Team und Kraft:"</span>, distance_means_by_team_and_force.head(), sep <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>() <span class="co"># leere Zeile</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardfehler der Teams nach Kraft</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>distance_stderrors_by_team_and_force <span class="op">=</span> hooke.groupby(by <span class="op">=</span> [hooke[<span class="st">'Team'</span>], hooke[<span class="st">'Kraft'</span>]], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstandsänderung'</span>].std(ddof <span class="op">=</span> <span class="dv">1</span>).div(np.sqrt(hooke[<span class="st">'Abstandsänderung'</span>].groupby(by <span class="op">=</span> [hooke[<span class="st">'Team'</span>], hooke[<span class="st">'Kraft'</span>]], sort <span class="op">=</span> <span class="va">False</span>).size()))</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>distance_stderrors_by_team_and_force.name <span class="op">=</span> <span class="st">'Standardfehler'</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Standardfehler der Mittelwerte nach Team und Kraft"</span>, distance_stderrors_by_team_and_force.head(), sep <span class="op">=</span> <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="co"># grafische Darstellung</span></span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>anzahl_teams <span class="op">=</span> hooke[<span class="st">'Team'</span>].unique().size</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize <span class="op">=</span> (<span class="fl">7.5</span>, <span class="dv">12</span>))</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(anzahl_teams):</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>  plt.subplot(<span class="dv">4</span>, <span class="dv">1</span>, i <span class="op">+</span> <span class="dv">1</span>) <span class="co"># plt.subplot zählt ab 1</span></span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Punktdiagramm</span></span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>  plotting_data <span class="op">=</span> hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> hooke[<span class="st">'Team'</span>].unique()[i], :]</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>  plt.scatter(x <span class="op">=</span> plotting_data[<span class="st">'Abstandsänderung'</span>], y <span class="op">=</span> plotting_data[<span class="st">'Kraft'</span>], alpha <span class="op">=</span> <span class="fl">0.6</span>)</span>
+<span id="cb34-26"><a href="#cb34-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-27"><a href="#cb34-27" aria-hidden="true" tabindex="-1"></a>  plt.title(label <span class="op">=</span> hooke[<span class="st">'Team'</span>].unique()[i])</span>
+<span id="cb34-28"><a href="#cb34-28" aria-hidden="true" tabindex="-1"></a>  plt.xlabel(<span class="st">"Federausdehnung in m"</span>)</span>
+<span id="cb34-29"><a href="#cb34-29" aria-hidden="true" tabindex="-1"></a>  plt.ylabel(<span class="st">"wirkende Kraft in N"</span>)</span>
+<span id="cb34-30"><a href="#cb34-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-31"><a href="#cb34-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # Fehlerbalken</span></span>
+<span id="cb34-32"><a href="#cb34-32" aria-hidden="true" tabindex="-1"></a>  distance_means_by_force <span class="op">=</span> plotting_data.groupby(by <span class="op">=</span> plotting_data[<span class="st">'Kraft'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstandsänderung'</span>].mean()</span>
+<span id="cb34-33"><a href="#cb34-33" aria-hidden="true" tabindex="-1"></a>  distance_stderrors_by_force <span class="op">=</span> plotting_data.groupby(by <span class="op">=</span> plotting_data[<span class="st">'Kraft'</span>], sort <span class="op">=</span> <span class="va">False</span>)[<span class="st">'Abstandsänderung'</span>].std(ddof <span class="op">=</span> <span class="dv">1</span>).div(np.sqrt(plotting_data[<span class="st">'Abstandsänderung'</span>].groupby(by <span class="op">=</span> plotting_data[<span class="st">'Kraft'</span>], sort <span class="op">=</span> <span class="va">False</span>).size()))</span>
+<span id="cb34-34"><a href="#cb34-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-35"><a href="#cb34-35" aria-hidden="true" tabindex="-1"></a>  errorbar_container <span class="op">=</span> plt.errorbar(x <span class="op">=</span> distance_means_by_force, y <span class="op">=</span> distance_means_by_force.index, xerr <span class="op">=</span> distance_stderrors_by_force,</span>
+<span id="cb34-36"><a href="#cb34-36" aria-hidden="true" tabindex="-1"></a>  linestyle <span class="op">=</span> <span class="st">'none'</span>, marker <span class="op">=</span> <span class="st">'x'</span>, color <span class="op">=</span> <span class="st">'black'</span>, markersize <span class="op">=</span> <span class="dv">12</span>, elinewidth <span class="op">=</span> <span class="dv">3</span>, ecolor <span class="op">=</span> <span class="st">'red'</span>, capsize <span class="op">=</span> <span class="dv">12</span>)</span>
+<span id="cb34-37"><a href="#cb34-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-38"><a href="#cb34-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># siehe: https://matplotlib.org/stable/api/container_api.html#matplotlib.container.ErrorbarContainer</span></span>
+<span id="cb34-39"><a href="#cb34-39" aria-hidden="true" tabindex="-1"></a>  plt.legend([errorbar_container.lines[<span class="dv">0</span>], errorbar_container.lines[<span class="dv">2</span>][<span class="dv">0</span>]],</span>
+<span id="cb34-40"><a href="#cb34-40" aria-hidden="true" tabindex="-1"></a>             [<span class="st">'Mittelwert'</span>, <span class="st">'Standardfehler'</span>],</span>
+<span id="cb34-41"><a href="#cb34-41" aria-hidden="true" tabindex="-1"></a>             loc <span class="op">=</span> <span class="st">'upper left'</span>)</span>
+<span id="cb34-42"><a href="#cb34-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-43"><a href="#cb34-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb34-44"><a href="#cb34-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<ul>
+<li>Die Messreihen des Teams die_ahnungslosen entsprechen dem erwarteten linearen Trend.</li>
+<li>Bei Team fabi scheint für das erste angehängte Gewicht (50 Gramm) ein Fehler bei der Datenerhebung vorzuliegen. Vermutlich wurde hier mit 0 Gramm gemessen.</li>
+<li>Die Messreihen des Teams kreativköpfe entsprechen weitgehend dem erwarteten linearen Trend.</li>
+<li>Die Messreihen des Teams ma scheinen wenigstens für die ersten vier angehängten Gewichten durch grobe Messfehler geprägt zu sein.</li>
+</ul>
+<p>Die Messreihe des Teams ma wird wegen grober Messfehler aus dem Datensatz entfernt. Aus der Messreihe des Teams fabi wird die Messung für das Gewicht 50 Gramm entfernt.</p>
+<div id="89b081eb" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>hooke.drop(index <span class="op">=</span> hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> <span class="st">'ma'</span>, :].index, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>hooke.drop(index <span class="op">=</span> hooke.loc[(hooke[<span class="st">'Team'</span>] <span class="op">==</span> <span class="st">'fabi'</span>) <span class="op">&amp;</span> (hooke[<span class="st">'Gewicht'</span>] <span class="op">==</span> <span class="dv">50</span>), :].index, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<div id="tip-vieledatensätze" class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip&nbsp;53.4: Vorgehen bei vielen Datensätzen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei einer großen Anzahl an Datensätzen kann auch die grafische Kontrolle an Grenzen stoßen. In diesem Fall empfiehlt es sich, die visuellen und kennzahlenbasierten Methoden zusammen zu nutzen, um Muster zu identifizieren und für eine große Zahl von Messungen zu überprüfen. Beispielsweise könnten nach einer visuellen Inspektion von Messreihen mit Extremwerten bzw. Ausreißern alle Messreihen daraufhin überprüft werden, ob mit zunehmenden Gewicht stets auch die mittlere Federausdehnung größer als für leichtere Gewichte ist. Abweichende Messreihen könnten dann grafisch kontrolliert werden.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-lösung-federkonstanten" class="level2" data-number="53.4">
+<h2 data-number="53.4" class="anchored" data-anchor-id="sec-lösung-federkonstanten"><span class="header-section-number">53.4</span> Musterlösung Federkonstanten bestimmen</h2>
+<p>Im nächsten Schritt können die Federkonstanten mittels linearer Regression bestimmt werden.</p>
+<ol start="2" type="1">
+<li><strong>Welche Werte können für die Federkonstanten ermittelt werden?</strong><br>
+</li>
+<li><strong>Wurden die Messungen mit der gleichen Feder durchgeführt, wenn als Vertrauenswahrscheinlichkeit 90 % bzw. 95 % angenommen werden soll?</strong></li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><span class="math inline">\(\alpha = 0.10\)</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><span class="math inline">\(\alpha = 0.05\)</span></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Auswertung</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div id="2cee0775" class="cell" data-execution_count="25">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+kreativkoepfe Konfidenzniveau: 0.9
+y = 0.3180 + 29.7643 * x
+r = 0.9773 R2 = 0.9552 p = 0.0000
+Standardfehler des Anstiegs: 0.6148
+28.744  ≤ 29.764 ≤ 30.784
+
+fabi Konfidenzniveau: 0.9
+y = 0.2373 + 34.1048 * x
+r = 0.9907 R2 = 0.9814 p = 0.0000
+Standardfehler des Anstiegs: 0.4792
+33.309  ≤ 34.105 ≤ 34.901
+
+die_ahnungslosen Konfidenzniveau: 0.9
+y = 0.1798 + 34.9183 * x
+r = 0.9886 R2 = 0.9773 p = 0.0000
+Standardfehler des Anstiegs: 0.4651
+34.148  ≤ 34.918 ≤ 35.689</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="639c4774" class="cell" data-execution_count="26">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+kreativkoepfe Konfidenzniveau: 0.95
+y = 0.3180 + 29.7643 * x
+r = 0.9773 R2 = 0.9552 p = 0.0000
+Standardfehler des Anstiegs: 0.6148
+28.546  ≤ 29.764 ≤ 30.983
+
+fabi Konfidenzniveau: 0.95
+y = 0.2373 + 34.1048 * x
+r = 0.9907 R2 = 0.9814 p = 0.0000
+Standardfehler des Anstiegs: 0.4792
+33.154  ≤ 34.105 ≤ 35.056
+
+die_ahnungslosen Konfidenzniveau: 0.95
+y = 0.1798 + 34.9183 * x
+r = 0.9886 R2 = 0.9773 p = 0.0000
+Standardfehler des Anstiegs: 0.4651
+33.998  ≤ 34.918 ≤ 35.838</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div id="c94ef184" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>anzahl_teams <span class="op">=</span> hooke[<span class="st">'Team'</span>].unique().size</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.10</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(anzahl_teams):</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  reg_data <span class="op">=</span> hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> hooke[<span class="st">'Team'</span>].unique()[i], :]</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> reg_data[<span class="st">'Abstandsänderung'</span>]</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>  y <span class="op">=</span> reg_data[<span class="st">'Kraft'</span>]</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>  n <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, hooke[<span class="st">'Team'</span>].unique()[i], <span class="st">" Konfidenzniveau: "</span>, <span class="dv">1</span> <span class="op">-</span> alpha, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  slope, intercept, rvalue, pvalue, slope_stderr <span class="op">=</span> scipy.stats.linregress(x, y)</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"y = </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss"> + </span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss"> * x</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"r = </span><span class="sc">{</span>rvalue<span class="sc">:.4f}</span><span class="ss"> R2 = </span><span class="sc">{</span>rvalue <span class="op">**</span> <span class="dv">2</span><span class="sc">:.4f}</span><span class="ss"> p = </span><span class="sc">{</span>pvalue<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"Standardfehler des Anstiegs: </span><span class="sc">{</span>slope_stderr<span class="sc">:.4f}</span><span class="ss">"</span>, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>slope <span class="op">-</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">  ≤ </span><span class="sc">{</span>slope<span class="sc">:.3f}</span><span class="ss"> ≤ </span><span class="sc">{</span>slope <span class="op">+</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(anzahl_teams):</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>  reg_data <span class="op">=</span> hooke.loc[hooke[<span class="st">'Team'</span>] <span class="op">==</span> hooke[<span class="st">'Team'</span>].unique()[i], :]</span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> reg_data[<span class="st">'Abstandsänderung'</span>]</span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>  y <span class="op">=</span> reg_data[<span class="st">'Kraft'</span>]</span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>  n <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, hooke[<span class="st">'Team'</span>].unique()[i], <span class="st">" Konfidenzniveau: "</span>, <span class="dv">1</span> <span class="op">-</span> alpha, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>  slope, intercept, rvalue, pvalue, slope_stderr <span class="op">=</span> scipy.stats.linregress(x, y)</span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"y = </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss"> + </span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss"> * x</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"r = </span><span class="sc">{</span>rvalue<span class="sc">:.4f}</span><span class="ss"> R2 = </span><span class="sc">{</span>rvalue <span class="op">**</span> <span class="dv">2</span><span class="sc">:.4f}</span><span class="ss"> p = </span><span class="sc">{</span>pvalue<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f"Standardfehler des Anstiegs: </span><span class="sc">{</span>slope_stderr<span class="sc">:.4f}</span><span class="ss">"</span>, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>slope <span class="op">-</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">  ≤ </span><span class="sc">{</span>slope<span class="sc">:.3f}</span><span class="ss"> ≤ </span><span class="sc">{</span>slope <span class="op">+</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p>Die Punktschätzung der Federkonstante von Team fabi 34.105 liegt im 95-%-Konfidenzintervall der Messung von Team die_ahnungslosen 33.998 ≤ 34.918 ≤ 35.838. Die Punktschätzung der Federkonstante von Team fabi 34.105 liegt <strong>aber nicht im 90-%-Konfidenzintervall</strong> der Messung von Team die_ahnungslosen 34.148 ≤ 34.918 ≤ 35.689.</p>
+<p>Unabhängig vom gewählten Vertrauensniveau liegt die Punktschätzung der Federkonstante von Team kreativkoepfe 29.764 nicht in den Konfidenzintervallen der beiden übrigen Teams.</p>
+<div id="wrn-results" class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning&nbsp;53.2: Ergebnisse
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Abhängig vom gewählten Vorgehen sind andere Ergebnisse möglich, beispielsweise durch das Entfernen von als Ausreißern eingestuften Einzelwerten oder einer anderen Behandlung der Messreihe vom Team fabi für das angehängte Gewicht 50 Gramm.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" class="pagination-link" aria-label="Fehlerrechnung">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Fehlerrechnung</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../books/m-sensordatenanalyse/skript/kalibrierung.html" class="pagination-link" aria-label="Kalibrierung">
+        <span class="nav-page-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Kalibrierung</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik/blob/main/books/m-sensordatenanalyse/skript/übung-hooke.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

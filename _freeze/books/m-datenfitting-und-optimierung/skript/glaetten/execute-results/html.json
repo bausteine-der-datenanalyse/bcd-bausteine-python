@@ -1,0 +1,12 @@
+{
+  "hash": "2c665ba8d1d04b330b302b66db55952f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Trendglättung – Rauschen reduzieren\n\n\n\nVerrauschte Daten? Ein **gleitender Mittelwert** glättet Kurven:\n\n::: {#d3d4ab17 .cell execution_count=2}\n``` {.python .cell-code}\ndata = np.genfromtxt(\"01-daten/trenddaten-mit-rauschen.csv\", delimiter=\",\", skip_header=1)\nx = data[:, 0]\ny = data[:, 1]\n\nwindow = 5\nweights = np.ones(window) / window\ny_smooth = np.convolve(y, weights, mode='valid')\n\nplt.plot(x, y, label=\"Original\", alpha=0.5)\nplt.plot(x[(window-1)//2:-(window//2)], y_smooth, label=\"Geglättet\", color='red')\nplt.legend()\nplt.grid(True)\nplt.title(\"Trendglättung\")\n\nplt.show()\n```\n\n::: {.cell-output .cell-output-display}\n![](glaetten_files/figure-html/cell-3-output-1.png){fig-alt='Darstellung der in einer Wellenform von links nach rechts verlaufenden Daten. Über die Kurve ist der geglättete Verlauf gelegt.'}\n:::\n:::\n\n\n",
+    "supporting": [
+      "glaetten_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

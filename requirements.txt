@@ -1,0 +1,17 @@
+
+datetime
+fdsreader
+h5py
+jupyter
+matplotlib
+netCDF4==1.7.2
+numpy
+openpyxl
+pandas
+pandas==2.2.3
+pytz
+schemdraw
+scipy
+seaborn
+tables
+xlrd

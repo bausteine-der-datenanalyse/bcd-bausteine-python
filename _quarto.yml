@@ -1,0 +1,131 @@
+project:
+  type: book
+  output-dir: output/book/
+book:
+  title: "Vorlesung Ingenieurinformatik"
+  author: 
+    - Lukas Arnold
+    - Simone Arnold
+    - Florian Bagemihl
+    - Matthias Baitsch
+    - Marc Fehr
+    - Maik Poetzsch
+    - Sebastian Seipel
+  date: today
+  language: de-DE
+  downloads: [pdf]
+  repo-url: "https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik"
+  repo-actions: [source]
+  favicon: books/shared-media/logo/favicon.svg
+  sidebar:
+    title: "Vorlesung Ingenieurinformatik"
+    logo: books/shared-media/logo/logo_with_text.svg
+  chapters:
+    - index.qmd
+    - part: "w-pseudocode"
+      chapters:
+        - books/w-pseudocode/Pseudocode.qmd
+    - part: "w-python-minimal"
+      chapters:
+        - books/w-python-minimal/index.qmd
+        - books/w-python-minimal/skript/einleitung.qmd
+        - books/w-python-minimal/skript/datentypen.qmd
+        - books/w-python-minimal/skript/flusskontrolle.qmd
+        - books/w-python-minimal/skript/listen_iterationen.qmd
+        - books/w-python-minimal/skript/funktionen.qmd
+        - books/w-python-minimal/skript/lesen_schreiben.qmd
+        - books/w-python-minimal/skript/daswichtigste.qmd
+    - part: "w-python"
+      chapters:
+        - books/w-python/index.qmd
+        - books/w-python/skript/einleitung.qmd
+        - books/w-python/skript/datentypen.qmd
+        - books/w-python/skript/funktionen.qmd
+        - books/w-python/skript/flusskontrolle.qmd
+        - books/w-python/skript/sammeltypen.qmd
+        - books/w-python/skript/funktionen-definieren.qmd
+        - books/w-python/skript/dateien-lesen-und-schreiben.qmd
+        - books/w-python/skript/module-und-pakete-importieren.qmd
+        - books/w-python/skript/daswichtigste.qmd
+    - part: "w-python-numpy"
+      chapters:
+        - books/w-python-numpy/index.qmd
+        - books/w-python-numpy/skript/introduction.qmd
+        - books/w-python-numpy/skript/array_creation.qmd
+        - books/w-python-numpy/skript/array_info.qmd
+        - books/w-python-numpy/skript/array_calculation.qmd
+        - books/w-python-numpy/skript/array_slicing.qmd
+        - books/w-python-numpy/skript/array_manipulation.qmd
+        - books/w-python-numpy/skript/array_read_n_write.qmd
+        - books/w-python-numpy/skript/array_images.qmd
+        - books/w-python-numpy/skript/assessment.qmd
+        - books/w-python-numpy/uebungen/uebung.qmd
+        - books/w-python-numpy/klausurfragen/klausurfragen.qmd
+    - part: "w-python-matplotlib"
+      chapters:
+        - books/w-python-matplotlib/index.qmd
+        - books/w-python-matplotlib/skript/introduction.qmd
+        - books/w-python-matplotlib/skript/basic_plot_types.qmd
+        - books/w-python-matplotlib/skript/adapting_plots.qmd
+        - books/w-python-matplotlib/skript/advanced_techniques.qmd
+        - books/w-python-matplotlib/skript/scientific_plotting.qmd
+    - part: "w-python-pandas"
+      chapters:
+        - books/w-pandas/index.qmd
+        - books/w-pandas/skript/einleitung.qmd
+        - books/w-pandas/skript/operationen.qmd
+        - books/w-pandas/skript/plotting.qmd
+        - books/w-pandas/skript/datentypen.qmd
+        - books/w-pandas/skript/datetime.qmd
+        - books/w-pandas/skript/dateien.qmd
+    - part: "m-numerik"
+      chapters:
+        - books/m-numerik/index.qmd
+        - books/m-numerik/skript/intro_integrale.qmd
+        - books/m-numerik/skript/intro_ableitungen.qmd
+    - part: "m-einlesen-strukturierter-datensätze"
+      chapters:
+        - books/m-einlesen-strukturierter-datensätze/index.qmd
+        - books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze.qmd
+    - part: "m-datenfitting-und-optimierung"
+      chapters:
+        - books/m-datenfitting-und-optimierung/index.qmd
+        - books/m-datenfitting-und-optimierung/skript/einleitung.qmd
+        - books/m-datenfitting-und-optimierung/skript/interpolation.qmd
+        - books/m-datenfitting-und-optimierung/skript/fitting.qmd
+        - books/m-datenfitting-und-optimierung/skript/splines.qmd
+        - books/m-datenfitting-und-optimierung/skript/glaetten.qmd
+        - books/m-datenfitting-und-optimierung/skript/uebungen.qmd
+    - part: "a-energiedatenanalyse"
+      chapters:
+        - books/m-sensordatenanalyse/index.qmd
+        - books/m-sensordatenanalyse/skript/einleitung.qmd
+        - books/m-sensordatenanalyse/skript/normalverteilung.qmd
+        - books/m-sensordatenanalyse/skript/lineare-parameterschätzung.qmd
+        - books/m-sensordatenanalyse/skript/fehlerrechnung.qmd
+        - books/m-sensordatenanalyse/skript/übung-hooke.qmd
+        - books/m-sensordatenanalyse/skript/kalibrierung.qmd
+        - books/m-sensordatenanalyse/skript/beispiel-eiskochen.qmd 
+    - part: "a-energiedatenanalyse"
+      chapters:
+        - books/a-energiedatenanalyse/index.qmd
+        - books/a-energiedatenanalyse/skript/energiedatenanalyse.qmd    
+    - part: "a-auswertung-fds-daten"
+      chapters:
+        - books/a-auswertung-fds-daten/index.qmd
+        - books/a-auswertung-fds-daten/skript/introduction.qmd
+        - books/a-auswertung-fds-daten/skript/aset.qmd
+        - books/a-auswertung-fds-daten/skript/fdsreader.qmd
+        - books/a-auswertung-fds-daten/uebungen/uebung.qmd
+        - books/a-auswertung-fds-daten/klausurfragen/klausurfragen.qmd
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-depth: 2
+  pdf:
+    number-sections: true
+
+execute:
+  freeze: auto
+

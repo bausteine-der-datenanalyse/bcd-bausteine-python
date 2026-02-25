@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>51&nbsp; Lineare Parameterschätzung – Vorlesung Ingenieurinformatik</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" rel="next">
+<link href="../../../books/m-sensordatenanalyse/skript/normalverteilung.html" rel="prev">
+<link href="../../../books/shared-media/logo/favicon.svg" rel="icon" type="image/svg+xml">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e22fbe6e69edb8577f7b7bd0719516f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/index.html">a-energiedatenanalyse</a></li><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/skript/lineare-parameterschätzung.html"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Lineare Parameterschätzung</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../books/shared-media/logo/logo_with_text.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Vorlesung Ingenieurinformatik</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../../../Vorlesung-Ingenieurinformatik.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Übersicht</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-pseudocode</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pseudocode/Pseudocode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Werkzeugbaustein Pseudocode</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-minimal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einführung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Datentypen verstehen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Entscheidungen und Wiederholungen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/listen_iterationen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mehrere Werte speichern</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/funktionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Wiederverwendbarer Code mit Funktionen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/lesen_schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Arbeiten mit Dateien</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-minimal/skript/daswichtigste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Das Wichtigste</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Einleitung: Datenanalyse mit Python</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/funktionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Funktionen: Grundlagen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/flusskontrolle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Flusskontrolle</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/sammeltypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Sammeltypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/funktionen-definieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Eigene Funktionen definieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/dateien-lesen-und-schreiben.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/module-und-pakete-importieren.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Module und Pakete importieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python/skript/daswichtigste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Das Wichtigste</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-numpy</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein NumPy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Einführung NumPy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_creation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Erstellen von NumPy arrays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Größe, Struktur und Typ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_calculation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Rechnen mit Arrays</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_slicing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Slicing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_manipulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Array Manipulation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_read_n_write.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lesen und Schreiben von Dateien</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/array_images.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Arbeiten mit Bildern</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/skript/assessment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lernzielkontrolle</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/uebungen/uebung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Übung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-numpy/klausurfragen/klausurfragen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Klausurfragen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-matplotlib</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/basic_plot_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/adapting_plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/advanced_techniques.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-python-matplotlib/skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">w-python-pandas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Werkzeugbaustein Pandas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/operationen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Operationen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/plotting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Grafikerstellung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/datentypen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/datetime.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Zeitreihen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/w-pandas/skript/dateien.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-numerik</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/skript/intro_integrale.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Integration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-numerik/skript/intro_ableitungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Differentiation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-einlesen-strukturierter-datensätze</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-einlesen-strukturierter-datensätze/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Einlesen strukturierter Datensätze</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">m-datenfitting-und-optimierung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Datenfitting und Datenoptimierung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/interpolation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">Interpolation – Lücken schließen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/fitting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">Fitting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/splines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">Splines</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/glaetten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">Trendglättung – Rauschen reduzieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-datenfitting-und-optimierung/skript/uebungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">Übungen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-energiedatenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methodenbaustein Sensordatenanalyse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">Das Prinzip von Messungen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/normalverteilung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Die Normalverteilung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/lineare-parameterschätzung.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Lineare Parameterschätzung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Fehlerrechnung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/übung-hooke.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">Übung Hooke’sches Gesetz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/kalibrierung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">Kalibrierung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/m-sensordatenanalyse/skript/beispiel-eiskochen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">Beispiel Eis kochen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-energiedatenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-energiedatenanalyse/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-energiedatenanalyse/skript/energiedatenanalyse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">Energiedatenanalyse</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true">
+ <span class="menu-text">a-auswertung-fds-daten</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preamble</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">Einführung in ASET</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/aset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">Verfügbare sichere Evakuierungszeit (ASET)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/skript/fdsreader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">Fdsreader</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/uebungen/uebung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">uebung.html</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../books/a-auswertung-fds-daten/klausurfragen/klausurfragen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">klausurfragen.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#messreihe-hookesches-gesetz" id="toc-messreihe-hookesches-gesetz" class="nav-link active" data-scroll-target="#messreihe-hookesches-gesetz"><span class="header-section-number">51.1</span> Messreihe Hooke’sches Gesetz</a></li>
+  <li><a href="#federkonstante-bestimmen" id="toc-federkonstante-bestimmen" class="nav-link" data-scroll-target="#federkonstante-bestimmen"><span class="header-section-number">51.2</span> Federkonstante bestimmen</a></li>
+  </ul>
+<div class="toc-actions"><ul class="collapse"><li><a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik/blob/main/books/m-sensordatenanalyse/skript/lineare-parameterschätzung.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/index.html">a-energiedatenanalyse</a></li><li class="breadcrumb-item"><a href="../../../books/m-sensordatenanalyse/skript/lineare-parameterschätzung.html"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Lineare Parameterschätzung</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-hooke" class="quarto-section-identifier"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">Lineare Parameterschätzung</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Viele physikalische Größen werden indirekt gemessen. Häufig liegt dabei ein linearer Zusammenhang zwischen der gemessenen und der gesuchten Größe vor. In der Praxis sind die Daten einer Messreihe nie exakt und mit mehr oder weniger großen Abweichungen vom wahren Wert der gesuchten Größe behaftet. Die lineare Parameterschätzung ist ein Verfahren, um aus einer Menge von Daten denjenigen Wert zu bestimmen, der die Abweichungen der einzelnen Messwerte minimiert.</p>
+<section id="messreihe-hookesches-gesetz" class="level2" data-number="51.1">
+<h2 data-number="51.1" class="anchored" data-anchor-id="messreihe-hookesches-gesetz"><span class="header-section-number">51.1</span> Messreihe Hooke’sches Gesetz</h2>
+<p>Das <a href="https://de.wikipedia.org/wiki/Hookesches_Gesetz">Hooke’sche Gesetz</a>, benannt nach dem englischen Wissenschaftler Robert Hooke, beschreibt die Beziehung zwischen der Kraft <span class="math inline">\(F\)</span> und der Längenänderung <span class="math inline">\(\Delta{x}\)</span> einer Feder durch die Gleichung <span class="math inline">\(F = k \cdot \Delta{x}\)</span>, wobei <span class="math inline">\(k\)</span> die Federkonstante ist.</p>
+<p>Die Federkonstante ist eine grundlegende Eigenschaft elastischer Materialien und gibt an, wie viel Kraft erforderlich ist, um eine Feder um eine bestimmte Länge zu dehnen oder zu komprimieren. Das Hooke’sche Gesetz besagt, dass die Deformation eines elastischen Körpers proportional zur aufgebrachten Kraft ist, solange die Feder nicht über den elastischen Bereich hinaus gedehnt oder gestaucht wird.</p>
+<p>In einem Experiment wurde das Hooke’sche Gesetz überprüft. An einer an einer Halterung hängenden Metallfeder ist ein (variables) Gewicht angebracht. Darunter befindet sich in einigem Abstand ein Ultraschallsensor zur Abstandsmessung. Der Abstand zwischen der Unterseite des an der Feder befestigten Gewichts und dem Ultraschallsensor ist der gemessene Abstand.</p>
+<p>Die Gewichte konnten mit einer Genauigkeit von <span class="math inline">\(\epsilon_{m} = 0,5 g\)</span> mit einer Küchenwaage bestimmt werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="00-bilder/aufbau.png" class="img-fluid figure-img" alt="Darstellung des Versuchsaufbaus."></p>
+<figcaption>Versuchsaufbau</figcaption>
+</figure>
+</div>
+<p>Die Messreihe liegt in Form einer CSV-Datei unter dem Pfad ‘01-daten/hooke_data.csv’ vor. Die Datei wird mit Pandas eingelesen.</p>
+<div id="3e3912ae" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dateipfad <span class="op">=</span> <span class="st">"01-daten/hooke_data.csv"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>hooke <span class="op">=</span> pd.read_csv(filepath_or_buffer <span class="op">=</span> dateipfad, sep <span class="op">=</span> <span class="st">';'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="deskriptive-statistik" class="level3" data-number="51.1.1">
+<h3 data-number="51.1.1" class="anchored" data-anchor-id="deskriptive-statistik"><span class="header-section-number">51.1.1</span> Deskriptive Statistik</h3>
+<p>Nach dem Einlesen sollte man sich einen Überblick über die Daten verschaffen. Mit den Methoden <code>pd.DataFrame.head()</code> und <code>pd.DataFrame.tail()</code> kann ein Ausschnitt vom Beginn und vom Ende der Daten betrachtet werden.</p>
+<div id="9ae39cec" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.head(), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.tail())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   no  mass  distance
+0   0   705    153.29
+1   1   705    152.74
+2   2   705    153.27
+3   3   705    152.81
+4   4   705    152.77 
+
+      no  mass  distance
+109  109     0    173.70
+110  110     0    173.44
+111  111     0    173.75
+112  112     0    173.30
+113  113     0    200.00</code></pre>
+</div>
+</div>
+<p>Die Methode <code>pd.DataFrame.describe()</code> erstellt die deskriptive Statistik für den Datensatz. Diese ist in diesem Fall jedoch noch nicht sonderlich nützlich. Die Spalte ‘no’ enthält lediglich eine laufende Versuchsnummer, die Spalte ‘mass’ enhält verschiedene Gewichte.</p>
+<div id="b1147e29" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>hooke.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">no</th>
+<th data-quarto-table-cell-role="th">mass</th>
+<th data-quarto-table-cell-role="th">distance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>114.000000</td>
+<td>114.000000</td>
+<td>114.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>56.561404</td>
+<td>394.921053</td>
+<td>162.301754</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>33.131552</td>
+<td>226.237605</td>
+<td>7.483767</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>152.740000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>28.250000</td>
+<td>201.000000</td>
+<td>156.622500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>56.500000</td>
+<td>452.000000</td>
+<td>160.720000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>84.750000</td>
+<td>605.000000</td>
+<td>167.767500</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>113.000000</td>
+<td>705.000000</td>
+<td>200.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Sinnvoller ist eine nach dem verwendeten Gewicht aufgeteilte beschreibende Statistik der gemessenen Ausdehnung. Dafür kann die Pandas-Methode <code>pd.DataFrame.groupby()</code> verwendet werden. So kann für jedes der gemessenen Gewichte der arithmethische Mittelwert und die Standardabweichung abgelesen werden.</p>
+<div id="c3d77b27" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>hooke.groupby(by <span class="op">=</span> <span class="st">'mass'</span>)[<span class="st">'distance'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">mass</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>12.0</td>
+<td>175.828333</td>
+<td>7.620157</td>
+<td>173.27</td>
+<td>173.3150</td>
+<td>173.570</td>
+<td>174.1125</td>
+<td>200.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">100</td>
+<td>11.0</td>
+<td>171.044545</td>
+<td>0.985833</td>
+<td>170.15</td>
+<td>170.3650</td>
+<td>170.800</td>
+<td>171.2400</td>
+<td>173.56</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">201</td>
+<td>11.0</td>
+<td>167.791818</td>
+<td>0.296305</td>
+<td>167.26</td>
+<td>167.7200</td>
+<td>167.780</td>
+<td>167.9750</td>
+<td>168.19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">301</td>
+<td>10.0</td>
+<td>163.710000</td>
+<td>1.660977</td>
+<td>161.60</td>
+<td>162.0575</td>
+<td>163.825</td>
+<td>165.3250</td>
+<td>165.86</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">401</td>
+<td>10.0</td>
+<td>161.967000</td>
+<td>0.313229</td>
+<td>161.42</td>
+<td>161.8450</td>
+<td>161.915</td>
+<td>162.0250</td>
+<td>162.48</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">452</td>
+<td>10.0</td>
+<td>160.713000</td>
+<td>0.627854</td>
+<td>159.98</td>
+<td>160.4575</td>
+<td>160.555</td>
+<td>160.7400</td>
+<td>161.83</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">503</td>
+<td>10.0</td>
+<td>159.314000</td>
+<td>0.781099</td>
+<td>158.43</td>
+<td>158.6400</td>
+<td>159.220</td>
+<td>159.9650</td>
+<td>160.61</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">554</td>
+<td>10.0</td>
+<td>157.547000</td>
+<td>0.523791</td>
+<td>156.92</td>
+<td>157.2075</td>
+<td>157.435</td>
+<td>157.7100</td>
+<td>158.60</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">605</td>
+<td>10.0</td>
+<td>156.142000</td>
+<td>0.354206</td>
+<td>155.62</td>
+<td>156.0700</td>
+<td>156.080</td>
+<td>156.2075</td>
+<td>156.84</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">655</td>
+<td>11.0</td>
+<td>154.022727</td>
+<td>0.224414</td>
+<td>153.72</td>
+<td>153.8800</td>
+<td>153.920</td>
+<td>154.2400</td>
+<td>154.35</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">705</td>
+<td>9.0</td>
+<td>153.008889</td>
+<td>0.241425</td>
+<td>152.74</td>
+<td>152.8100</td>
+<td>152.910</td>
+<td>153.2700</td>
+<td>153.29</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Bereits an dieser Stelle könnte die hohe Standardabweichung in der Messreihe mit 0 Gramm auffallen. Leichter ist es jedoch in der grafischen Betrachtung.</p>
+<div id="b6ddb2f4" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hooke.plot(x <span class="op">=</span> <span class="st">'mass'</span>, y <span class="op">=</span> <span class="st">'distance'</span>, kind <span class="op">=</span> <span class="st">'scatter'</span>, title <span class="op">=</span> <span class="st">"Messreihe Hooke`sches Gesetz"</span>, ylabel <span class="op">=</span> <span class="st">'Abstand in cm'</span>, xlabel <span class="op">=</span> <span class="st">'Gewicht in Gramm'</span>, label <span class="op">=</span> <span class="st">'gemessener Abstand'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img" alt="Darstellung des auf der x-Achse aufgetragenen Gewichts und des auf der y-Achse aufgetragenen gemessenen Abstands."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Grafisch fällt der Messwert von 200 cm für das Gewicht 0 Gramm als stark von den übrigen Messwerten abweichend auf.</p>
+<p>Die Messwerte für das Gewicht 0 Gramm sollen näher betrachtet werden. Dafür werden die Messwerte sowohl absolut, als auch <a href="https://de.wikipedia.org/wiki/Standardisierung_(Statistik)">standardisiert in Einheiten der Standardabweichung (z-Werten)</a> ausgedrückt ausgegeben.</p>
+<p>Eine Variable wird standardisiert, indem von jedem Wert der Erwartungswert abgezogen und das Ergebnis durch die Standardabweichung geteilt wird.</p>
+<p><span class="math display">\[
+Z = \frac{x - \mu}{\sigma}
+\]</span></p>
+<p>Da in der Regel der Erwartungswert und die Standardabweichung unbekannt sind, werden der Stichprobenmittelwert und die Stichprobenstandardabweichung verwendet. Dies nennt man <em>studentisieren</em>, nach dem Pseudonym des bereits im vorherigen Kapitel erwähnten William Sealy Gosset.</p>
+<p><span class="math display">\[
+z_{i} = \frac{x_{i} - \bar{x}}{s}
+\]</span></p>
+<div id="e7cb112d" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gewicht <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># z-Transformation manuell berechnen</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mittelwert_ausdehnung <span class="op">=</span> hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht].loc[: , <span class="st">'distance'</span>].mean()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>standardabweichung_ausdehnung <span class="op">=</span> hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht].loc[: , <span class="st">'distance'</span>].std(ddof <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>z_values <span class="op">=</span> hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht].loc[: , <span class="st">'distance'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: ( (x <span class="op">-</span> mittelwert_ausdehnung) <span class="op">/</span> standardabweichung_ausdehnung))</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>z_values.name <span class="op">=</span> <span class="st">'z-values'</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># z-Transformation mit scipy</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">## scipy gibt ein np.array zurück</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">## zur besseren Darstellung wird das np.array in eine pd.Series umgewandelt, die ein name Attribut hat</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>scipy_z_values <span class="op">=</span> pd.Series(scipy.stats.zscore(hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht].loc[: , <span class="st">'distance'</span>], ddof <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>scipy_z_values.name <span class="op">=</span> <span class="st">'scipy z-values'</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># gemeinsame Ausgabe der Daten</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.concat([hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht], z_values, scipy_z_values], axis <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        no  mass  distance  z-values  scipy z-values
+102  102.0   0.0    173.32 -0.329171             NaN
+103  103.0   0.0    174.11 -0.225498             NaN
+104  104.0   0.0    173.42 -0.316048             NaN
+105  105.0   0.0    174.12 -0.224186             NaN
+106  106.0   0.0    173.30 -0.331795             NaN
+107  107.0   0.0    174.21 -0.212375             NaN
+108  108.0   0.0    173.27 -0.335732             NaN
+109  109.0   0.0    173.70 -0.279303             NaN
+110  110.0   0.0    173.44 -0.313423             NaN
+111  111.0   0.0    173.75 -0.272742             NaN
+112  112.0   0.0    173.30 -0.331795             NaN
+113  113.0   0.0    200.00  3.172069             NaN
+0      NaN   NaN       NaN       NaN       -0.329171
+1      NaN   NaN       NaN       NaN       -0.225498
+2      NaN   NaN       NaN       NaN       -0.316048
+3      NaN   NaN       NaN       NaN       -0.224186
+4      NaN   NaN       NaN       NaN       -0.331795
+5      NaN   NaN       NaN       NaN       -0.212375
+6      NaN   NaN       NaN       NaN       -0.335732
+7      NaN   NaN       NaN       NaN       -0.279303
+8      NaN   NaN       NaN       NaN       -0.313423
+9      NaN   NaN       NaN       NaN       -0.272742
+10     NaN   NaN       NaN       NaN       -0.331795
+11     NaN   NaN       NaN       NaN        3.172069</code></pre>
+</div>
+</div>
+<p>Der Wert 200 cm in Zeile 113 scheint fehlerhaft zu sein. Eine Eigendehnung der Feder um zusätzliche 16 Zentimeter ist nicht plausibel. Auch der z-Wert &gt; 3 kennzeichnet den Messwert als <a href="https://de.wikipedia.org/wiki/Ausrei%C3%9Fer">Ausreißer</a>. Die Zeile wird deshalb aus dem Datensatz entfernt.</p>
+<div id="imp-ausreißer" class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important&nbsp;51.1: Ausreißer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In der Statistik wird ein Messwert als Ausreißer bezeichnet, wenn dieser stark von der übrigen Messreihe abweicht. In einer Messreihe können auch mehrere Ausreißer auftreten. Diese Werte können zur Verbesserung der Schätzung aus der Messreihe entfernt werden, wenn anzunehmen ist, dass diese durch Messfehler und andere Störgrößen verursacht sind.</p>
+<p>Eine Möglichkeit, Ausreißer zu identifizieren, ist die z-Transformation. Dabei muss ein Schwellenwert gewählt werden, ab dem ein Messwert als Ausreißer klassifiziert werden soll, bspw. 2,5 oder 3 Einheiten der Standardabweichung. In der Statistik wurde eine ganze Reihe von Ausreißertests entwickelt (siehe <a href="https://de.wikipedia.org/wiki/Ausrei%C3%9Fer#Ausrei%C3%9Fertests">Ausreißertests</a>)</p>
+<p>Die Einstufung eines Messwerts als Ausreißer kann aber nicht allein auf der Grundlage statistischer Verfahren erfolgen, sondern ist immer eine Ermessensentscheidung auf der Grundlage Ihres Fachwissens. Denn nicht alle abweichenden Werte sind automatisch ungültig, sondern treten mit einer gewissen statistischen Wahrscheinlichkeit auf (siehe Kapitel Normalverteilung). Man spricht dann von gültigen Extremwerten.</p>
+<p>Ausreißer von verschiedenen <a href="https://xtools.wmcloud.org/authorship/de.wikipedia.org/Ausrei%C3%9Fer?uselang=de">Autor:innen</a> steht unter der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a> und ist abrufbar auf <a href="https://de.wikipedia.org/wiki/Ausrei%C3%9Fer">Wikipedia</a></p>
+</div>
+</div>
+</div>
+<div id="f8334681" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>hooke.drop(index <span class="op">=</span> <span class="dv">113</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>hooke.groupby(by <span class="op">=</span> <span class="st">'mass'</span>)[<span class="st">'distance'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">mean</th>
+<th data-quarto-table-cell-role="th">std</th>
+<th data-quarto-table-cell-role="th">min</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
+<th data-quarto-table-cell-role="th">max</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">mass</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>11.0</td>
+<td>173.630909</td>
+<td>0.367409</td>
+<td>173.27</td>
+<td>173.3100</td>
+<td>173.440</td>
+<td>173.9300</td>
+<td>174.21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">100</td>
+<td>11.0</td>
+<td>171.044545</td>
+<td>0.985833</td>
+<td>170.15</td>
+<td>170.3650</td>
+<td>170.800</td>
+<td>171.2400</td>
+<td>173.56</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">201</td>
+<td>11.0</td>
+<td>167.791818</td>
+<td>0.296305</td>
+<td>167.26</td>
+<td>167.7200</td>
+<td>167.780</td>
+<td>167.9750</td>
+<td>168.19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">301</td>
+<td>10.0</td>
+<td>163.710000</td>
+<td>1.660977</td>
+<td>161.60</td>
+<td>162.0575</td>
+<td>163.825</td>
+<td>165.3250</td>
+<td>165.86</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">401</td>
+<td>10.0</td>
+<td>161.967000</td>
+<td>0.313229</td>
+<td>161.42</td>
+<td>161.8450</td>
+<td>161.915</td>
+<td>162.0250</td>
+<td>162.48</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">452</td>
+<td>10.0</td>
+<td>160.713000</td>
+<td>0.627854</td>
+<td>159.98</td>
+<td>160.4575</td>
+<td>160.555</td>
+<td>160.7400</td>
+<td>161.83</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">503</td>
+<td>10.0</td>
+<td>159.314000</td>
+<td>0.781099</td>
+<td>158.43</td>
+<td>158.6400</td>
+<td>159.220</td>
+<td>159.9650</td>
+<td>160.61</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">554</td>
+<td>10.0</td>
+<td>157.547000</td>
+<td>0.523791</td>
+<td>156.92</td>
+<td>157.2075</td>
+<td>157.435</td>
+<td>157.7100</td>
+<td>158.60</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">605</td>
+<td>10.0</td>
+<td>156.142000</td>
+<td>0.354206</td>
+<td>155.62</td>
+<td>156.0700</td>
+<td>156.080</td>
+<td>156.2075</td>
+<td>156.84</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">655</td>
+<td>11.0</td>
+<td>154.022727</td>
+<td>0.224414</td>
+<td>153.72</td>
+<td>153.8800</td>
+<td>153.920</td>
+<td>154.2400</td>
+<td>154.35</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">705</td>
+<td>9.0</td>
+<td>153.008889</td>
+<td>0.241425</td>
+<td>152.74</td>
+<td>152.8100</td>
+<td>152.910</td>
+<td>153.2700</td>
+<td>153.29</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Hiernach ist die höchste Standardabweichung für die Messreihe mit 301 Gramm zu verzeichnen. Die gemessenen Werte sind jedoch unauffällig.</p>
+<div id="907ea299" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>gewicht <span class="op">=</span> <span class="dv">301</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">## scipy gibt ein np.array zurück</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">## zur besseren Darstellung wird das np.array in eine pd.Series umgewandelt, die ein name Attribut hat</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>z_values <span class="op">=</span> pd.Series(scipy.stats.zscore(hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht].loc[: , <span class="st">'distance'</span>], ddof <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>z_values.name <span class="op">=</span> <span class="st">'z-values'</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pd.concat([hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> gewicht], z_values], axis <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      no   mass  distance  z-values
+70  70.0  301.0    162.38       NaN
+71  71.0  301.0    161.93       NaN
+72  72.0  301.0    161.95       NaN
+73  73.0  301.0    161.60       NaN
+74  74.0  301.0    164.59       NaN
+75  75.0  301.0    165.86       NaN
+76  76.0  301.0    163.82       NaN
+77  77.0  301.0    163.83       NaN
+78  78.0  301.0    165.57       NaN
+79  79.0  301.0    165.57       NaN
+0    NaN    NaN       NaN -0.800734
+1    NaN    NaN       NaN -1.071658
+2    NaN    NaN       NaN -1.059617
+3    NaN    NaN       NaN -1.270337
+4    NaN    NaN       NaN  0.529809
+5    NaN    NaN       NaN  1.294419
+6    NaN    NaN       NaN  0.066226
+7    NaN    NaN       NaN  0.072247
+8    NaN    NaN       NaN  1.119823
+9    NaN    NaN       NaN  1.119823</code></pre>
+</div>
+</div>
+</section>
+<section id="explorative-statistik" class="level3" data-number="51.1.2">
+<h3 data-number="51.1.2" class="anchored" data-anchor-id="explorative-statistik"><span class="header-section-number">51.1.2</span> Explorative Statistik</h3>
+<p>Die Grafik des bereinigten Datensatzes legt einen linearen Zusammenhang nahe. Darüber hinaus sticht der mit zunehmendem Gewicht abfallende Trend der Datenpunkte ins Auge.</p>
+<div id="7752950e" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>hooke.plot(x <span class="op">=</span> <span class="st">'mass'</span>, y <span class="op">=</span> <span class="st">'distance'</span>, kind <span class="op">=</span> <span class="st">'scatter'</span>, title <span class="op">=</span> <span class="st">'bereinigter Datensatz'</span>, ylabel <span class="op">=</span> <span class="st">'Abstand in cm'</span>, xlabel <span class="op">=</span> <span class="st">'Gewicht in Gramm'</span>, label <span class="op">=</span> <span class="st">'gemessener Abstand'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img" alt="Darstellung des auf der x-Achse aufgetragenen Gewichts und des auf der y-Achse aufgetragenen gemessenen Abstands."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Entsprechend des Versuchsaufbaus nimmt mit zunehmender Dehnung der Feder der Abstand zum Abstandssensor ab. Da die Federausdehnung gemessen werden soll, bietet es sich an, die Daten entsprechend zu transformieren. Dazu wird der gemessene Abstand bei 0 Gramm Gewicht als Nullpunkt aufgefasst, von dem aus die Federdehnung gemessen wird. Das bedeutet, dass von allen Datenpunkten das arithmetische Mittel der für 0 Gramm Gewicht gemessen Ausdehnung abgezogen und das Ergebnis mit -1 multipliziert wird.</p>
+<div id="83fd0f23" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nullpunkt <span class="op">=</span> hooke[hooke[<span class="st">'mass'</span>] <span class="op">==</span> <span class="dv">0</span>].loc[: , <span class="st">'distance'</span>].mean()</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Nullpunkt: </span><span class="sc">{</span>nullpunkt<span class="sc">:.2f}</span><span class="ss"> cm"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'distance'</span>] <span class="op">=</span> hooke[<span class="st">'distance'</span>].sub(nullpunkt).mul(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>hooke.plot(x <span class="op">=</span> <span class="st">'mass'</span>, y <span class="op">=</span> <span class="st">'distance'</span>, kind <span class="op">=</span> <span class="st">'scatter'</span>, title <span class="op">=</span> <span class="st">'bereinigter und invertierter Datensatz'</span>, ylabel <span class="op">=</span> <span class="st">'Federausdehnung in cm'</span>, xlabel <span class="op">=</span> <span class="st">'Gewicht in Gramm'</span>, label <span class="op">=</span> <span class="st">'gemessener Abstand'</span>)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Nullpunkt: 173.63 cm</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-12-output-2.png" class="img-fluid figure-img" alt="Darstellung des auf der x-Achse aufgetragenen Gewichts und des auf der y-Achse aufgetragenen Federausdehnung."></p>
+</figure>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Mit der Funktion <code>plt.errorbars()</code> können die Mittelwerte und Standardfehler für jedes Gewicht grafisch dargestellt werden. Da die Standardfehler eher klein sind, werden mit dem Parameter <code>capsize</code> horizontale Linien am Ende des Fehlerbalkens eingezeichnet.</p>
+<div id="7110d285" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwerte nach Gewicht</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>distance_means_by_weight <span class="op">=</span> hooke[<span class="st">'distance'</span>].groupby(by <span class="op">=</span> hooke[<span class="st">'mass'</span>]).mean()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>distance_means_by_weight.name <span class="op">=</span> <span class="st">'Federausdehnung'</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Standardfehler nach Gewicht</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>distance_stderrors_by_weight <span class="op">=</span> hooke[<span class="st">'distance'</span>].groupby(by <span class="op">=</span> hooke[<span class="st">'mass'</span>]).std(ddof <span class="op">=</span> <span class="dv">1</span>).div(np.sqrt(hooke[<span class="st">'distance'</span>].groupby(by <span class="op">=</span> hooke[<span class="st">'mass'</span>]).size()))</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>distance_stderrors_by_weight.name <span class="op">=</span> <span class="st">'Standardfehler'</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>datenpunkte <span class="op">=</span> hooke.plot(x <span class="op">=</span> <span class="st">'mass'</span>, y <span class="op">=</span> <span class="st">'distance'</span>, kind <span class="op">=</span> <span class="st">'scatter'</span>, title <span class="op">=</span> <span class="st">'bereinigter und invertierter Datensatz'</span>, ylabel <span class="op">=</span> <span class="st">'Federausdehnung in cm'</span>, xlabel <span class="op">=</span> <span class="st">'Gewicht in Gramm'</span>, alpha <span class="op">=</span> <span class="fl">0.6</span>, label <span class="op">=</span> <span class="st">'gemessene Federausdehnung'</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Legendeneinträge abgreifen</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># siehe: https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.get_legend_handles_labels.html</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>datenpunkte_handle, datenpunkte_label <span class="op">=</span> datenpunkte.get_legend_handles_labels()</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>errorbar_container <span class="op">=</span> plt.errorbar(</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  x <span class="op">=</span> distance_means_by_weight.index, y <span class="op">=</span> distance_means_by_weight, yerr <span class="op">=</span> distance_stderrors_by_weight,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  linestyle <span class="op">=</span> <span class="st">'none'</span>, marker <span class="op">=</span> <span class="st">'x'</span>, color <span class="op">=</span> <span class="st">'black'</span>, markersize <span class="op">=</span> <span class="dv">12</span>, elinewidth <span class="op">=</span> <span class="dv">3</span>, ecolor <span class="op">=</span> <span class="st">'red'</span>, capsize <span class="op">=</span> <span class="dv">12</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Legende manuell erstellen</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="co"># siehe: https://matplotlib.org/stable/api/container_api.html#matplotlib.container.ErrorbarContainer</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>plt.legend([datenpunkte_handle[<span class="dv">0</span>], errorbar_container.lines[<span class="dv">0</span>], errorbar_container.lines[<span class="dv">2</span>][<span class="dv">0</span>]],</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>           [datenpunkte_label[<span class="dv">0</span>], <span class="st">'Mittelwert'</span>, <span class="st">'Standardfehler'</span>],</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>           loc <span class="op">=</span> <span class="st">'upper left'</span>)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, pd.concat([distance_means_by_weight, distance_stderrors_by_weight], axis <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img" alt="Auf der x-Achse ist das Gewicht in Gramm, auf der y-Achse die Federausdehnung in cm abgetragen. Zusätzlich zu den Messpunkten sind für jedes Gewicht der Mittelwert mit einem großen X und von dessen Mittelpunkt ausgehend der Bereich des Mittelwerts ± 1 Standardfehler eingezeichnet."></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+       Federausdehnung  Standardfehler
+mass                                 
+0       -7.751375e-15        0.110778
+100      2.586364e+00        0.297240
+201      5.839091e+00        0.089339
+301      9.920909e+00        0.525247
+401      1.166391e+01        0.099052
+452      1.291791e+01        0.198545
+503      1.431691e+01        0.247005
+554      1.608391e+01        0.165637
+605      1.748891e+01        0.112010
+655      1.960818e+01        0.067663
+705      2.062202e+01        0.080475</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="federkonstante-bestimmen" class="level2" data-number="51.2">
+<h2 data-number="51.2" class="anchored" data-anchor-id="federkonstante-bestimmen"><span class="header-section-number">51.2</span> Federkonstante bestimmen</h2>
+<p>Die Beziehung zwischen der Kraft <span class="math inline">\(F\)</span> und der Längenänderung <span class="math inline">\(\Delta{x}\)</span> einer Feder mit Federkonstante <span class="math inline">\(k\)</span> wird durch die Gleichung <span class="math inline">\(F = k \cdot \Delta{x}\)</span> beschrieben. Dabei entspricht die Kraft <span class="math inline">\(F\)</span> dem mit der Fallbeschleunigung <span class="math inline">\(g\)</span> multiplizierten Gewicht in Kilogramm <span class="math inline">\(m\)</span>. Die Fallbeschleunigung beträgt auf der Erde <span class="math inline">\(9,81 \frac{m}{s^2}\)</span>.</p>
+<p>Deshalb wird im Datensatz das in der Spalte ‘mass’ eingetragene Gewicht in Gramm in die wirkende Kraft umgerechnet. Ebenso wird die gemessene Abstandsänderung in der Spalte ‘distance’ von Zentimeter in Meter umgerechnet.</p>
+<div id="946115a7" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'mass'</span>] <span class="op">=</span> hooke[<span class="st">'mass'</span>].div(<span class="dv">1000</span>).mul(<span class="fl">9.81</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>hooke.rename(columns <span class="op">=</span> {<span class="st">'mass'</span>: <span class="st">'force'</span>}, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>hooke[<span class="st">'distance'</span>] <span class="op">=</span> hooke[<span class="st">'distance'</span>].div(<span class="dv">100</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(hooke.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   no    force  distance
+0   0  6.91605  0.203409
+1   1  6.91605  0.208909
+2   2  6.91605  0.203609
+3   3  6.91605  0.208209
+4   4  6.91605  0.208609</code></pre>
+</div>
+</div>
+<p>Für die grafische Darstellung des Zusammenhangs <span class="math inline">\(F = k \cdot \Delta{x}\)</span> ist es zweckmäßiger, die Abstandsänderung auf der x-Achse und die wirkende Kraft auf der y-Achse darzustellen.</p>
+<div id="88015beb" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>hooke.plot(x <span class="op">=</span> <span class="st">'distance'</span>, y <span class="op">=</span> <span class="st">'force'</span>, kind <span class="op">=</span> <span class="st">'scatter'</span>, title <span class="op">=</span> <span class="st">'umgeformter Datensatz'</span>, ylabel <span class="op">=</span> <span class="st">'wirkende Kraft in $N$'</span>, xlabel <span class="op">=</span> <span class="st">'Abstandsänderung in Meter'</span>, label <span class="op">=</span> <span class="st">'gemessene Abstandsänderung'</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img" alt="Darstellung der auf der x-Achse aufgetragenen Federausdehnung und der auf der y-Achse aufgetragenen wirkenden Kraft."></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="lineare-ausgleichsrechnung" class="level3" data-number="51.2.1">
+<h3 data-number="51.2.1" class="anchored" data-anchor-id="lineare-ausgleichsrechnung"><span class="header-section-number">51.2.1</span> Lineare Ausgleichsrechnung</h3>
+<p>Die Ausgleichsrechnung (oder auch Parameterschätzung) ist eine Methode, um für eine Messreihe die unbekannten Parameter des zugrundeliegenden physikalischen Modells zu schätzen. Das Ziel besteht darin, eine (in diesem Fall lineare) Funktion zu bestimmen, die bestmöglich an die Messdaten angepasst ist. (<a href="https://de.wikipedia.org/wiki/Ausgleichungsrechnung">Wikipedia</a>)</p>
+<p>Eine lineare Funktion wird durch die Konstante <span class="math inline">\(\beta_0\)</span>, den Schnittpunkt mit der y-Achse, und den Steigungskoeffizienten <span class="math inline">\(\beta_1\)</span> bestimmt.</p>
+<p><span class="math display">\[
+y = \beta_0 + \beta_1 \cdot x
+\]</span></p>
+<p>In der Regel liegt kein deterministischer Zusammenhang vor, sondern es treten zufällige Abweichungen auf, die mit dem additiven Fehlerterm ausgedrückt und aus dem Englischen error mit <span class="math inline">\(e_i\)</span> notiert werden. Diese Fehler werden Residuen genannt.</p>
+<p><span class="math display">\[
+y = \beta_0 + \beta_1 \cdot x + e_i
+\]</span></p>
+<p>Zur Bestimmung der Parameter einer linearen Funktion wird die Methode der <a href="https://de.wikipedia.org/wiki/Methode_der_kleinsten_Quadrate">kleinsten Quadrate</a> verwendet.</p>
+<div id="nte-ols" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;51.2: Methode der kleinsten Quadrate
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mit der Methode der kleinsten Quadrate soll diejenige Gerade <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 \cdot x\)</span> gefunden werden, die die quadrierten Abstände der Vorhersagewerte <span class="math inline">\(\hat{y}\)</span> von den tatsächlich gemessenen Werten <span class="math inline">\(y\)</span> minimiert. Die Werte <span class="math inline">\(y_i - \hat{y_i}\)</span> sind die Residuen <span class="math inline">\(e_i\)</span>. Es gilt also:</p>
+<p><span class="math display">\[
+\sum_{i=1}^{N}(y_i - \hat{y_i})^2 = \sum_{i=1}^{N} e_i = \min
+\]</span></p>
+<p>Grafisch kann man sich die Minimierung der quadrierten Abstände so vorstellen.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Grafik</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="dd23e830" class="cell" data-execution_count="15">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img" alt="Auf einer Geraden sind 9 Punkte markiert, die die Vorhersagewerte des linearen Modells repräsentieren. Vertikal darüber oder darunter sind die Messwerte eingezeichnet. Jeder Vorhersagewerte ist durch eine gestrichelte, vertikale Linie mit einem der Messwerte verbunden."></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Regressionskoeffizienten: [ 2.93333333 -0.73333333]</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="8e76c819" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">11</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="op">-</span> x.copy() <span class="op">+</span> <span class="dv">4</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>y[<span class="dv">0</span>] <span class="op">-=</span> <span class="dv">2</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>y[<span class="dv">2</span>] <span class="op">-=</span> <span class="dv">2</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>y[<span class="dv">3</span>] <span class="op">+=</span> <span class="dv">3</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>y[<span class="op">-</span><span class="dv">3</span>] <span class="op">+=</span> <span class="dv">5</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> poly.polyfit(x, y, <span class="dv">1</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>vorhersagewerte <span class="op">=</span> poly.polyval(x, lm)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, vorhersagewerte, label <span class="op">=</span> <span class="st">'Vorhersagewerte'</span>, marker <span class="op">=</span> <span class="st">"^"</span>, color <span class="op">=</span> <span class="st">"tab:blue"</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label <span class="op">=</span> <span class="st">'Messwerte'</span>, marker <span class="op">=</span> <span class="st">'o'</span>, color <span class="op">=</span> <span class="st">"tab:orange"</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>plt.axline(xy1 <span class="op">=</span> (<span class="dv">0</span>, lm[<span class="dv">0</span>]), slope <span class="op">=</span> lm[<span class="dv">1</span>], label <span class="op">=</span> <span class="st">"Regressionsgerade"</span>, color <span class="op">=</span> <span class="st">"tab:blue"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>dotted <span class="op">=</span> plt.vlines(x, ymin <span class="op">=</span> vorhersagewerte, ymax <span class="op">=</span> y, alpha <span class="op">=</span> <span class="fl">0.6</span>, ls <span class="op">=</span> <span class="st">'dotted'</span>, label <span class="op">=</span> <span class="st">'Residuen'</span>)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Regressionskoeffizienten:"</span>, lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>Die eingezeichnete Gerade entspricht der linearen Funktion <span class="math inline">\(\hat{y} = \beta_0 + \beta_1 \cdot x + e_i\)</span>. Die Dreiecksmarker sind die Vorhersagewerte <span class="math inline">\(\hat{y_i}\)</span> des linearen Modells für die Werte <span class="math inline">\(x_i = np.arange(1, 11)\)</span>. Die tatsächlichen Messwerte <span class="math inline">\(y\)</span> sind mit Kreismarkern markiert. Die Länge der gestrichelten Linien entspricht der Größe der Abweichung zwischen den Mess- und Vorhersagewerten <span class="math inline">\(y_i - \hat{y_i}\)</span>, also den Residuen <span class="math inline">\(e_i\)</span>.</p>
+<p>Gesucht wird diejenige Gerade, die die Summe der quadrierten Residuen minimiert. Die gesuchten Werte <span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind die Kleinst-Quadrate-Schätzer.</p>
+<p><span class="math display">\[
+\beta_0 = \bar{y} - \beta_1 \cdot \bar{x}
+\]</span></p>
+<p><span class="math display">\[
+\beta_1 = { \sum_{i=1}^n (x_i- \bar{x}) \cdot (y_i - \bar{y}) \over \sum_{i=1}^n (x_i - \bar{x})^2 }
+\]</span></p>
+<p>Der Vollständigkeit halber leiten wir die Kleinst-Quadrate-Schätzer her. Gesucht werden Werte für <span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span>, damit die Summe der Residuenquadrate <span class="math inline">\(\sum_{i=1}^{n} e_i^2\)</span> möglichst klein wird. Die Residuenquadratsumme ist die Summe der quadrierten Differenzen aus beobachteten Werten <span class="math inline">\(y_i\)</span> und der durch die lineare Funktion vorhergesagten Werte. <span class="math display">\[
+\sum_{i=1}^{n} e_i^2 ~ = ~ \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i))^2
+\]</span></p>
+<p>Wir untersuchen also eine Funktion, die von zwei Variablen abhängig ist. <span class="math display">\[
+f(\beta_0, \beta_1) = \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i))^2
+\]</span></p>
+<p>Das Summenzeichen ist die Kurzschreibweise für eine Summe. <span class="math display">\[
+f(\beta_0, \beta_1) = (y_1 - (\beta_0 + \beta_1 \cdot x_1))^2 ~ + ~ (y_2 - (\beta_0 + \beta_1 \cdot x_2))^2 ~ + ~ ... ~ (y_n - (\beta_0 + \beta_1 \cdot x_n))^2
+\]</span></p>
+<p>Im Minimum der Funktion müssen die beiden partiellen Ableitungen gleich Null sein (Warum das so ist, wird <a href="https://www.sofatutor.com/mathematik/funktionen/funktionen-mehrerer-veraenderlicher/lokale-extrempunkte-bei-funktionen-mit-mehreren-veraenderlichen">hier</a> leicht verständlich erklärt.)</p>
+<div id="nte-partielleableitung" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;51.1: Partielle Ableitung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die partielle Ableitung ist die Ableitung einer Funktion mit mehreren Variablen nach einer Variablen, wobei die übrigen Variablen als Konstanten behandelt werden.</p>
+<p>Für eine Funktion <span class="math inline">\(f(x, y) = 2x + y^2\)</span> wird die partielle Ableitung nach x so ausgedrückt:</p>
+<p><span class="math inline">\(\frac{\partial f(x, y)}{\partial x}\)</span></p>
+<ul>
+<li>Das Symbol ∂ ist die kursive Darstellung des kyrillischen Kleinbuchstaben д (d) und wird als “del” gelesen. Es zeigt an, das eine partielle Ableitung durchgeführt wird.</li>
+<li>Im Zähler steht die Funktion, die abgeleitet werden soll. Im Nenner steht die Variable nach der abgeleitet wird. Der Term wird gelesen als “del f von x und y nach del x”.</li>
+</ul>
+<p>Die partielle Ableitung <span class="math inline">\(\frac{\partial f(x, y)}{\partial x} = 2\)</span>. <span class="math inline">\(y^2\)</span> wird als Konstante behandelt (z. B. <span class="math inline">\(5^2\)</span> ) und ist abgeleitet Null.</p>
+<p>Die partielle Ableitung <span class="math inline">\(\frac{\partial f(x, y)}{\partial y} = 2y\)</span>. <span class="math inline">\(2x\)</span> wird als Konstante behandelt (z. B. <span class="math inline">\(2 \cdot 3\)</span> ) und ist abgeleitet Null.</p>
+</div>
+</div>
+</div>
+<p>In beiden partiellen Ableitungen sind <span class="math inline">\(x_i\)</span> und <span class="math inline">\(y_i\)</span> konstant. In der partiellen Ableitung nach <span class="math inline">\(\beta_0\)</span> ist außerdem <span class="math inline">\(\beta_1\)</span> konstant, in der partiellen Ableitung nach <span class="math inline">\(\beta_1\)</span> ist entsprechend <span class="math inline">\(\beta_0\)</span> konstant.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">partielle Ableitung nach dem y-Achsenschnittpunkt</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">partielle Ableitung nach dem Anstieg</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Für die partielle Ableitung nach <span class="math inline">\(\beta_0\)</span> gilt also nach der Kettenregel für die äußere Funktion (oben) und die innere Funktion (Mitte): <span class="math display">\[ \begin{aligned}
+\frac{\partial f(\beta_0, \beta_1)}{\partial \beta_0} = 2 \cdot (y_1 - (\beta_0 + \beta_1 \cdot x_1)) ~ + ~ ... ~ (y_n - (\beta_0 + \beta_1 \cdot x_n)) = 2 \cdot \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i)) ~ \cdot
+\newline
+(0 - (1 + 0 \cdot 0)) ~ + ~ ... ~ (0 - (1 + 0 \cdot 0)) = \sum_{i=1}^{n} (0 - (1 + 0 \cdot 0)) =
+\newline
+2 \cdot \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i)) ~ \cdot (-1)
+\end{aligned}
+\]</span></p>
+<p>Für die partielle Ableitung nach <span class="math inline">\(\beta_0\)</span> gilt also: <span class="math display">\[
+\frac{\partial f(\beta_0, \beta_1)}{\partial \beta_0} = -2 \cdot \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i)) = 0
+\]</span></p>
+<p>Diese kann vereinfacht werden, indem der Vorfaktor <span class="math inline">\(-2\)</span> entfällt (weil <span class="math inline">\(-2 \cdot 0 = 0\)</span> gelten muss) und die Vorzeichen aufgelöst werden. Sodass: <span class="math display">\[
+\sum_{i=1}^{n} (y_i - \beta_0 - \beta_1 \cdot x_i) = 0
+\]</span></p>
+<p>Man kann auch schreiben: <span class="math display">\[
+\sum_{i=1}^{n} y_i - \sum_{i=1}^{n} \beta_0 - \sum_{i=1}^{n} \beta_1 \cdot x_i = 0
+\]</span></p>
+<p><span class="math inline">\(\beta_0\)</span> und <span class="math inline">\(\beta_1\)</span> sind Konstanten, sodass gilt <span class="math inline">\(\sum_{i=1}^{n} \beta_0  = \beta_0 \cdot \sum_{i=1}^{n} 1 = \beta_0 \cdot n\)</span> und <span class="math inline">\(\sum_{i=1}^{n} \beta_1 \cdot x_i = \beta_1 \cdot \sum_{i=1}^{n} 1 \cdot x_i\)</span>. So gilt: <span class="math display">\[
+\sum_{i=1}^{n} y_i - n \cdot \beta_0 - \beta_1 \cdot \sum_{i=1}^{n} x_i = 0
+\]</span></p>
+<p>Jetzt kann man durch <span class="math inline">\(n\)</span> teilen. Dabei entspricht <span class="math inline">\(\frac{\sum_{i=1}^{n}y_i}{n}\)</span> dem arithmetischen Mittelwert von <span class="math inline">\(y\)</span> und <span class="math inline">\(\frac{\sum_{i=1}^{n}x_i}{n}\)</span> dem arithmetischen Mittelwert von <span class="math inline">\(x\)</span>. Somit steht: <span class="math display">\[
+\bar{y} - \beta_0 - \beta_1 \cdot \bar{x}= 0
+\]</span></p>
+<p>Umgestellt: <span class="math display">\[
+\beta_0 = \bar{y} - \beta_1 \cdot \bar{x}
+\]</span></p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Für die partielle Ableitung nach <span class="math inline">\(\beta_1\)</span> ist ebenfalls die Kettenregel anzuwenden, sodass die äußere Funktion (oben) identisch abgeleitet wird: <span class="math display">\[ \begin{aligned}
+\frac{\partial f(\beta_0, \beta_1)}{\partial \beta_1} = 2 \cdot (y_1 - (\beta_0 + \beta_1 \cdot x_1)) ~ + ~ ... ~ (y_n - (\beta_0 + \beta_1 \cdot x_n)) = 2 \cdot \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i)) ~ \cdot
+\newline
+(0 - (0 + 1 \cdot x_1)) ~ + ~ ... ~ (0 - (0 + 1 \cdot x_n)) ~ = ~ \sum_{i=1}^{n} -x_i =
+\newline
+2 \cdot \sum_{i=1}^{n} (y_i - (\beta_0 + \beta_1 \cdot x_i)) ~ \cdot -x_i
+\end{aligned}
+\]</span></p>
+<p>Für die partielle Ableitung nach <span class="math inline">\(\beta_1\)</span> gilt also: <span class="math display">\[
+\frac{\partial f(\beta_0, \beta_1)}{\partial \beta_1} = -2 \sum_{i=1}^{n} x_i \cdot (y_i - (\beta_0 + \beta_1 \cdot x_i)) = 0
+\]</span></p>
+<p>Auch diese kann vereinfacht werden, indem der Vorfaktor <span class="math inline">\(-2\)</span> entfällt (weil <span class="math inline">\(-2 \cdot 0 = 0\)</span> gelten muss) und die Vorzeichen aufgelöst werden. Außerdem kann ausmultipliziert werden: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - \sum_{i=1}^{n}  \beta_0 \cdot x_i - \sum_{i=1}^{n}  \beta_1 \cdot x_ix_i = 0
+\]</span></p>
+<p>Wieder können die Konstanten herausgezogen werden: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - \beta_0 \cdot \sum_{i=1}^{n} x_i - \beta_1 \cdot \sum_{i=1}^{n} x_ix_i = 0
+\]</span></p>
+<p>Jetzt kann man <span class="math inline">\(\beta_0 = \bar{y} - \beta_1 \cdot \bar{x}\)</span> und <span class="math inline">\(\sum_{i=1}^{n} x_i = n \cdot \bar{x}\)</span> einsetzen: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - (\bar{y} - \beta_1 \cdot \bar{x}) \cdot  n \cdot \bar{x} - \beta_1 \cdot \sum_{i=1}^{n} x_ix_i = 0
+\]</span></p>
+<p>Der mittlere Term wird ausmultipliziert und <span class="math inline">\(x_ix_i\)</span> im letzten Term als <span class="math inline">\(x_i^2\)</span> geschrieben: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y} - \beta_1 \cdot n\bar{x}\bar{x} - \beta_1 \cdot \sum_{i=1}^{n} x_i^2 = 0
+\]</span></p>
+<p>Die letzten beiden Terme werden unter Anwendung des Distributivgesetzes <span class="math inline">\(a−b = − (b−a)\)</span> zusammengefasst. <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y} - \beta_1 \cdot ( \sum_{i=1}^{n} x_i^2 - n \bar{x}^2) = 0
+\]</span></p>
+<p>Jetzt kann nach <span class="math inline">\(\beta_1\)</span> umgestellt werden. Erst: <span class="math display">\[
+\beta_1 \cdot ( \sum_{i=1}^{n} x_i^2 - n \bar{x}^2) = \sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y}
+\]</span></p>
+<p>Dann: <span class="math display">\[
+\beta_1 = \frac{\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y}}{\sum_{i=1}^{n} x_i^2 - n \bar{x}^2}
+\]</span></p>
+<p>Nun kann zuerst mit <span class="math inline">\(\sum_{i=1}^{n} x_i^2 - n \bar{x}^2 = \sum_{i=1}^{n} (x_i - \bar{x})^2\)</span> umgeformt werden. <span class="math display">\[
+\beta_1 = \frac{\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y}}{\sum_{i=1}^{n}  (x_i - \bar{x})^2}
+\]</span></p>
+<p>Dann - und das wird gleich gezeigt - mit <span class="math inline">\(\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y} = \sum_{i=1}^{n} (x_i - \bar{x}) (y_i - \bar{y})\)</span>. Sodass steht: <span class="math display">\[
+\beta_1 = \frac{\sum_{i=1}^{n} (x_i - \bar{x}) (y_i - \bar{y})}{\sum_{i=1}^{n}  (x_i - \bar{x})^2}
+\]</span></p>
+<p>Der letzte Schritt wird ausgehend vom Ergebnis gezeigt und beginnt mit dem Ausmultiplizieren: <span class="math display">\[
+\sum_{i=1}^{n} (x_i - \bar{x}) (y_i - \bar{y}) = \sum_{i=1}^{n} (x_iy_i - x_i\bar{y} - \bar{x}y_i + \bar{x}\bar{y})
+\]</span></p>
+<p>Man kann auch schreiben: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - \sum_{i=1}^{n} x_i\bar{y} - \sum_{i=1}^{n} \bar{x}y_i + \sum_{i=1}^{n} \bar{x}\bar{y}
+\]</span></p>
+<p><span class="math inline">\(\bar{x}\)</span> und <span class="math inline">\(\bar{y}\)</span> sind Konstanten, sodass <span class="math inline">\(\bar{x} \cdot \sum_{i=1}^{n} y_i\)</span> und <span class="math inline">\(\bar{y} \cdot \sum_{i=1}^{n} x_i\)</span> geschrieben werden kann. <span class="math inline">\(\sum_{i=1}^{n} x_i\)</span> ist gleich <span class="math inline">\(n \cdot \bar{x}\)</span> (analog für <span class="math inline">\(y\)</span>). So ergibt sich:</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - \bar{y} \cdot n \cdot \bar{x} - \bar{x} \cdot n \cdot \bar{y} + \sum_{i=1}^{n} \bar{x}\bar{y}
+\]</span></p>
+<p>Sortieren: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y}  -  n\bar{x}\bar{y} + \sum_{i=1}^{n} \bar{x}\bar{y}
+\]</span></p>
+<p>Der letzte Term <span class="math inline">\(\sum_{i=1}^{n} \bar{x}\bar{y}\)</span> kann auch <span class="math inline">\(n \cdot \bar{x}\bar{y}\)</span> geschrieben werden, sodass sich ergibt: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y} - n\bar{x}\bar{y} + n\bar{x}\bar{y}
+\]</span></p>
+<p>Die letzten beiden Terme entfallen somit und es bleibt: <span class="math display">\[
+\sum_{i=1}^{n} x_iy_i - n\bar{x}\bar{y}
+\]</span></p>
+<p><span class="citation" data-cites="Baitsch-2019">[@Baitsch-2019, S. 73-74]</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Die Funktionen dafür stellen sowohl das Paket <code>numpy.polynomial</code> bzw. für Polynomfunktionen dessen Modul <code>numpy.polynomial.polynomial</code> als auch das Modul <code>scipy.stats.linregress</code> bereit. Im Folgenden wird die Berechnung mit NumPy gezeigt und anschließend die Funktionen aus dem Modul SciPy vorgestellt. Die Funktionsweise beider Module ist ähnlich.</p>
+<section id="numpy-polyfit-und-polyeval" class="level4" data-number="51.2.1.1">
+<h4 data-number="51.2.1.1" class="anchored" data-anchor-id="numpy-polyfit-und-polyeval"><span class="header-section-number">51.2.1.1</span> NumPy polyfit und polyeval</h4>
+<div id="136f301d" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy.polynomial.polynomial <span class="im">as</span> poly</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Zur Schätzung von Funktionsparametern nach der Methode der kleinsten Quadrate wird die Funktion <code>poly.polyfit(x, y, deg)</code> verwendet. <code>x</code> sind die Werte der unabhängigen Variablen, <code>y</code> die Werte der abhängigen Variablen und <code>deg</code> spezifiziert den Grad der gesuchten Polynomfunktion. <code>deg = 1</code> spezifiziert eine lineare Funktion.</p>
+<div id="nte-polyfitpolyeval" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;51.3: polyfit und polyeval erklärt
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="4d5e5785" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispieldaten erzeugen</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">100</span>)))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly.polyfit(x, y, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-1617.    99.]</code></pre>
+</div>
+</div>
+<p>Die Funktion gibt die geschätzten Regressionsparameter als NumPy-Array zurück. Die Terme sind aufsteigend angeordnet, d.&nbsp;h. der Achsabschnitt steht an Indexposition 0, der Steigungskoeffizient an Indexposition 1. Die Ausgabe für ein Polynom zweiten Grades würde beispielsweise so aussehen:</p>
+<div id="38a9f99d" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly.polyfit(x, y, <span class="dv">2</span>).<span class="bu">round</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0. 0. 1.]</code></pre>
+</div>
+</div>
+<p>Mit den Regressionskoeffizienten können die Vorhersagewerte der linearen Funktion berechnet werden. Dafür wird die Funktion <code>poly.polyeval(x, c)</code> verwendet. Diese berechnet die Funktionswerte für in <code>x</code> übergebene Werte mit den Funktionsparametern <code>c</code>. Aus der Differenz der gemessenen Werte und der Vorhersagewerte können die Residuen bestimmt werden.</p>
+<div id="1de32104" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'manuelle' Berechnung</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>regressions_koeffizienten <span class="op">=</span> poly.polyfit(x, y, <span class="dv">1</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>vorhersagewerte <span class="op">=</span> regressions_koeffizienten[<span class="dv">0</span>] <span class="op">+</span> x <span class="op">*</span> regressions_koeffizienten[<span class="dv">1</span>]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>residuen <span class="op">=</span> y <span class="op">-</span> vorhersagewerte</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung mit polyeval</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> poly.polyfit(x, y, <span class="dv">1</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>vorhersagewerte_polyval <span class="op">=</span> poly.polyval(x, lm)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die Ergebnisse stimmen überein:"</span>, np.equal(vorhersagewerte, vorhersagewerte_polyval).<span class="bu">all</span>())</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Ausschnitt der Vorhersagewerte:"</span>, vorhersagewerte[:<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die Ergebnisse stimmen überein: True
+
+Ausschnitt der Vorhersagewerte: [-1617. -1518. -1419. -1320. -1221. -1122. -1023.  -924.  -825.  -726.]</code></pre>
+</div>
+</div>
+<p>Das <a href="https://de.wikipedia.org/wiki/Bestimmtheitsma%C3%9F">Bestimmtheitsmaß</a> <span class="math inline">\(R^2\)</span> gibt an, wie gut die Schätzfunktion an die Daten angepasst ist. Der Wertebereich reicht von 0 bis 1. Ein Wert von 1 bedeutet eine vollständige Anpassung. Für eine einfache lineare Regression mit nur einer erklärenden Variable kann das Bestimmtheitsmaß als Quadrat des <a href="https://de.wikipedia.org/wiki/Korrelationskoeffizient_nach_Bravais-Pearson">Bravais-Pearson-Korrelationskoeffizienten</a> <span class="math inline">\(r\)</span> berechnet werden. Dieser wird mit der Funktion <code>np.corrcoef(x, y)</code> ermittelt (die eine Matrix der Korrelationskoeffizienten ausgibt).</p>
+<div id="447dd06a" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"r = </span><span class="sc">{</span>np<span class="sc">.</span>corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R</span><span class="ch">\u00b2</span><span class="ss"> = </span><span class="sc">{</span>np<span class="sc">.</span>corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span><span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>r = 0.97
+R² = 0.94</code></pre>
+</div>
+</div>
+<p>Die Daten und die geschätzte Gerade können grafisch dargestellt werden.</p>
+<div id="32d24fd9" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label <span class="op">=</span> <span class="st">'Beispieldaten'</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, vorhersagewerte, label <span class="op">=</span> <span class="st">'Vorhersagewerte'</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"$R^2$ = </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(np.corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span>), (<span class="bu">max</span>(x) <span class="op">*</span> <span class="fl">0.9</span>, <span class="dv">1</span>))</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>plt.title(label <span class="op">=</span> <span class="st">'Beispieldaten und geschätzte Linearfunktion'</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x-Werte'</span>)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y-Werte'</span>)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>NumPy umfasst außerdem die inzwischen veralteten Funktionen <code>np.polyfit(x, y, deg)</code> und <code>np.polyval(p, x)</code>.</p>
+<div id="nte-polyfit" class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note&nbsp;51.4: np.polyfit &amp; np.polyval
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Die Funktionen <code>np.polyfit(x, y, deg)</code> und <code>np.polyval(p, x)</code> funktionieren wie die vorgestellten Funktionen aus dem Modul <code>numpy.polynomial.polynomial</code>. Ein wichtiger Unterschied besteht jedoch darin, dass <strong>die Parameter der Funktion <code>polyfit</code> in umgekehrter Reihenfolge</strong> ausgegeben werden.</p>
+<div id="2d48f1e2" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly.polyfit(x, y, deg <span class="op">=</span> <span class="dv">1</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.polyfit(x, y, deg <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-1617.    99.]
+[   99. -1617.]</code></pre>
+</div>
+</div>
+<div class="border">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This forms part of the old polynomial API. Since version 1.4, the new polynomial API defined in <code>numpy.polynomial</code> is preferred. A summary of the differences can be found in the <a href="https://numpy.org/doc/stable/reference/routines.polynomials.html">transition guide</a>.</p>
+</div>
+</div>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html">NumPy-Dokumentation</a></p>
+</div>
+</div>
+</div>
+</div>
+<p>Die Parameter der an die Messwerte angepassten linearen Funktion und das Bestimmtheitsmaß lauten:</p>
+<div id="203c10ab" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(poly.polyfit(hooke[<span class="st">'distance'</span>], hooke[<span class="st">'force'</span>], <span class="dv">1</span>))</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"r = </span><span class="sc">{</span>np<span class="sc">.</span>corrcoef(hooke[<span class="st">'distance'</span>], hooke[<span class="st">'force'</span>])[<span class="dv">0</span>, <span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"R</span><span class="ch">\u00b2</span><span class="ss"> = </span><span class="sc">{</span>np<span class="sc">.</span>corrcoef(hooke[<span class="st">'distance'</span>], hooke[<span class="st">'force'</span>])[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span><span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 0.05753159 33.01899551]
+r = 0.99
+R² = 0.99</code></pre>
+</div>
+</div>
+<p>Mit den Regressionskoeffizienten können die Vorhersagewerte der linearen Funktion berechnet werden.</p>
+<div id="9e372cd7" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung mit polyeval</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> poly.polyfit(hooke[<span class="st">'distance'</span>], hooke[<span class="st">'force'</span>], <span class="dv">1</span>)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>vorhersagewerte_hooke <span class="op">=</span> poly.polyval(hooke[<span class="st">'distance'</span>], lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Die Messreihe und die darauf angepasste lineare Funktion können grafisch dargestellt werden.</p>
+<div id="d2ec1442" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Platzhalter x &amp; y</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> hooke[<span class="st">'distance'</span>]</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> hooke[<span class="st">'force'</span>]</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot erstellen</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label <span class="op">=</span> <span class="st">'Messdaten'</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>plt.axline(xy1 <span class="op">=</span> (<span class="dv">0</span>, lm[<span class="dv">0</span>]), slope <span class="op">=</span> lm[<span class="dv">1</span>], label <span class="op">=</span> <span class="st">'Regressionsgerade</span><span class="ch">\n</span><span class="st">y = '</span> <span class="op">+</span> <span class="st">"</span><span class="sc">{beta_0:.3f}</span><span class="st">"</span>.<span class="bu">format</span>(beta_0 <span class="op">=</span> lm[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">' + '</span> <span class="op">+</span> <span class="st">"</span><span class="sc">{beta_1:.3f}</span><span class="st"> "</span>.<span class="bu">format</span>(beta_1 <span class="op">=</span> lm[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">'x'</span> )</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"$R^2$ = </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(np.corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span>), (<span class="bu">max</span>(x) <span class="op">*</span> <span class="fl">0.9</span>, <span class="dv">1</span>))</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>plt.title(label <span class="op">=</span> <span class="st">'Messdaten und geschätzte Linearfunktion'</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'gemessene Abstandsänderung in m'</span>)</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'wirkende Kraft in N'</span>)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img" alt="Messdaten des Federexperiments (Abstandsänderung vs. wirkende Kraft) mit eingezeichneter Regressionsgeraden."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="messabweichung-quantifizieren" class="level3" data-number="51.2.2">
+<h3 data-number="51.2.2" class="anchored" data-anchor-id="messabweichung-quantifizieren"><span class="header-section-number">51.2.2</span> Messabweichung quantifizieren</h3>
+<p>Für den geschätzten Regressionskoeffizienten kann für die lineare Regression mit einer erklärenden Variable der Standardfehler des Regressionskoeffizienten <span class="math inline">\(SE = \hat{\sigma}_{\hat{\beta_1}}\)</span> ermittelt werden (siehe <a href="https://de.wikipedia.org/wiki/Standardfehler_des_Regressionskoeffizienten#Spezialfall:_Lineare_Einfachregression">Wikipedia</a>).</p>
+<p><span class="math display">\[
+SE = \sqrt{\frac{\frac{1}{n-2} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{ \sum_{i=1}^{n} (x_i - \bar{x})^2}}
+\]</span></p>
+<ul>
+<li>Im Zähler steht die mittlere <a href="https://de.wikipedia.org/wiki/Residuenquadratsumme">Residuenquadratsumme</a> (Summe der quadrierten Residuen / Anzahl der Freiheitsgrade).</li>
+<li>Im Nenner steht die <a href="https://de.wikipedia.org/wiki/Summe_der_Abweichungsquadrate">Summe der Abweichungsquadrate von <span class="math inline">\(x\)</span></a>.</li>
+</ul>
+<p>Für ein Signifikanzniveau <span class="math inline">\(\alpha\)</span> kann ein Konfidenzniveau <span class="math inline">\(1 - \alpha\)</span> angegeben werden als:</p>
+<p><span class="math display">\[
+\hat{\beta_1} \pm SE \cdot t_{1-\alpha / 2} ~ (n - 2)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(t_{1-\alpha / 2} ~ (n - 2)\)</span> ist der Wert der t-Verteilung mit n - 2 Freiheitsgraden bzw. der Rückgabewert der Funktion:
+<ul>
+<li><code>scipy.stats.t.ppf(q = 1 - alpha/2, df = n - 2)</code> für die obere Intervallgrenze.</li>
+</ul></li>
+</ul>
+<div id="9ba5e8c8" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Regressionskoeffizient: </span><span class="sc">{</span>lm[<span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 'manuell' Standardfehler des Regressionskoeffizienten berechnen</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>standardfehler_beta_1 <span class="op">=</span> np.sqrt( (<span class="dv">1</span> <span class="op">/</span> (<span class="bu">len</span>(x) <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> <span class="bu">sum</span>((y <span class="op">-</span> vorhersagewerte_hooke) <span class="op">**</span> <span class="dv">2</span>)) <span class="op">/</span> <span class="bu">sum</span>( (x <span class="op">-</span> x.mean()) <span class="op">**</span> <span class="dv">2</span>  ))</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Standardfehler des Regressionskoeffizienten: </span><span class="sc">{</span>standardfehler_beta_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Signifikanzniveau (alpha-Niveau) 1 - 95 % wählen</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>t_wert <span class="op">=</span> scipy.stats.t.ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha<span class="op">/</span><span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>)</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"t-Wert 95-%-Intervall (zweiseitig): </span><span class="sc">{</span>t_wert<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Konfidenzintervall 95 %: </span><span class="sc">{</span>lm[<span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss"> ± </span><span class="sc">{</span>t_wert<span class="sc">:.4f}</span><span class="ss"> * </span><span class="sc">{</span>standardfehler_beta_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"untere 95-%-Intervallgrenze: </span><span class="sc">{</span>lm[<span class="dv">1</span>] <span class="op">-</span> t_wert <span class="op">*</span> standardfehler_beta_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"obere 95-%-Intervallgrenze: </span><span class="sc">{</span>lm[<span class="dv">1</span>] <span class="op">+</span> t_wert <span class="op">*</span> standardfehler_beta_1<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Regressionskoeffizient: 33.0190
+Standardfehler des Regressionskoeffizienten: 0.3784
+t-Wert 95-%-Intervall (zweiseitig): 1.9816
+Konfidenzintervall 95 %: 33.0190 ± 1.9816 * 0.3784
+untere 95-%-Intervallgrenze: 32.2692
+obere 95-%-Intervallgrenze: 33.7688</code></pre>
+</div>
+</div>
+<p>Das Konfidenzintervall kann auch grafisch dargestellt werden.</p>
+<div id="de752374" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Platzhalter x &amp; y</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> hooke[<span class="st">'distance'</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> hooke[<span class="st">'force'</span>]</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot erstellen</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, label <span class="op">=</span> <span class="st">'Messdaten'</span>)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>plt.axline(xy1 <span class="op">=</span> (<span class="dv">0</span>, lm[<span class="dv">0</span>]), slope <span class="op">=</span> lm[<span class="dv">1</span>], label <span class="op">=</span> <span class="st">'Regressionsgerade</span><span class="ch">\n</span><span class="st">y = '</span> <span class="op">+</span> <span class="st">"</span><span class="sc">{beta_0:.3f}</span><span class="st">"</span>.<span class="bu">format</span>(beta_0 <span class="op">=</span> lm[<span class="dv">0</span>]) <span class="op">+</span> <span class="st">' + '</span> <span class="op">+</span> <span class="st">"</span><span class="sc">{beta_1:.3f}</span><span class="st"> "</span>.<span class="bu">format</span>(beta_1 <span class="op">=</span> lm[<span class="dv">1</span>]) <span class="op">+</span> <span class="st">'x'</span> )</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">"$R^2$ = </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(np.corrcoef(x, y)[<span class="dv">0</span>, <span class="dv">1</span>] <span class="op">**</span> <span class="dv">2</span>), (<span class="bu">max</span>(x) <span class="op">*</span> <span class="fl">0.9</span>, <span class="dv">1</span>))</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 95-%-Konfidenzintervall einzeichnen</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co">## poly.polyval(hooke['distance'], [lm[0]])</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>beta1_lower_boundary <span class="op">=</span> lm[<span class="dv">1</span>] <span class="op">-</span> (t_wert <span class="op">*</span> standardfehler_beta_1)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>beta1_upper_boundary <span class="op">=</span> lm[<span class="dv">1</span>] <span class="op">+</span> (t_wert <span class="op">*</span> standardfehler_beta_1)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>y_lower_boundary <span class="op">=</span> poly.polyval(hooke[<span class="st">'distance'</span>], [lm[<span class="dv">0</span>], beta1_lower_boundary])</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>y_upper_boundary <span class="op">=</span> poly.polyval(hooke[<span class="st">'distance'</span>], [lm[<span class="dv">0</span>], beta1_upper_boundary])</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x <span class="op">=</span> x, y1 <span class="op">=</span> y_lower_boundary , y2 <span class="op">=</span> y_upper_boundary, alpha <span class="op">=</span> <span class="fl">0.3</span>, label <span class="op">=</span> <span class="st">'95-%-Konfidenzintervall $</span><span class="ch">\\</span><span class="st">beta_1$'</span>)</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>plt.title(label <span class="op">=</span> <span class="st">'Messdaten und geschätzte Linearfunktion im 95-%-Intervall'</span>)</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'gemessene Abstandsänderung in m'</span>)</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'wirkende Kraft in N'</span>)</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lineare-parameterschätzung_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img" alt="Messdaten des Federexperiments (Abstandsänderung vs. wirkende Kraft) mit eingezeichneter Regressionsgeraden und 95-%-Konfidenzintervall des Anstiegs."></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="das-modul-scipy" class="level3" data-number="51.2.3">
+<h3 data-number="51.2.3" class="anchored" data-anchor-id="das-modul-scipy"><span class="header-section-number">51.2.3</span> Das Modul SciPy</h3>
+<p>Die Funktion <code>scipy.stats.lingress(x, y)</code> liefert mit einem Funktionsaufruf zahlreiche Rückgabewerte:</p>
+<ul>
+<li>Steigung der Regressionsgerade,</li>
+<li>y-Achsenschnittpunkt der Regressionsgerade,</li>
+<li>Bravais-Pearson-Korrelationskoeffizient r,</li>
+<li>p-Wert der Nullhypothese, dass die Steigung der Regressionsgerade Null ist,</li>
+<li>Standardfehler der Steigung und</li>
+<li>Standardfehler des y-Achsenschnittpunkts.</li>
+</ul>
+<p>Der Standardfehler des y-Achsenschnittpunkts ist nur verfügbar, wenn die Rückgabewerte in einem Objekt gespeichert werden. Die Rückgabewerte können dann als Attribute abgerufen werden.</p>
+<div id="9b20c1ec" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zuweisung mehrerer Objekte</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>slope, intercept, rvalue, pvalue, slope_stderr <span class="op">=</span> scipy.stats.linregress(x, y)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"y = </span><span class="sc">{</span>intercept<span class="sc">:.4f}</span><span class="ss"> + </span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss"> * x</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"r = </span><span class="sc">{</span>rvalue<span class="sc">:.4f}</span><span class="ss"> R2 = </span><span class="sc">{</span>rvalue <span class="op">**</span> <span class="dv">2</span><span class="sc">:.4f}</span><span class="ss"> p = </span><span class="sc">{</span>pvalue<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Standardfehler des Anstiegs: </span><span class="sc">{</span>slope_stderr<span class="sc">:.4f}</span><span class="ss">"</span>, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Zuweisung eines Objekts</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>lm <span class="op">=</span> scipy.stats.linregress(x, y)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, lm, sep <span class="op">=</span> <span class="st">''</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"y-Achsenschnittpunkt: </span><span class="sc">{</span>lm<span class="sc">.</span>intercept<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">Standardfehler des y-Achsenschnittpunkts:</span><span class="sc">{</span>lm<span class="sc">.</span>intercept_stderr<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>y = 0.0575 + 33.0190 * x
+r = 0.9928 R2 = 0.9856 p = 0.0000
+Standardfehler des Anstiegs: 0.3784
+
+LinregressResult(slope=np.float64(33.01899550918018), intercept=np.float64(0.05753158907970102), rvalue=np.float64(0.9927907555799099), pvalue=np.float64(4.115211719827623e-104), stderr=np.float64(0.37837320019327897), intercept_stderr=np.float64(0.0506707972676925))
+y-Achsenschnittpunkt: 0.0575
+Standardfehler des y-Achsenschnittpunkts:0.0507</code></pre>
+</div>
+</div>
+<p>So kann mit dem entsprechenden t-Wert das Konfidenzintervall berechnet werden.</p>
+<div id="0eb7b20a" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(x)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>slope <span class="op">-</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">  ≤ </span><span class="sc">{</span>slope<span class="sc">:.3f}</span><span class="ss"> ≤ </span><span class="sc">{</span>slope <span class="op">+</span> scipy<span class="sc">.</span>stats<span class="sc">.</span>t<span class="sc">.</span>ppf(q <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> alpha <span class="op">/</span> <span class="dv">2</span>, df <span class="op">=</span> n <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> slope_stderr<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>32.269  ≤ 33.019 ≤ 33.769</code></pre>
+</div>
+</div>
+</section>
+<section id="ergebnis-federkonstante" class="level3" data-number="51.2.4">
+<h3 data-number="51.2.4" class="anchored" data-anchor-id="ergebnis-federkonstante"><span class="header-section-number">51.2.4</span> Ergebnis Federkonstante</h3>
+<p>Die Federkonstante des Versuchaufbaus liegt mit 95 prozentiger Sicherheit im Intervall zwischen 32,27 und 33,77. Die Punktschätzung für die Federkonstante beträgt 33,02.</p>
+<p><strong>Aufgabe könnte sein, das Konfidenzintervall 99-Prozent zu berechnen.</strong><br>
+–&gt; Dann muss man aber nur eine Zahl ändern</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../books/m-sensordatenanalyse/skript/normalverteilung.html" class="pagination-link" aria-label="Die Normalverteilung">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">Die Normalverteilung</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../books/m-sensordatenanalyse/skript/fehlerrechnung.html" class="pagination-link" aria-label="Fehlerrechnung">
+        <span class="nav-page-text"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">Fehlerrechnung</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik/blob/main/books/m-sensordatenanalyse/skript/lineare-parameterschätzung.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
