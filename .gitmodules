@@ -22,9 +22,6 @@
 [submodule "books/m-datenfitting-und-optimierung"]
 	path = books/m-datenfitting-und-optimierung
 	url = https://github.com/bausteine-der-datenanalyse/m-datenfitting-und-optimierung.git
-[submodule "books/m-einlesen-strukturierter-datensätze"]
-	path = books/m-einlesen-strukturierter-datensätze
-	url = https://github.com/bausteine-der-datenanalyse/m-einlesen-strukturierter-datensaetze.git
 [submodule "books/m-sensordatenanalyse"]
 	path = books/m-sensordatenanalyse
 	url = https://github.com/bausteine-der-datenanalyse/m-sensordatenanalyse.git
@@ -34,3 +31,6 @@
 [submodule "books/a-energiedatenanalyse"]
 	path = books/a-energiedatenanalyse
 	url = https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse
+[submodule "books/m-einlesen-strukturierter-datensaetze"]
+	path = books/m-einlesen-strukturierter-datensaetze
+	url = https://github.com/bausteine-der-datenanalyse/m-einlesen-strukturierter-datensaetze

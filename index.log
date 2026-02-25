@@ -1,23 +1,23 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.26)  25 FEB 2026 10:28
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.25)  25 FEB 2026 10:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **index.tex
 (./index.tex
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-08-13>
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2025/08/19 v3.46 KOMA-Script document class (report)
+Document Class: scrreprt 2026/02/02 v3.49.2 KOMA-Script document class (report)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2025/08/19 v3.46 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2025/08/19 v3.46 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2025/08/19 v3.46 KOMA-Script package (file load hooks)
+Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2025/08/19 v3.46 KOMA-Script package (using LaTeX hooks)
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2025/08/19 v3.46 KOMA-Script package (logo)
+Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
 ))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
@@ -25,7 +25,7 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2025/08/19 v3.46 KOMA-Script package (handling toc-files)
+Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip49
 \scr@dte@tocline@numbox=\box53
 )
@@ -33,11 +33,11 @@ Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 143.
 Class scrreprt Info: File `scrsize11pt.clo' used instead of
-(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2705.
+(scrreprt)           file `scrsize11.clo' to setup font sizes on input line 2710.
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2025/08/19 v3.46 KOMA-Script font size class option (11pt)
+File: scrsize11pt.clo 2026/02/02 v3.49.2 KOMA-Script font size class option (11pt)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2025/08/19 v3.46 KOMA-Script package (type area)
+Package: typearea 2026/02/02 v3.49.2 KOMA-Script package (type area)
 \ta@bcor=\skip50
 \ta@div=\count271
 Package typearea Info: You've used standard option `letterpaper'.
@@ -66,7 +66,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.6pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1805.
+(typearea)              on input line 1810.
 )
 \c@part=\count272
 \c@chapter=\count273
@@ -77,49 +77,49 @@ Package typearea Info: These are the values describing the layout:
 \c@subparagraph=\count278
 \scr@dte@chapter@maxnumwidth=\skip55
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\chapter on input line 6078.
+(scrreprt)           for `\chapter on input line 5934.
 \scr@dte@section@maxnumwidth=\skip56
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\section on input line 6089.
+(scrreprt)           for `\section on input line 5945.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\section on input line 6089.
+(scrreprt)           for `\section on input line 5945.
 \scr@dte@part@maxnumwidth=\skip57
 Class scrreprt Info: using compatibility default `afterindent=true'
-(scrreprt)           for `\part on input line 6098.
+(scrreprt)           for `\part on input line 5954.
 \scr@dte@subsection@maxnumwidth=\skip58
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsection on input line 6108.
+(scrreprt)           for `\subsection on input line 5964.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsection on input line 6108.
+(scrreprt)           for `\subsection on input line 5964.
 \scr@dte@subsubsection@maxnumwidth=\skip59
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subsubsection on input line 6118.
+(scrreprt)           for `\subsubsection on input line 5974.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subsubsection on input line 6118.
+(scrreprt)           for `\subsubsection on input line 5974.
 \scr@dte@paragraph@maxnumwidth=\skip60
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\paragraph on input line 6129.
+(scrreprt)           for `\paragraph on input line 5985.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\paragraph on input line 6129.
+(scrreprt)           for `\paragraph on input line 5985.
 \scr@dte@subparagraph@maxnumwidth=\skip61
 Class scrreprt Info: using compatibility default `runin=bysign'
-(scrreprt)           for `\subparagraph on input line 6139.
+(scrreprt)           for `\subparagraph on input line 5995.
 Class scrreprt Info: using compatibility default `afterindent=bysign'
-(scrreprt)           for `\subparagraph on input line 6139.
+(scrreprt)           for `\subparagraph on input line 5995.
 \abovecaptionskip=\skip62
 \belowcaptionskip=\skip63
 \c@pti@nb@sid@b@x=\box54
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 7346.
+(tocbasic)             for `lof' on input line 7225.
 \scr@dte@figure@maxnumwidth=\skip64
 \c@figure=\count279
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 7359.
+(tocbasic)             for `lot' on input line 7238.
 \scr@dte@table@maxnumwidth=\skip65
 \c@table=\count280
-Class scrreprt Info: Redefining `\numberline' on input line 7530.
+Class scrreprt Info: Redefining `\numberline' on input line 7409.
 \bibindent=\dimen148
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -128,7 +128,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 274.
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/xetex.def
-File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -145,7 +145,7 @@ File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/xcolor/x11nam.def
 File: x11nam.def 2024/09/29 v3.02 Predefined colors according to Unix/X11 (UK)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/06/16 v2.17y AMS math features
+Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip66
 For additional information on amsmath, use the `?' option.
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -205,8 +205,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \multlinegap=\skip67
 \multlinetaggap=\skip68
 \mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -219,9 +219,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-08-13 L3 programming layer (loader) 
+Package: expl3 2026-01-19 L3 programming layer (loader) 
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2025-06-09 L3 backend support: XeTeX
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
 \g__graphics_track_int=\count293
 \g__pdfannot_backend_int=\count294
 \g__pdfannot_backend_link_int=\count295
@@ -230,13 +230,13 @@ Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
 Package: unicode-math-xetex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
+Package: xparse 2025-10-09 L3 Experimental document command parser
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
-Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_script_int=\count296
 \l__fontspec_language_int=\count297
 \l__fontspec_strnum_int=\count298
@@ -252,7 +252,7 @@ Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_tmpb_dim=\dimen159
 \l__fontspec_tmpc_dim=\dimen160
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
@@ -431,7 +431,7 @@ Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2025/07/09 v3.2b Micro-typographical refinements (RS)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count310
 )
 \MT@toks=\toks23
@@ -473,7 +473,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen164
 \FrameSep=\dimen165
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip71
 \LTright=\skip72
 \LTpre=\skip73
@@ -512,7 +512,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count324
 \@thisrulewidth=\dimen179
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen180
 \ar@mcellbox=\box64
 \extrarowheight=\dimen181
@@ -558,7 +558,7 @@ Package graphics Info: Driver file: xetex.def on input line 106.
 )
 \pandoc@box=\box67
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2025/07/08 version 6.7.1 text color boxes
+Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks27
 \pgfutil@tempdima=\dimen188
@@ -566,11 +566,11 @@ Package: tcolorbox 2025/07/08 version 6.7.1 text color boxes
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box68
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2025-08-14 v3.1.11 (3.1.11)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
-Package: pgf 2025-08-14 v3.1.11 (3.1.11)
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2025-08-14 v3.1.11 (3.1.11)
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks28
 \pgfkeys@temptoks=\toks29
@@ -598,25 +598,25 @@ Package: pgfsys 2025-08-14 v3.1.11 (3.1.11)
 \t@pgf@tokc=\toks33
 \pgf@sys@id@count=\count333
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2025-08-14 v3.1.11 (3.1.11)
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-xetex.def
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-xetex.def
-File: pgfsys-xetex.def 2025-08-14 v3.1.11 (3.1.11)
+File: pgfsys-xetex.def 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvipdfmx.def
-File: pgfsys-dvipdfmx.def 2025-08-14 v3.1.11 (3.1.11)
+File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
-File: pgfsys-common-pdf.def 2025-08-14 v3.1.11 (3.1.11)
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )
 \pgfsys@objnum=\count334
 ))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
-File: pgfsyssoftpath.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count335
 \pgfsyssoftpath@bigbuffer@items=\count336
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
-File: pgfsysprotocol.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2025-08-14 v3.1.11 (3.1.11)
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen256
 \pgfmath@count=\count337
@@ -627,7 +627,7 @@ Package: pgfcore 2025-08-14 v3.1.11 (3.1.11)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count338
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
-File: pgfcorepoints.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen257
 \pgf@picmaxx=\dimen258
 \pgf@picminy=\dimen259
@@ -643,75 +643,75 @@ File: pgfcorepoints.code.tex 2025-08-14 v3.1.11 (3.1.11)
 \pgf@zx=\dimen269
 \pgf@zy=\dimen270
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
-File: pgfcorepathconstruct.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen271
 \pgf@path@lasty=\dimen272
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
-File: pgfcorepathusage.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen273
 \pgf@shorten@start@additional=\dimen274
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
-File: pgfcorescopes.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box70
 \pgf@hbox=\box71
 \pgf@layerbox@main=\box72
 \pgf@picture@serial@count=\count339
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
-File: pgfcoregraphicstate.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen275
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
-File: pgfcoretransformations.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen276
 \pgf@pt@y=\dimen277
 \pgf@pt@temp=\dimen278
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
-File: pgfcorequick.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
-File: pgfcoreobjects.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
-File: pgfcorepathprocessing.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
-File: pgfcorearrows.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen279
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen280
 \pgf@sys@shading@range@num=\count340
 \pgf@shadingcount=\count341
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
-File: pgfcoreexternal.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box73
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
-File: pgfcorelayers.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
-File: pgfcoretransparency.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
-File: pgfcorepatterns.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
-File: pgfcorerdf.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box74
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
-Package: pgfcomp-version-0-65 2025-08-14 v3.1.11 (3.1.11)
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen281
 \pgf@nodesepend=\dimen282
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
-Package: pgfcomp-version-1-18 2025-08-14 v3.1.11 (3.1.11)
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2025-08-14 v3.1.11 (3.1.11)
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen283
 \pgffor@skip=\dimen284
 \pgffor@stack=\toks37
 \pgffor@toks=\toks38
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2025-08-14 v3.1.11 (3.1.11)
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
-File: pgflibraryplothandlers.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count342
 \pgfplotmarksize=\dimen285
 )
@@ -732,14 +732,14 @@ File: pgflibraryplothandlers.code.tex 2025-08-14 v3.1.11 (3.1.11)
 \tikznumberofcurrentchild=\count345
 \tikz@fig@count=\count346
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count347
 \pgfmatrixcurrentcolumn=\count348
 \pgf@matrix@numberofcolumns=\count349
 )
 \tikz@expandcount=\count350
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2025-08-14 v3.1.11 (3.1.11)
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks39
@@ -764,7 +764,7 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@temp=\box86
 \tcb@temp=\box87
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
-Library (tcolorbox): 'tcbskins.code.tex' version '6.7.1'
+Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
 Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
@@ -773,9 +773,9 @@ Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
 \l__tikzfill_img_box=\box88
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
-Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.7.1'
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
-Library (tcolorbox): 'tcbbreakable.code.tex' version '6.7.1'
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.9.0'
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/pdfcol/pdfcol.sty
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
@@ -799,7 +799,7 @@ LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on 
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/fontawesome5/tufontawesomebrands.fd))) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -814,7 +814,7 @@ Package pdftexcmds Info: \pdfdraftmode not found.
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -830,28 +830,28 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 \Hy@linkcounter=\count355
 \Hy@pagecounter=\count356
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count357
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4066.
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Option `unicode' set `true' on input line 4072.
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
+Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count358
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip19
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4801.
+LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen296
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -861,20 +861,20 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 \Fld@menulength=\count359
 \Field@Width=\dimen297
 \Fld@charsize=\dimen298
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring OFF on input line 6098.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
 \Hy@abspage=\count360
 \c@Item=\count361
 \c@Hfootnote=\count362
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
-File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
+File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
 \pdfm@box=\box92
 \c@Hy@AnnotLevel=\count363
 \HyField@AnnotCount=\count364
@@ -893,6 +893,10 @@ File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count367
 )) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+Package tocbasic Info: Loading of class-dependent code for package caption3
+(tocbasic)             prevented on line 50.
+
 (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen299
@@ -903,15 +907,7 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@indent=\dimen304
 \caption@parindent=\dimen305
 \caption@hangindent=\dimen306
-Package caption Info: Unknown document class (or package),
-(caption)             standard defaults will be used.
-Package caption Info: \@makecaption = \long macro:#1#2->\@abovecaptionbreak \vskip \abovecaptionskip \@abovecaptionbreak \@@makecaption \@firstofone {#1}{#2}\@belowcaptionbreak \vskip \belowcaptionskip \@belowcaptionbreak  on input line 1175.
 )
-
-Package caption Warning: Unknown document class (or package),
-(caption)                standard defaults will be used.
-See the caption package documentation for explanation.
-
 \c@caption@flags=\count368
 \c@continuedfloat=\count369
 Package caption Info: hyperref package is loaded.
@@ -1202,7 +1198,9 @@ LaTeX Info: Redefining \microtypecontext on input line 238.
 Package microtype Info: Applying patch `item' on input line 238.
 Package microtype Info: Applying patch `toc' on input line 238.
 Package microtype Info: Applying patch `eqnum' on input line 238.
-Package microtype Info: Applying patch `footnote' on input line 238.
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 238.
+
 Package microtype Info: Applying patch `verbatim' on input line 238.
 LaTeX Info: Redefining \microtypesetup on input line 238.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1257,9 +1255,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 240.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/mfehr/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-
-[1
+) [1
 
 
 
@@ -1269,21 +1265,15 @@ No file index.toc.
 \tf@toc=\write5
 \openout5 = `index.toc'.
 
-
-
 [2
 
-]
-
-[3
+] [3
 
 ]
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 255.
-
-
 [4
 
 ]
@@ -1316,28 +1306,20 @@ Overfull \hbox (496.03476pt too wide) in paragraph at lines 296--296
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Bagemihl, Florian and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [5
 
 ]
 chapter 2.
-
-
 [6
 
 ]
 chapter 3.
-
-
 [7
 
 ]
 chapter 4.
 File: index_files/mediabag/books/w-pseudocode/skript/00-bilder/festmahl-PCL.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-pseudocode/skript/00-bilder/festmahl-PCL.pdf>
-
-
 [8
 
 ]
@@ -1351,8 +1333,6 @@ File: mt-TU-empty.cfg 2021/06/22 v1.1 microtype config. file: fonts with nonstan
 
 LaTeX Warning: Reference `imp-Pseudocode' on page 9 undefined on input line 442.
 
-
-
 [9]
 Overfull \hbox (174.10483pt too wide) in paragraph at lines 502--502
 []      \TU/lmtt/m/n/10.95 VON Datensatz[IndexA = 1] BIS Datensatz [IndexA = LängeDatensatz - 1] TUE # Anzahl Schleifendurchläufe[] 
@@ -1363,26 +1343,14 @@ Overfull \hbox (151.10983pt too wide) in paragraph at lines 503--503
 []        \TU/lmtt/m/n/10.95 VON Datensatz[IndexB = 1] BIS Datensatz [IndexB = LängeDatensatz - 1] TUE # Paarweise Vergleiche[] 
  []
 
-
-
 [10]
 File: books/w-pseudocode/skript/00-bilder/flussdiagramm-bubblesort-ms-mp.png Graphic file (type bmp)
 <books/w-pseudocode/skript/00-bilder/flussdiagramm-bubblesort-ms-mp.png>
-
-
-[11]
-
-[12]
+[11] [12]
 Overfull \vbox (18.7748pt too high) has occurred while \output is active []
 
-
-
-[13]
-
-[14]
+[13] [14]
 chapter 5.
-
-
 [15
 
 ]
@@ -1390,17 +1358,13 @@ chapter 5.
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.1 on input line 628.
 
-[16]
-
-[17]
+ignored error: Infinite glue shrinkage found in box being split [16] [17]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 5.2 on input line 706.
 
 File: books/w-pseudocode/skript/00-bilder/adam-eve-PCL-de.png Graphic file (type bmp)
 <books/w-pseudocode/skript/00-bilder/adam-eve-PCL-de.png>
-
-
 [18]
 
 LaTeX Warning: Reference `tip-Zwischenschritte' on page 19 undefined on input line 777.
@@ -1420,8 +1384,6 @@ Underfull \hbox (badness 1122) in paragraph at lines 828--830
 []\TU/lmr/m/n/10.95 Unterteilung nach Arbeitsergebnis: tabellierter Mittelwertvergleich,
  []
 
-
-
 [19]
 Underfull \hbox (badness 1005) in paragraph at lines 835--841
 \TU/lmr/m/n/10.95 Prinzip ist ein Grundmuster der computergestützten Datenverarbeitung und steht für
@@ -1432,14 +1394,10 @@ Underfull \hbox (badness 1024) in paragraph at lines 835--841
 \TU/lmr/m/n/10.95 die Daten erfasst, dann erfolgt die Datenverarbeitung, zuletzt werden die Ergebnisse
  []
 
-
-
 [20]
 Underfull \hbox (badness 1558) in paragraph at lines 907--909
 []\TU/lmr/m/n/10.95 zusammenhängende Programmanweisungen in abgegrenzten Zwischenschritten
  []
-
-
 
 [21]
 Underfull \hbox (badness 1859) in paragraph at lines 953--956
@@ -1464,15 +1422,9 @@ Overfull \hbox (55.70897pt too wide) in paragraph at lines 989--989
 []          \TU/lmtt/m/n/10.95 VON Datensatz[IndexB = 1] BIS Datensatz [IndexB = LängeDatensatz - 1] TUE[] 
  []
 
-
-
-[22]
-
-[23]
+[22] [23]
 File: books/w-pseudocode/skript/00-bilder/woman-speaker.png Graphic file (type bmp)
 <books/w-pseudocode/skript/00-bilder/woman-speaker.png>
-
-
 [24]
 File: index_files/mediabag/books/w-pseudocode/skript/00-bilder/start-stopp.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-pseudocode/skript/00-bilder/start-stopp.pdf>
@@ -1517,11 +1469,7 @@ Underfull \hbox (badness 2035) in paragraph at lines 1199--1201
 
 File: index_files/mediabag/books/w-pseudocode/skript/00-bilder/din-daten-allgemein.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-pseudocode/skript/00-bilder/din-daten-allgemein.pdf>
-
-
-[25]
-
-[26]
+[25] [26]
 
 LaTeX Warning: Reference `nte-flowcharts' on page 27 undefined on input line 1269.
 
@@ -1531,38 +1479,18 @@ File: index_files/mediabag/books/w-pseudocode/skript/00-bilder/Kartoffeln.pdf Gr
 <use index_files/mediabag/books/w-pseudocode/skript/00-bilder/Kartoffeln.pdf>
 File: books/w-pseudocode/skript/00-bilder/mermaid-in-r.png Graphic file (type bmp)
 <books/w-pseudocode/skript/00-bilder/mermaid-in-r.png>
-
-
 [27]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 1431.
 
-
-
-[28]
-
-[29]
+[28] [29]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 1431.
 
-
-
-[30]
-
-[31]
-
-[32]
-
-[33]
-
-[34]
+[30] [31] [32] [33] [34]
 File: books/w-pseudocode/aufgaben/00-bilder/musterloesung-flussdiagramm.png Graphic file (type bmp)
 <books/w-pseudocode/aufgaben/00-bilder/musterloesung-flussdiagramm.png>
-
-
-[35]
-
-[36]
+[35] [36]
 chapter 6.
 
 LaTeX Warning: Reference `tip-Hefezopf' on page 37 undefined on input line 1501.
@@ -1572,26 +1500,14 @@ Overfull \hbox (15.46773pt too wide) in paragraph at lines 1540--1540
 []\TU/lmtt/m/n/10.95 ## Eingabe: Hefemischung, Mehl, 1 Ei, 60 g Zucker, 1 Prise Salz, 50 g Butter[] 
  []
 
-
-
 [37
 
-]
-
-[38]
+] [38]
 
 LaTeX Warning: Reference `tip-Meerschweinchen' on page 39 undefined on input line 1618.
 
-
-
-[39]
-
-[40]
-
-[41]
+[39] [40] [41]
 chapter 7.
-
-
 [42
 
 ]
@@ -1601,17 +1517,11 @@ LaTeX Warning: Reference `tip-Kompetenzquiz' on page 43 undefined on input line 
 
 File: index_files/mediabag/books/w-pseudocode/skript/00-bilder/mermaid-diagram-buchstaben.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-pseudocode/skript/00-bilder/mermaid-diagram-buchstaben.pdf>
-
-
 [43
 
-]
-
-[44]
+] [44]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 1792.
-
-
 
 [45]
 
@@ -1621,19 +1531,13 @@ LaTeX Warning: Reference `wrn-SP500' on page 46 undefined on input line 1838.
 Package longtable Warning: Column widths have changed
 (longtable)                in table 8.1 on input line 1880.
 
-
-
 [46
 
-]
-
-[47]
+] [47]
 part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 1885.
-
-
 [48
 
 ]
@@ -1649,66 +1553,44 @@ Overfull \hbox (369.56229pt too wide) in paragraph at lines 1923--1923
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [49
 
-]
-
-[50]
+] [50]
 chapter 9.
-
-
 [51
 
 ]
 chapter 10.
 File: books/w-python-minimal/skript/00-bilder/python-logo-and-wordmark-cc0-tm.png Graphic file (type bmp)
 <books/w-python-minimal/skript/00-bilder/python-logo-and-wordmark-cc0-tm.png>
-
-
 [52
 
 ]
 Missing character: There is no ✏ (U+270F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=tex-text;!
-
-
-[53]
-
-[54]
+[53] [54]
 chapter 11.
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 11.1 on input line 2158.
-
-
 
 [55
 
 ]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2175.
-
-
 [56]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 11.2 on input line 2274.
-
-
 
 [57]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 11.3 on input line 2361.
 
-[58]
-
-[59]
+ignored error: Infinite glue shrinkage found in box being split [58] [59]
 chapter 12.
-
-
 [60
 
 ]
@@ -1716,11 +1598,7 @@ chapter 12.
 Package longtable Warning: Column widths have changed
 (longtable)                in table 12.1 on input line 2508.
 
-
-
-[61]
-
-[62]
+[61] [62]
 Missing character: There is no ➡ (U+27A1) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ➡ (U+27A1) in font [lmroman10-regular]:mapping=tex-text;!
@@ -1729,59 +1607,27 @@ Missing character: There is no ➡ (U+27A1) in font [lmroman10-regular]:mapping=
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ✏ (U+270F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font [lmroman10-regular]:mapping=tex-text;!
-
-
-[63]
-
-[64]
+[63] [64]
 chapter 13.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2745.
-
-
 [65
 
-]
-
-[66]
-
-[67]
-
-[68]
-
-[69]
+] [66] [67] [68] [69]
 chapter 14.
-
-
 [70
 
-]
-
-[71]
-
-[72]
+] [71] [72]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 14.1 on input line 3178.
 
-
-
 [73]
 chapter 15.
-
-
 [74
 
-]
-
-[75]
-
-[76]
-
-[77]
+] [75] [76] [77]
 chapter 16.
-
-
 [78
 
 ]
@@ -1789,8 +1635,6 @@ part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 3452.
-
-
 [79
 
 ]
@@ -1806,25 +1650,17 @@ Overfull \hbox (369.56229pt too wide) in paragraph at lines 3490--3490
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [80
 
-]
-
-[81]
+] [81]
 chapter 17.
 File: books/w-python/skript/00-bilder/python-logo-and-wordmark-cc0-tm.png Graphic file (type bmp)
 <books/w-python/skript/00-bilder/python-logo-and-wordmark-cc0-tm.png>
 File: index_files/mediabag/books/w-python/skript/einleitung_files/figure-pdf/cell-2-output-1.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-python/skript/einleitung_files/figure-pdf/cell-2-output-1.pdf>
-
-
 [82
 
-]
-
-[83]
+] [83]
 File: books/w-python/skript/00-bilder/python3-standard-type-hierarchy.png Graphic file (type bmp)
 <books/w-python/skript/00-bilder/python3-standard-type-hierarchy.png>
 Missing character: There is no М (U+041C) in font [lmroman10-regular]:mapping=tex-text;!
@@ -1835,8 +1671,6 @@ Missing character: There is no и (U+0438) in font [lmroman10-regular]:mapping=t
 Missing character: There is no м (U+043C) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no П (U+041F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no е (U+0435) in font [lmroman10-regular]:mapping=tex-text;!
-
-
 [84]
 
 LaTeX Warning: Reference `nte-attribute' on page 85 undefined on input line 3685.
@@ -1844,46 +1678,29 @@ LaTeX Warning: Reference `nte-attribute' on page 85 undefined on input line 3685
 
 LaTeX Warning: Reference `nte-methods' on page 85 undefined on input line 3685.
 
-
-
-[85]
-
-[86]
+[85] [86]
 Underfull \hbox (badness 1917) in paragraph at lines 3860--3862
 []\TU/lmr/m/n/10.95 Die Anzahl der darzustellenden Nachkommastellen kann wie folgt festgelegt werden:
  []
 
-
-
-[87] [88]
-
-[89]
+[87]
+ignored error: Infinite glue shrinkage found in box being split [88] [89]
 
 LaTeX Warning: Reference `tip-lösungausgabe' on page 90 undefined on input line 4016.
-
-
 
 [90]
 Underfull \hbox (badness 10000) in paragraph at lines 4131--4134
 []\TU/lmr/m/n/10.95 [@Arnold-2023-datentypen-und-grundlagen; @Arnold-2023-funktionen-module-dateien;
  []
 
-
-
 [91]
 chapter 18.
-
-
 [92
 
-]
-
-[93]
+] [93]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 18.1 on input line 4315.
-
-
 
 [94]
 
@@ -1897,32 +1714,18 @@ Missing character: There is no 𝟧 (U+1D7E7) in font [lmroman10-regular]:mappin
 
 LaTeX Warning: Reference `tip-lösungzahlen' on page 95 undefined on input line 4373.
 
-
-
-[95]
-
-[96]
-
-[97]
-
-[98]
+[95] [96] [97] [98]
 
 LaTeX Warning: Reference `wrn-bitwise' on page 99 undefined on input line 4573.
-
-
 
 [99]
 
 LaTeX Warning: Reference `tip-musterlösung-bool' on page 100 undefined on input line 4641.
 
-
-
 [100]
 Overfull \hbox (64.8786pt too wide) in paragraph at lines 4732--4732
 []\TU/lmtt/m/n/10.95 Das Steuerzeichen \ ermöglicht die gleichen "Anführungszeichen" in der Ausgabe von print.[] 
  []
-
-
 
 [101]
 
@@ -1933,17 +1736,9 @@ Overfull \hbox (95.95021pt too wide) in paragraph at lines 4820--4820
 []\TU/lmtt/m/n/10.95 tick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tacktick tack[] 
  []
 
-
-
-[102]
-
-[103]
-
-[104]
+[102] [103] [104]
 
 LaTeX Warning: Reference `tip-zuweisung' on page 105 undefined on input line 4973.
-
-
 
 [105]
 
@@ -1952,12 +1747,8 @@ LaTeX Warning: Reference `tip-lösungvariablen' on page 106 undefined on input l
 
 LaTeX Warning: Reference `wrn-schlüsselwörter' on page 106 undefined on input line 5037.
 
-
-
 [106]
 Missing character: There is no 𝗍 (U+1D5CD) in font [lmroman10-regular]:mapping=tex-text;!
-
-
 [107]
 
 LaTeX Warning: Reference `tip-lösungvariablen' on page 108 undefined on input line 5108.
@@ -1967,11 +1758,7 @@ Overfull \hbox (72.95522pt too wide) in paragraph at lines 5169--5169
 []\TU/lmtt/m/n/10.95 Die berechnete Position des Fahrzeugs zur Zeit t = 10 Minuten beträgt 36.33 Kilometer.[] 
  []
 
-
-
-[108]
-
-[109]
+[108] [109]
 chapter 19.
 
 LaTeX Warning: Reference `tip-dokumentation' on page 110 undefined on input line 5198.
@@ -1982,13 +1769,9 @@ File: books/w-python/skript/00-bilder/deprecated-in-python.png Graphic file (typ
 <books/w-python/skript/00-bilder/deprecated-in-python.png>
 File: books/w-python/skript/00-bilder/python-documentation-version.png Graphic file (type bmp)
 <books/w-python/skript/00-bilder/python-documentation-version.png>
-
-
 [110
 
-]
-
-[111]
+] [111]
 
 LaTeX Warning: Reference `nte-methods' on page 112 undefined on input line 5381.
 
@@ -2015,11 +1798,7 @@ Overfull \hbox (2636.89717pt too wide) in paragraph at lines 5461--5461
 []\TU/lmtt/m/n/10.95 [[]capitalize[], []casefold[], []center[], []count[], []encode[], []endswith[], []expandtabs[], []find[], []format[], []format_map[], []index[], []isalnum[], []isalpha[], []isascii[], []isdecimal[], []isdigit[], []isidentifier[], []islower[], []isnumeric[], []isprintable[], []isspace[], []istitle[], []isupper[], []join[], []ljust[], []lower[], []lstrip[], []maketrans[], []partition[], []removeprefix[], []removesuffix[], []replace[], []rfind[], []rindex[], []rjust[], []rpartition[], []rsplit[], []rstrip[], []split[], []splitlines[], []startswith[], []strip[], []swapcase[], []title[], []translate[], []upper[], []zfill[]][] 
  []
 
-
-
-[112]
-
-[113]
+[112] [113]
 
 LaTeX Warning: Reference `tip-standardwerte' on page 114 undefined on input line 5497.
 
@@ -2033,8 +1812,6 @@ Overfull \hbox (118.9452pt too wide) in paragraph at lines 5513--5513
 []              \TU/lmtt/m/n/10.95 skiprows=0, usecols=None, unpack=False, ndmin=0, encoding=None, max_rows=None, /[] 
  []
 
-
-
 [114]
 
 LaTeX Warning: Reference `tip-sonderzeichen' on page 115 undefined on input line 5559.
@@ -2044,75 +1821,31 @@ Overfull \hbox (90.20146pt too wide) in paragraph at lines 5600--5600
 []\TU/lmtt/m/n/10.95 glob.glob(pathname, *, root_dir=None, dir_fd=None, recursive=False, include_hidden=False)[] 
  []
 
-
-
-[115]
-
-[116]
-
-[117]
+[115] [116] [117]
 chapter 20.
-
-
 [118
 
-]
-
-[119]
-
-[120]
+] [119] [120]
 
 LaTeX Warning: Reference `wrn-endlosschleife' on page 121 undefined on input line 5920.
 
-
-
-[121]
-
-[122]
-
-[123]
-
-[124]
-
-[125]
-
-[126]
-
-[127]
+[121] [122] [123] [124] [125] [126] [127]
 File: books/w-python/skript/00-bilder/European_roulette_cc-by-sa.png Graphic file (type bmp)
 <books/w-python/skript/00-bilder/European_roulette_cc-by-sa.png>
-
-
-[128]
-
-[129]
+[128] [129]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 6445.
 
-
-
-[130]
-
-[131]
+[130] [131]
 chapter 21.
-
-
 [132
 
-]
-
-[133]
+] [133]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 21.1 on input line 6603.
 
-
-
-[134]
-
-[135]
-
-[136]
+[134] [135] [136]
 Overfull \hbox (59.12985pt too wide) in paragraph at lines 6791--6791
 []\TU/lmtt/m/n/10.95 Auch liste1 hat sich durch die Zuweisung in liste2 verändert: [[]ABC[], []xy[], True, []abc[]][] 
  []
@@ -2127,8 +1860,6 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 6822--6822
 []\TU/lmtt/m/n/10.95 liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, []xy[], True, []abc[]][] 
  []
 
-
-
 [137]
 Overfull \hbox (7.39111pt too wide) in paragraph at lines 6840--6840
 []\TU/lmtt/m/n/10.95 liste1 bleibt durch die Zuweisung in liste2 unverändert: [1, []xy[], True, []abc[]][] 
@@ -2137,32 +1868,16 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 6840--6840
 
 LaTeX Warning: Reference `wrn-wertgleichheit' on page 138 undefined on input line 6873.
 
-
-
 [138]
 
 LaTeX Warning: Reference `tip-listen' on page 139 undefined on input line 6944.
 
-
-
-[139]
-
-[140]
-
-[141]
-
-[142]
-
-[143]
+[139] [140] [141] [142] [143]
 Overfull \hbox (1.64236pt too wide) in paragraph at lines 7197--7197
 []\TU/lmtt/m/n/10.95 Menge a | b: {[]h[], []s[], []u[], []y[], []t[], [] [], []n[], []e[], []i[], []P[], []r[], []o[], []p[]}[] 
  []
 
-
-
-[144]
-
-[145]
+[144] [145]
 Overfull \hbox (10.63155pt too wide) in paragraph at lines 7345--7346
 []|\TU/lmr/m/n/10.95 Elemente 
  []
@@ -2177,56 +1892,24 @@ Overfull \hbox (30.65898pt too wide) in paragraph at lines 7347--7348
 []|\TU/lmr/m/n/10.95 Zuordnungstabelle 
  []
 
-[146]
-
-[147]
+ignored error: Infinite glue shrinkage found in box being split [146] [147]
 Package hyperref Info: bookmark level for unknown codelisting defaults to 0 on input line 7430.
 
 LaTeX Warning: Reference `lst-quadratzahlen' on page 148 undefined on input line 7465.
-
-
 
 [148]
 
 LaTeX Warning: Reference `tip-musterlösungsammeltypen' on page 149 undefined on input line 7501.
 
-
-
-[149]
-
-[150]
-
-[151]
+[149] [150] [151]
 chapter 22.
-
-
 [152
 
-]
-
-[153]
-
-[154]
-
-[155]
-
-[156]
-
-[157]
-
-[158]
+] [153] [154] [155] [156] [157] [158]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 8160.
 
-
-
-[159]
-
-[160]
-
-[161]
-
-[162]
+[159] [160] [161] [162]
 chapter 23.
 
 Package longtable Warning: Column widths have changed
@@ -2239,8 +1922,6 @@ LaTeX Warning: Reference `tip-wd-Python' on page 163 undefined on input line 820
 Underfull \hbox (badness 2351) in paragraph at lines 8211--8216
 []\TU/lmr/m/n/10.95 Der Pfad des aktuellen Arbeitsverzeichnisses kann mit dem Modul os mittels
  []
-
-
 
 [163
 
@@ -2266,15 +1947,9 @@ Overfull \hbox (182.18144pt too wide) in paragraph at lines 8395--8395
 []\TU/lmtt/m/n/10.95 [[]buffer[], []closed[], []encoding[], []errors[], []line_buffering[], []mode[], []name[], []newlines[], []write_through[]][] 
  []
 
-
-
-[164]
-
-[165]
+[164] [165]
 
 LaTeX Warning: Reference `tip-rückfalloption' on page 166 undefined on input line 8421.
-
-
 
 [166]
 
@@ -2287,15 +1962,9 @@ File: books/w-python/skript/00-bilder/indexposition-0.png Graphic file (type bmp
 <books/w-python/skript/00-bilder/indexposition-0.png>
 File: books/w-python/skript/00-bilder/indexposition-3.png Graphic file (type bmp)
 <books/w-python/skript/00-bilder/indexposition-3.png>
-
-
-[167]
-
-[168]
+[167] [168]
 
 LaTeX Warning: Reference `tip-Musterlösung-Zeigerposition' on page 169 undefined on input line 8578.
-
-
 
 [169]
 
@@ -2304,24 +1973,12 @@ LaTeX Warning: Reference `wrn-Schreiboperationen' on page 170 undefined on input
 
 LaTeX Warning: Reference `tip-Musterlösung-Augenzahlvergleich' on page 170 undefined on input line 8689.
 
-
-
-[170]
-
-[171]
+[170] [171]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 23.3 on input line 8754.
 
-
-
-[172]
-
-[173]
-
-[174]
-
-[175]
+[172] [173] [174] [175]
 Overfull \hbox (1829.74448pt too wide) in paragraph at lines 8987--8987
 []\TU/lmtt/m/n/10.95 [[]Belgien[], []Bulgarien[], []Tschechien[], []Daenemark[], []Deutschland einschliesslich ehemalige DDR[], []Estland[], []Irland[], []Griechenland[], []Spanien[], []Frankreich[], []Kroatien[], []Italien[], []Zypern[], []Lettland[], []Litauen[], []Luxemburg[], []Uganda[], []Ungarn[], []Malta[], []Niederlande[], []Oesterreich[], []Polen[], []Portugal[], []Rumaenien[], []Slowenien[], []Slowakei[], []Finnland[], []Schweden[], []Vereinigtes Koenigreich[]][] 
  []
@@ -2336,11 +1993,7 @@ Overfull \hbox (3.97023pt too wide) in paragraph at lines 9055--9055
 []\TU/lmtt/m/n/10.95 Maximum: Deutschland einschliesslich ehemalige DDR mit 82940663 Einwohnern[] 
  []
 
-
-
-[176]
-
-[177]
+[176] [177]
 Overfull \hbox (39.66083pt too wide) in paragraph at lines 9068--9074
 \TU/lmr/m/n/10.95 Ein Dateiobjekt kann auch direkt als Liste eingelesen werden. Die Methode \TU/lmtt/m/n/10.95 dateiobjekt.readlines()
  []
@@ -2355,33 +2008,23 @@ Overfull \hbox (3611.8566pt too wide) in paragraph at lines 9098--9098
 []\TU/lmtt/m/n/10.95 [[]GEO,Value\n[], []Belgien,11467923\n[], []Bulgarien,7000039\n[], []Tschechien,10528984\n[], []Daenemark,5799763\n[], []Deutschland einschliesslich ehemalige DDR,82940663\n[], []Estland,1324820\n[], []Irland,4904240\n[], []Griechenland,10722287\n[], []Spanien,46934632\n[], []Frankreich,67028048\n[], []Kroatien,4076246\n[], []Italien,61068437\n[], []Zypern,875898\n[], []Lettland,1919968\n[], []Litauen,2794184\n[], []Luxemburg,612179\n[], []Uganda,-1\n[], []Ungarn,9772756\n[], []Malta,493559\n[], []Niederlande,17423013\n[], []Oesterreich,8842000\n[], []Polen,37972812\n[], []Portugal,10276617\n[], []Rumaenien,19405156\n[], []Slowenien,2080908\n[], []Slowakei,5450421\n[], []Finnland,5512119\n[], []Schweden,10243000\n[], []Vereinigtes Koenigreich,66647112\n[]][] 
  []
 
-
-
 [178]
 Overfull \hbox (3266.93167pt too wide) in paragraph at lines 9166--9166
 []\TU/lmtt/m/n/10.95 [[]GEO,Value[], []Belgien,11467923[], []Bulgarien,7000039[], []Tschechien,10528984[], []Daenemark,5799763[], []Deutschland einschliesslich ehemalige DDR,82940663[], []Estland,1324820[], []Irland,4904240[], []Griechenland,10722287[], []Spanien,46934632[], []Frankreich,67028048[], []Kroatien,4076246[], []Italien,61068437[], []Zypern,875898[], []Lettland,1919968[], []Litauen,2794184[], []Luxemburg,612179[], []Uganda,-1[], []Ungarn,9772756[], []Malta,493559[], []Niederlande,17423013[], []Oesterreich,8842000[], []Polen,37972812[], []Portugal,10276617[], []Rumaenien,19405156[], []Slowenien,2080908[], []Slowakei,5450421[], []Finnland,5512119[], []Schweden,10243000[], []Vereinigtes Koenigreich,66647112[]][] 
  []
 
-
-
-[179]
-
-[180]
+[179] [180]
 chapter 24.
 
 LaTeX Warning: Reference `imp-module-und-pakete' on page 181 undefined on input line 9231.
 
 File: books/w-python/skript/module-und-pakete-importieren_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-python/skript/module-und-pakete-importieren_files/figure-pdf/cell-3-output-1.png>
-
-
 [181
 
 ]
 
 LaTeX Warning: Reference `wrn-fromimport' on page 182 undefined on input line 9308.
-
-
 
 [182]
 File: books/w-python/skript/module-und-pakete-importieren_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
@@ -2390,14 +2033,8 @@ File: books/w-python/skript/module-und-pakete-importieren_files/figure-pdf/cell-
 Package longtable Warning: Column widths have changed
 (longtable)                in table 24.1 on input line 9378.
 
-
-
-[183]
-
-[184]
+[183] [184]
 chapter 25.
-
-
 [185
 
 ]
@@ -2405,8 +2042,6 @@ part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 9426.
-
-
 [186
 
 ]
@@ -2427,32 +2062,20 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 9466--9466
 [] \TU/lmtt/m/n/10.95 url={https://github.com/bausteine-der-datenanalyse/w-python-numpy-grundlagen}}[] 
  []
 
-
-
 [187
 
-]
+] [188
 
-[188
-
-]
-
-[189]
+] [189]
 chapter 26.
 File: index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/data_memory_list.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/data_memory_list.pdf>
 File: index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/data_memory_numpy.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/data_memory_numpy.pdf>
-
-
 [190
 
-]
-
-[191]
+] [191]
 chapter 27.
-
-
 [192
 
 ]
@@ -2460,126 +2083,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 9771--9777
 \TU/lmtt/m/n/10.95 np.linspace(Start,Stopp,#Anzahl Werte) \TU/lmr/m/n/10.95 und \TU/lmtt/m/n/10.95 np.arrange(Start,Stopp,Abstand
  []
 
-
-
-[193]
-
-[194]
-
-[195]
+[193] [194] [195]
 chapter 28.
-
-
 [196
 
-]
-
-[197]
+] [197]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 28.1 on input line 10052.
 
-
-
-[198]
-
-[199]
+[198] [199]
 chapter 29.
-
-
 [200
 
-]
-
-[201]
-
-[202]
-
-[203]
-
-[204]
+] [201] [202] [203] [204]
 chapter 30.
 File: books/w-python-numpy/skript/../skript/00-bilder/slicing.png Graphic file (type bmp)
 <books/w-python-numpy/skript/../skript/00-bilder/slicing.png>
-
-
 [205
 
-]
-
-[206]
-
-[207]
+] [206] [207]
 File: index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/exercise_slicing.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/exercise_slicing.pdf>
-
-
-[208]
-
-[209]
+[208] [209]
 chapter 31.
-
-
 [210
 
-]
-
-[211]
-
-[212]
-
-[213]
-
-[214]
+] [211] [212] [213] [214]
 chapter 32.
 File: books/w-python-numpy/skript/array_read_n_write_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_read_n_write_files/figure-pdf/cell-5-output-1.png>
-
-
 [215
 
-]
-
-[216]
+] [216]
 File: books/w-python-numpy/skript/array_read_n_write_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_read_n_write_files/figure-pdf/cell-7-output-1.png>
-
-
-[217]
-
-[218]
+[217] [218]
 chapter 33.
 File: index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/pixel_mona_lisa_split.pdf Graphic file (type pdf)
 <use index_files/mediabag/books/w-python-numpy/skript/../skript/00-bilder/pixel_mona_lisa_split.pdf>
-
-
 [219
 
-]
-
-[220]
+] [220]
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_images_files/figure-pdf/cell-5-output-1.png>
-
-
 [221]
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_images_files/figure-pdf/cell-6-output-1.png>
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_images_files/figure-pdf/cell-7-output-1.png>
-
-
-[222]
-
-[223]
+[222] [223]
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-9-output-1.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_images_files/figure-pdf/cell-9-output-1.png>
 
 Overfull \hbox (10.9444pt too wide) in paragraph at lines 11292--11293
 [][] 
  []
-
-
 
 [224]
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-10-output-1.png Graphic file (type bmp)
@@ -2591,24 +2150,16 @@ Overfull \hbox (10.95438pt too wide) in paragraph at lines 11332--11333
 
 File: books/w-python-numpy/skript/array_images_files/figure-pdf/cell-11-output-2.png Graphic file (type bmp)
 <books/w-python-numpy/skript/array_images_files/figure-pdf/cell-11-output-2.png>
-
-
-[225]
-
-[226]
+[225] [226]
 chapter 34.
 
 Underfull \hbox (badness 2726) in paragraph at lines 11433--11435
 \TU/lmr/m/n/10.95 Was ist der Unterschied zwischenden den Funktionen \TU/lmtt/m/n/10.95 np.ndim()\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 np.shape() \TU/lmr/m/n/10.95 und
  []
 
-
-
 [227
 
-]
-
-[228]
+] [228]
 Overfull \hbox (32.71397pt too wide) in paragraph at lines 11747--11747
 []\TU/lmtt/m/n/10.95 Originales Array: [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20][] 
  []
@@ -2618,44 +2169,12 @@ Overfull \hbox (44.21147pt too wide) in paragraph at lines 11765--11765
 []\TU/lmtt/m/n/10.95 Abgeflachtes Array: [ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20][] 
  []
 
-
-
-[229]
-
-[230]
-
-[231]
-
-[232]
-
-[233]
-
-[234]
+[229] [230] [231] [232] [233] [234]
 chapter 35.
-
-
 [235
 
-]
-
-[236]
-
-[237]
-
-[238]
-
-[239]
-
-[240]
-
-[241]
-
-[242]
-
-[243]
+] [236] [237] [238] [239] [240] [241] [242] [243]
 chapter 36.
-
-
 [244
 
 ]
@@ -2663,8 +2182,6 @@ part V.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 12342.
-
-
 [245
 
 ]
@@ -2685,28 +2202,18 @@ Overfull \hbox (369.56229pt too wide) in paragraph at lines 12380--12380
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [246
 
-]
-
-[247
+] [247
 
 ]
 chapter 37.
-
-
 [248
 
-]
-
-[249]
+] [249]
 chapter 38.
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-2-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-2-output-1.png>
-
-
 [250
 
 ]
@@ -2716,18 +2223,12 @@ Underfull \hbox (badness 7099) in paragraph at lines 12533--12535
 
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-3-output-1.png>
-
-
 [251]
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-4-output-1.png>
-
-
 [252]
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-5-output-1.png>
-
-
 [253]
 Overfull \hbox (990.42711pt too wide) in paragraph at lines 12606--12606
 []\TU/lmtt/m/n/10.95 /var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_80633/2728911591.py:2: MatplotlibDeprecationWarning: The []labels[] parameter of boxplot() has been renamed []tick_labels[] since Matplotlib 3.9; support for the old name will be dropped in 3.11.[] 
@@ -2735,34 +2236,22 @@ Overfull \hbox (990.42711pt too wide) in paragraph at lines 12606--12606
 
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-6-output-2.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-6-output-2.png>
-
-
 [254]
 File: books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/basic_plot_types_files/figure-pdf/cell-7-output-1.png>
-
-
-[255]
-
-[256]
+[255] [256]
 chapter 39.
 File: books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-2-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-2-output-1.png>
-
-
 [257
 
 ]
 File: books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-3-output-1.png>
-
-
 [258]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 39.1 on input line 12712.
-
-
 
 [259]
 
@@ -2771,98 +2260,64 @@ Package longtable Warning: Column widths have changed
 
 File: books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-4-output-1.png>
-
-
 [260]
 File: books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-5-output-1.png>
-
-
 [261]
 File: books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/adapting_plots_files/figure-pdf/cell-6-output-1.png>
-
-
 [262]
 chapter 40.
 File: books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-2-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-2-output-1.png>
-
-
 [263
 
 ]
 File: books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-3-output-1.png>
-
-
 [264]
 File: books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/advanced_techniques_files/figure-pdf/cell-4-output-1.png>
-
-
-[265]
-
-[266]
+[265] [266]
 chapter 41.
 Missing character: There is no ❌ (U+274C) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-2-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-2-output-1.png>
-
-
 [267
 
 ]
 Missing character: There is no ✅ (U+2705) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-3-output-1.png>
-
-
 [268]
 Missing character: There is no ❌ (U+274C) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-4-output-1.png>
-
-
 [269]
 Missing character: There is no ✅ (U+2705) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-5-output-1.png>
-
-
 [270]
 Missing character: There is no ❌ (U+274C) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-6-output-1.png>
-
-
 [271]
 Missing character: There is no ✅ (U+2705) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-7-output-1.png>
-
-
 [272]
 Missing character: There is no ❌ (U+274C) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-8-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-8-output-1.png>
-
-
 [273]
 Missing character: There is no ✅ (U+2705) in font [lmsans10-bold]:mapping=tex-text;!
 File: books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-9-output-1.png Graphic file (type bmp)
 <books/w-python-matplotlib/skript/scientific_plotting_files/figure-pdf/cell-9-output-1.png>
-
-
-[274]
-
-[275]
+[274] [275]
 part VI.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 13007.
-
-
 [276
 
 ]
@@ -2878,51 +2333,29 @@ Overfull \hbox (369.56229pt too wide) in paragraph at lines 13045--13045
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [277
 
-]
-
-[278]
+] [278]
 chapter 42.
-
-
 [279
 
-]
-
-[280]
-
-[281]
+] [280] [281]
 
 LaTeX Warning: Reference `tip-dtype' on page 282 undefined on input line 13303.
 
-
-
-[282]
-
-[283]
+[282] [283]
 Underfull \hbox (badness 1552) in paragraph at lines 13409--13413
 \TU/lmr/m/n/10.95 DataFrame angelegt und anschließend über die Attribute \TU/lmtt/m/n/10.95 .index \TU/lmr/m/n/10.95 und \TU/lmtt/m/n/10.95 .columns \TU/lmr/m/n/10.95 die
  []
-
-
 
 [284]
 
 LaTeX Warning: Reference `tip-index' on page 285 undefined on input line 13495.
 
-
-
-[285]
-
-[286]
+[285] [286]
 Underfull \hbox (badness 2617) in paragraph at lines 13599--13605
 \TU/lmtt/m/n/10.95 index = {"alt1": "neu1", "alt2": "neu2"}, inplace = True) \TU/lmr/m/n/10.95 können Spalten- und
  []
-
-
 
 [287]
 Underfull \hbox (badness 10000) in paragraph at lines 13651--13654
@@ -2932,90 +2365,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 13651--13654
 
 LaTeX Warning: Reference `tip-musterloesungdataframe' on page 288 undefined on input line 13656.
 
-
-
 [288]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 42.1 on input line 13745.
 
-
-
-[289]
-
-[290]
-
-[291]
+[289] [290] [291]
 File: books/w-pandas/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
 <books/w-pandas/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png>
-
-
 [292]
 
 LaTeX Warning: Reference `wrn-chainedassignment' on page 293 undefined on input line 13995.
-
-
 
 [293]
 
 LaTeX Warning: Reference `wrn-inklusiveslicing' on page 294 undefined on input line 14073.
 
-
-
-[294]
-
-[295]
+[294] [295]
 
 LaTeX Warning: Reference `wrn-exklusiveslicing' on page 296 undefined on input line 14177.
 
-
-
-[296]
-
-[297]
+[296] [297]
 
 LaTeX Warning: Reference `lst-readfile' on page 298 undefined on input line 14273.
 
 
 LaTeX Warning: Reference `tip-dose' on page 298 undefined on input line 14280.
 
-
-
-[298]
-
-[299]
-
-[300]
+[298] [299] [300]
 Underfull \hbox (badness 10000) in paragraph at lines 14482--14494
 []\TU/lmtt/m/n/10.95 pd.DataFrame.drop(labels = None, axis = 0, index = None, columns = None,
  []
-
-
 
 [301]
 
 LaTeX Warning: Reference `tip-mergeanddelete' on page 302 undefined on input line 14532.
 
-
-
-[302]
-
-[303]
+[302] [303]
 Underfull \hbox (badness 10000) in paragraph at lines 14636--14638
 [][]$[][][][][] [] [] [] [][][][][][] [] [][][][][][] [] [][][] [] [][][][] [] [][][][] [] [][][][][] [] [][][][][][][] [] [][][][]$[][] [][]$[][][][][] [] [] [] [][][][][][] [] [][][][][][] [] [][][] [] [][][][] []
  []
 
-
-
 [304]
 chapter 43.
-
-
 [305
 
-]
-
-[306]
+] [306]
 Underfull \hbox (badness 10000) in paragraph at lines 14737--14743
 \TU/lmr/m/n/10.95 Die Methoden \TU/lmtt/m/n/10.95 pd.DataFrame.add()\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pd.DataFrame.sub()\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pd.DataFrame.mul()\TU/lmr/m/n/10.95 ,
  []
@@ -3025,31 +2420,17 @@ Overfull \hbox (30.45622pt too wide) in paragraph at lines 14737--14743
 \TU/lmtt/m/n/10.95 pd.DataFrame.div()\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pd.DataFrame.floordiv()\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 pd.DataFrame.mod() \TU/lmr/m/n/10.95 und \TU/lmtt/m/n/10.95 pd.DataFrame.pow()
  []
 
-
-
-[307]
-
-[308]
+[307] [308]
 
 LaTeX Warning: Reference `nte-isin' on page 309 undefined on input line 14889.
 
-
-
-[309]
-
-[310]
-
-[311]
-
-[312]
+[309] [310] [311] [312]
 
 LaTeX Warning: Reference `tip-documentation' on page 313 undefined on input line 15065.
 
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 43.1 on input line 15107.
-
-
 
 [313]
 Underfull \hbox (badness 1377) in paragraph at lines 15149--15156
@@ -3061,57 +2442,29 @@ Underfull \hbox (badness 1038) in paragraph at lines 15149--15156
 \TU/lmr/m/n/10.95 auszuführen. \TU/lmtt/m/n/10.95 DataFrame.agg() \TU/lmr/m/n/10.95 (oder auch \TU/lmtt/m/n/10.95 DataFrame.aggregate()\TU/lmr/m/n/10.95 ) aggregiert einen
  []
 
-
-
-[314]
-
-[315]
-
-[316]
-
-[317]
+[314] [315] [316] [317]
 
 LaTeX Warning: Reference `tip-loesungoperationen' on page 318 undefined on input line 15368.
 
-
-
-[318]
-
-[319]
+[318] [319]
 Overfull \hbox (13.85161pt too wide) in paragraph at lines 15491--15495
 []\TU/lmtt/m/n/10.95 pd.DataFrame.replace(to_replace, value, *, inplace = False) \TU/lmr/m/n/10.95 ersetzt \TU/lmtt/m/n/10.95 to_replace
  []
-
-
 
 [320]
 
 LaTeX Warning: Reference `tip-loesung-suchenersetzen' on page 321 undefined on input line 15554.
 
-
-
-[321]
-
-[322]
+[321] [322]
 Underfull \hbox (badness 1661) in paragraph at lines 15673--15675
 []\TU/lmr/m/n/10.95 Wird mit dem Argument \TU/lmtt/m/n/10.95 axis = 1 \TU/lmr/m/n/10.95 entlang der zweiten Dimension sortiert, werden
  []
 
-
-
-[323]
-
-[324]
+[323] [324]
 
 LaTeX Warning: Reference `tip-musterloesungsortieren' on page 325 undefined on input line 15736.
 
-
-
-[325]
-
-[326]
-
-[327]
+[325] [326] [327]
 Overfull \hbox (5.01173pt too wide) in alignment at lines 15945--15956
  [] [] [] [] [] [] [] [] [] [] [] [] [] 
  []
@@ -3124,46 +2477,30 @@ Package longtable Warning: Column widths have changed
 Package longtable Warning: Column widths have changed
 (longtable)                in table 43.3 on input line 15980.
 
-
-
 [328]
 
 LaTeX Warning: Reference `tip-loesunggroupby' on page 329 undefined on input line 16001.
 
-
-
-[329]
-
-[330]
+[329] [330]
 chapter 44.
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-3-output-1.png>
-
-
 [331
 
 ]
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-4-output-1.png>
-
-
 [332]
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-5-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-5-output-1.png>
-
-
 [333]
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-6-output-1.png>
-
-
 [334]
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-7-output-1.png>
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-8-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-8-output-1.png>
-
-
 [335]
 Overfull \hbox (21.05899pt too wide) in paragraph at lines 16226--16229
 []\TU/lmr/m/n/10.95 Um die überdeckte Beschriftung der x-Achse zu beheben, muss auf den Befehl \TU/lmtt/m/n/10.95 plt.tight_layout()
@@ -3171,94 +2508,38 @@ Overfull \hbox (21.05899pt too wide) in paragraph at lines 16226--16229
 
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-9-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-9-output-1.png>
-
-
 [336]
 File: books/w-pandas/skript/plotting_files/figure-pdf/cell-10-output-1.png Graphic file (type bmp)
 <books/w-pandas/skript/plotting_files/figure-pdf/cell-10-output-1.png>
-
-
-[337]
-
-[338]
+[337] [338]
 chapter 45.
-
-
 [339
 
-]
-
-[340]
+] [340]
 
 LaTeX Warning: Reference `wrn-string' on page 341 undefined on input line 16405.
 
-
-
-[341]
-
-[342]
+[341] [342]
 chapter 46.
-
-
 [343
 
-]
-
-[344]
+] [344]
 
 LaTeX Warning: Reference `nte-zeitzonen' on page 345 undefined on input line 16618.
 
-
-
-[345]
-
-[346]
-
-[347]
-
-[348]
-
-[349]
-
-[350]
-
-[351]
-
-[352]
-
-[353]
-
-[354]
-
-[355]
-
-[356]
-
-[357]
-
-[358]
-
-[359]
-
-[360]
+[345] [346] [347] [348] [349] [350] [351] [352] [353] [354] [355] [356] [357] [358] [359] [360]
 
 LaTeX Warning: Reference `wrn-datetimetimezones' on page 361 undefined on input line 17265.
-
-
 
 [361]
 Underfull \hbox (badness 1062) in paragraph at lines 17363--17375
 \TU/lmr/m/n/10.95 1582 erweiterten Gregorianische Kalender, den [][]proleptischen Gregorianischen Kalender[][].
  []
 
-
-
 [362]
 Underfull \hbox (badness 3838) in paragraph at lines 17396--17402
 []\TU/lmr/m/n/10.95 Zahlen und eine Zeiteinheit \TU/lmtt/m/n/10.95 pd.to_datetime(1, unit = None) \TU/lmr/m/n/10.95 (Standard sind
  []
-
-
 
 [363]
 Overfull \hbox (82.12485pt too wide) in paragraph at lines 17514--17514
@@ -3268,18 +2549,12 @@ Overfull \hbox (82.12485pt too wide) in paragraph at lines 17514--17514
 
 LaTeX Warning: Reference `wrn-daterange' on page 364 undefined on input line 17533.
 
-
-
 [364]
 Overfull \hbox (202.84857pt too wide) in paragraph at lines 17578--17578
 []\TU/lmtt/m/n/10.95 Units []M[], []Y[], and []y[] are no longer supported, as they do not represent unambiguous timedelta values durations.[] 
  []
 
-
-
-[365]
-
-[366]
+[365] [366]
 
 LaTeX Warning: Reference `nte-attributeundmethoden' on page 367 undefined on input line 17668.
 
@@ -3293,11 +2568,7 @@ Overfull \hbox (2895.59087pt too wide) in paragraph at lines 17695--17695
 []\TU/lmtt/m/n/10.95 [[]_from_dt64[], []_from_value_and_reso[], []_round[], []as_unit[], []astimezone[], []ceil[], []combine[], []ctime[], []date[], []day_name[], []dst[], []floor[], []fromisocalendar[], []fromisoformat[], []fromordinal[], []fromtimestamp[], []isocalendar[], []isoformat[], []isoweekday[], []month_name[], []normalize[], []now[], []replace[], []round[], []strftime[], []strptime[], []time[], []timestamp[], []timetuple[], []timetz[], []to_datetime64[], []to_julian_date[], []to_numpy[], []to_period[], []to_pydatetime[], []today[], []toordinal[], []tz_convert[], []tz_localize[], []tzname[], []utcfromtimestamp[], []utcnow[], []utcoffset[], []utctimetuple[], []weekday[]][] 
  []
 
-
-
-[367]
-
-[368]
+[367] [368]
 
 LaTeX Warning: Reference `tip-musterlösungaufgaben' on page 369 undefined on input line 17780.
 
@@ -3316,11 +2587,7 @@ Overfull \hbox (32.71397pt too wide) in paragraph at lines 17828--17828
 []       \TU/lmtt/m/n/10.95 1952, 1956, 1960, 1964, 1968, 1972, 1976, 1980, 1984, 1988, 1992, 1996],[] 
  []
 
-
-
-[369]
-
-[370]
+[369] [370]
 chapter 47.
 
 Package longtable Warning: Column widths have changed
@@ -3328,26 +2595,12 @@ Package longtable Warning: Column widths have changed
 
 File: books/w-pandas/skript/00-bilder/lter_penguins_allison_horst_CC0.png Graphic file (type bmp)
 <books/w-pandas/skript/00-bilder/lter_penguins_allison_horst_CC0.png>
-
-
 [371
 
-]
-
-[372]
+] [372]
 File: books/w-pandas/skript/00-bilder/culmen_depth_allison_horst_CC0.png Graphic file (type bmp)
 <books/w-pandas/skript/00-bilder/culmen_depth_allison_horst_CC0.png>
-
-
-[373]
-
-[374]
-
-[375]
-
-[376]
-
-[377]
+[373] [374] [375] [376] [377]
 
 LaTeX Warning: Reference `tip-musterloesungzeitreihe' on page 378 undefined on input line 18239.
 
@@ -3363,21 +2616,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 18293--18298
 
 File: books/w-pandas/skript/dateien_files/figure-pdf/cell-11-output-2.png Graphic file (type bmp)
 <books/w-pandas/skript/dateien_files/figure-pdf/cell-11-output-2.png>
-
-
-[378]
-
-[379]
-
-[380]
-
-[381]
+[378] [379] [380] [381]
 part VII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 18358.
-
-
 [382
 
 ]
@@ -3393,91 +2636,51 @@ Overfull \hbox (248.83856pt too wide) in paragraph at lines 18395--18395
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Baitsch, Matthias and Fehr, Marc and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [383
 
-]
-
-[384
+] [384
 
 ]
 chapter 48.
-
-
 [385
 
 ]
 Missing character: There is no 𝛥 (U+1D6E5) in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no 𝛥 (U+1D6E5) in font [lmsans10-regular]:mapping=tex-text;!
-
-
 [386]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-7-output-1.png>
-
-
-[387]
-
-[388]
+[387] [388]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-10-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-10-output-1.png>
-
-
 [389]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-11-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-11-output-1.png>
-
-
 [390]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-15-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-15-output-1.png>
-
-
-[391]
-
-[392]
+[391] [392]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-18-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-18-output-1.png>
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-19-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-19-output-1.png>
-
-
-[393]
-
-[394]
+[393] [394]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-21-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-21-output-1.png>
-
-
 [395]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-23-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-23-output-1.png>
-
-
-[396]
-
-[397]
+[396] [397]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-28-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-28-output-1.png>
-
-
 [398]
 File: books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-31-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_integrale_files/figure-pdf/cell-31-output-1.png>
-
-
-[399]
-
-[400]
+[399] [400]
 chapter 49.
-
-
 [401
 
-]
-
-[402]
+] [402]
 Overfull \hbox (271.83353pt too wide) in paragraph at lines 19165--19165
 []\TU/lmtt/m/n/10.95 /var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_80918/2784086881.py:2: SyntaxWarning: invalid escape sequence []\m[][] 
  []
@@ -3509,11 +2712,7 @@ Overfull \hbox (10.95493pt too wide) in paragraph at lines 19175--19176
 [][] 
  []
 
-
-
-[403]
-
-[404]
+[403] [404]
 File: books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-10-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-10-output-1.png>
 
@@ -3521,11 +2720,7 @@ Overfull \hbox (10.95818pt too wide) in paragraph at lines 19275--19276
 [][] 
  []
 
-
-
-[405]
-
-[406]
+[405] [406]
 File: books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-13-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-13-output-1.png>
 
@@ -3533,22 +2728,12 @@ Overfull \hbox (10.95818pt too wide) in paragraph at lines 19349--19350
 [][] 
  []
 
-
-
-[407]
-
-[408]
+[407] [408]
 File: books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-17-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-17-output-1.png>
-
-
-[409]
-
-[410]
+[409] [410]
 File: books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-19-output-1.png Graphic file (type bmp)
 <books/m-numerik/skript/intro_ableitungen_files/figure-pdf/cell-19-output-1.png>
-
-
 [411]
 Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping=tex-text;!
@@ -3557,20 +2742,16 @@ Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping
 Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping=tex-text;!
 Missing character: There is no 𝜖 (U+1D716) in font [lmsans10-regular]:mapping=tex-text;!
-
-
 [412]
 part VIII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 19515.
-
-
 [413
 
 ]
-File: index_files/mediabag/books/m-einlesen-strukturierter-datensätze/skript/00-bilder/CC-BY.pdf Graphic file (type pdf)
-<use index_files/mediabag/books/m-einlesen-strukturierter-datensätze/skript/00-bilder/CC-BY.pdf>
+File: index_files/mediabag/books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/CC-BY.pdf Graphic file (type pdf)
+<use index_files/mediabag/books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/CC-BY.pdf>
 
 Overfull \hbox (156.85858pt too wide) in paragraph at lines 19556--19556
 [] \TU/lmtt/m/n/10.95 title={Bausteine Computergestützter Datenanalyse. Methodenbaustein Einlesen strukturierter Datensätze.},[] 
@@ -3586,26 +2767,16 @@ Overfull \hbox (76.3761pt too wide) in paragraph at lines 19559--19559
 [] \TU/lmtt/m/n/10.95 url={https://github.com/bausteine-der-datenanalyse/m-einlesen-strukturierter-datensaetze}}[] 
  []
 
-
-
 [414
 
-]
+] [415
 
-[415
-
-]
-
-[416]
-
-[417
+] [416] [417
 
 ]
 chapter 50.
 
 LaTeX Warning: Reference `tip-editor' on page 418 undefined on input line 19734.
-
-
 
 [418
 
@@ -3613,28 +2784,22 @@ LaTeX Warning: Reference `tip-editor' on page 418 undefined on input line 19734.
 
 LaTeX Warning: Reference `tip-dokumentation' on page 419 undefined on input line 19761.
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/added-in-pyhton.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/added-in-pyhton.png>
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/deprecated-in-python.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/deprecated-in-python.png>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/added-in-pyhton.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/added-in-pyhton.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/deprecated-in-python.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/deprecated-in-python.png>
 [419]
 chapter 51.
 
 LaTeX Warning: Reference `imp-Datensatz' on page 420 undefined on input line 19815.
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/slicing_mf_mp.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/slicing_mf_mp.png>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/slicing_mf_mp.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/slicing_mf_mp.png>
 [420
 
 ]
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/eindimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/eindimensionaler-datensatz-slicing-mf-mp.png>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/eindimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/eindimensionaler-datensatz-slicing-mf-mp.png>
 [421]
 
 LaTeX Warning: Reference `tip-openundco' on page 422 undefined on input line 19929.
@@ -3692,27 +2857,17 @@ Overfull \hbox (113.19643pt too wide) in paragraph at lines 20040--20040
 []\TU/lmtt/m/n/10.95 Auszug aus https://de.wikipedia.org/wiki/Python_(Programmiersprache), abgerufen am 20.02.2025[] 
  []
 
-
-
-[422]
-
-[423]
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png>
-
-
+[422] [423]
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/zweidimensionaler-datensatz-slicing-mf-mp.png>
 [424]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 51.1 on input line 20103.
 
-
-
 [425]
 
 LaTeX Warning: Reference `wrn-chainedassignment' on page 426 undefined on input line 20143.
-
-
 
 [426]
 
@@ -3723,8 +2878,6 @@ Package longtable Warning: Column widths have changed
 Package longtable Warning: Column widths have changed
 (longtable)                in table 51.3 on input line 20236.
 
-
-
 [427]
 
 Package longtable Warning: Column widths have changed
@@ -3734,10 +2887,8 @@ Package longtable Warning: Column widths have changed
 Package longtable Warning: Column widths have changed
 (longtable)                in table 51.5 on input line 20318.
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/5f489ffabc91dec1ec2192dc4e993e00.jpg Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/5f489ffabc91dec1ec2192dc4e993e00.jpg>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/5f489ffabc91dec1ec2192dc4e993e00.jpg Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/5f489ffabc91dec1ec2192dc4e993e00.jpg>
 [428]
 
 LaTeX Warning: Reference `tip-Antwort-all-id' on page 429 undefined on input line 20333.
@@ -3756,18 +2907,12 @@ Underfull \hbox (badness 2538) in paragraph at lines 20386--20404
 []\TU/lmr/m/n/10.95 Die Umkehroperation zum melting wird casting (gießen) oder pivoting (schwenken)
  []
 
-
-
-[429]
-
-[430]
+[429] [430]
 
 LaTeX Warning: Reference `tip-idvars' on page 431 undefined on input line 20484.
 
 
 LaTeX Warning: Reference `sec-tidydata' on page 431 undefined on input line 20490.
-
-
 
 [431]
 Overfull \hbox (7.02985pt too wide) in paragraph at lines 20497--20503
@@ -3785,18 +2930,14 @@ LaTeX Warning: Reference `tip-pivoting' on page 432 undefined on input line 2052
 Package longtable Warning: Column widths have changed
 (longtable)                in table 51.8 on input line 20556.
 
-
-
 [432]
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/dreidimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/dreidimensionaler-datensatz-slicing-mf-mp.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/dreidimensionaler-datensatz-slicing-mf-mp.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/dreidimensionaler-datensatz-slicing-mf-mp.png>
 
 LaTeX Warning: Reference `sec-spezialformate' on page 433 undefined on input line 20593.
 
 
 LaTeX Warning: Reference `sec-metadaten' on page 433 undefined on input line 20595.
-
-
 
 [433]
 Overfull \hbox (87.8736pt too wide) in paragraph at lines 20611--20611
@@ -3818,27 +2959,19 @@ Overfull \hbox (93.62234pt too wide) in paragraph at lines 20616--20616
 []\TU/lmtt/m/n/10.95 [[Rotwert, Grünwert, Blauwert], [Rotwert, Grünwert, Blauwert], [Rotwert, Grünwert, Blauwert]]][] 
  []
 
-File: books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-18-output-1.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-18-output-1.png>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-18-output-1.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-18-output-1.png>
 [434]
 
 LaTeX Warning: Reference `tip-logo' on page 435 undefined on input line 20695.
 
-File: books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-21-output-1.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-21-output-1.png>
-File: books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-22-output-1.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-22-output-1.png>
-
-
-[435]
-
-[436]
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/python3-standard-type-hierarchy.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/python3-standard-type-hierarchy.png>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-21-output-1.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-21-output-1.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-22-output-1.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze_files/figure-pdf/cell-22-output-1.png>
+[435] [436]
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/python3-standard-type-hierarchy.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/python3-standard-type-hierarchy.png>
 [437]
 Missing character: There is no М (U+041C) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no а (U+0430) in font [lmroman10-regular]:mapping=tex-text;!
@@ -3848,8 +2981,6 @@ Missing character: There is no и (U+0438) in font [lmroman10-regular]:mapping=t
 Missing character: There is no м (U+043C) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no П (U+041F) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no е (U+0435) in font [lmroman10-regular]:mapping=tex-text;!
-
-
 [438]
 
 LaTeX Warning: Reference `nte-operation-nach-datentyp' on page 439 undefined on input line 20830.
@@ -3875,21 +3006,11 @@ LaTeX Warning: Reference `tip-datatype' on page 439 undefined on input line 2087
 
 LaTeX Warning: Reference `sec-numpypandas' on page 439 undefined on input line 20885.
 
-
-
-[439]
-
-[440]
-
-[441]
+[439] [440] [441]
 
 LaTeX Warning: Reference `wrn-logicbasepython' on page 442 undefined on input line 21067.
 
-
-
-[442]
-
-[443]
+[442] [443]
 
 LaTeX Warning: Reference `tip-missingvalues' on page 444 undefined on input line 21137.
 
@@ -3899,26 +3020,18 @@ LaTeX Warning: Reference `sec-numpypandas' on page 444 undefined on input line 2
 
 LaTeX Warning: Reference `tip-metadata' on page 444 undefined on input line 21182.
 
-
-
 [444]
 
 LaTeX Warning: Reference `imp-tidy-data' on page 445 undefined on input line 21221.
-
-
 
 [445]
 chapter 52.
 
 LaTeX Warning: Reference `tip-pypandas' on page 446 undefined on input line 21320.
 
-
-
 [446
 
-]
-
-[447]
+] [447]
 Overfull \hbox (0.2736pt too wide) in paragraph at lines 21395--21396
 []\TU/lmtt/m/n/10.95 np.savetxt(fname = dateipfad, X = daten, header = kommentar, fmt=[]%5.2f[]) 
  []
@@ -3926,8 +3039,6 @@ Overfull \hbox (0.2736pt too wide) in paragraph at lines 21395--21396
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 52.2 on input line 21432.
-
-
 
 [448]
 
@@ -3940,11 +3051,7 @@ Package longtable Warning: Column widths have changed
 
 LaTeX Warning: Reference `tip-numpydatentyp' on page 449 undefined on input line 21490.
 
-
-
-[449]
-
-[450]
+[449] [450]
 
 LaTeX Warning: Reference `tip-meerschweinchen' on page 451 undefined on input line 21557.
 
@@ -3957,37 +3064,21 @@ Underfull \hbox (badness 2781) in paragraph at lines 21610--21612
 \TU/lmr/m/n/10.95 Pandas bietet einige praktische Funktionen, um den Aufbau eines Datensatzes zu
  []
 
-
-
-[451]
-
-[452]
-
-[453]
+[451] [452] [453]
 
 LaTeX Warning: Reference `tip-pandasinfo' on page 454 undefined on input line 21737.
 
 
 LaTeX Warning: Reference `tip-taxes' on page 454 undefined on input line 21764.
 
-
-
-[454]
-
-[455]
-
-[456]
+[454] [455] [456]
 
 LaTeX Warning: Reference `sec-ma' on page 457 undefined on input line 21925.
-
-
 
 [457]
 Underfull \hbox (badness 10000) in paragraph at lines 21981--21993
 \TU/lmtt/m/n/10.95 delimiter = None, missing_values = None, filling_values = None) \TU/lmr/m/n/10.95 verwendet.
  []
-
-
 
 [458]
 
@@ -4003,39 +3094,23 @@ Overfull \hbox (199.42769pt too wide) in paragraph at lines 22108--22108
 [] \TU/lmtt/m/n/10.95 [[]# Temperatur in C[], []20.1[], []platzhalter[], []20.1[], []20.1[], []20.1[], []platzhalter[], []20.1[], []20.1[], []20.1[]][] 
  []
 
-
-
-[459]
-
-[460]
+[459] [460]
 
 LaTeX Warning: Reference `nte-npgenfromtxt' on page 461 undefined on input line 22125.
-
-
 
 [461]
 
 LaTeX Warning: Reference `nte-npargwhere' on page 462 undefined on input line 22204.
 
-
-
-[462]
-
-[463]
+[462] [463]
 
 LaTeX Warning: Reference `nte-vectorslicing' on page 464 undefined on input line 22309.
-
-
 
 [464]
 
 LaTeX Warning: Reference `tip-numpynone' on page 465 undefined on input line 22411.
 
-
-
-[465]
-
-[466]
+[465] [466]
 Underfull \hbox (badness 10000) in paragraph at lines 22492--22496
 \TU/lmtt/m/n/10.95 [[]-1.#IND[], []1.#QNAN[], []1.#IND[], []-1.#QNAN[], []#N/A N/A[], []#N/A[], []N/A[],
  []
@@ -4045,34 +3120,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 22492--22496
 []\TU/lmtt/m/n/10.95 n/a[], []NA[], []<NA>[], []#NA[], []NULL[], []null[], []NaN[], []-NaN[], []nan[], []-nan[],
  []
 
-
-
 [467]
 Underfull \hbox (badness 1152) in paragraph at lines 22579--22582
 []\TU/lmtt/m/n/10.95 numpy.nan \TU/lmr/m/n/10.95 für NumPy-Datentypen. Hierbei wird der Datentyp automatisch in
  []
 
-
-
 [468]
 
 LaTeX Warning: Reference `nte-pdNA' on page 469 undefined on input line 22623.
 
-
-
-[469]
-
-[470]
-
-[471]
+[469] [470] [471]
 
 LaTeX Warning: Reference `wrn-logicpandas' on page 472 undefined on input line 22782.
 
-
-
-[472]
-
-[473]
+[472] [473]
 Underfull \hbox (badness 3713) in paragraph at lines 22858--22870
 []\TU/lmtt/m/n/10.95 pd.Series.fillna(value = 0) \TU/lmr/m/n/10.95 ersetzt fehlende Werte mit dem im Argument
  []
@@ -4086,8 +3147,6 @@ Underfull \hbox (badness 1019) in paragraph at lines 22858--22870
 Underfull \hbox (badness 1342) in paragraph at lines 22907--22911
 \TU/lmr/m/n/10.95 fassende Methoden wie \TU/lmtt/m/n/10.95 pd.Series.cumsum() \TU/lmr/m/n/10.95 oder \TU/lmtt/m/n/10.95 pd.Series.cumprod() \TU/lmr/m/n/10.95 überspringen
  []
-
-
 
 [474]
 
@@ -4103,8 +3162,6 @@ Underfull \hbox (badness 1478) in paragraph at lines 22958--22963
 Underfull \hbox (badness 10000) in paragraph at lines 22958--22963
 [][][][][][][] [] [][][][][][][][][][][] [] [][][] [] [][][][][][][][][][][][] [] [][][][][][][] [] [][][][][][][] [] [][][][][][] [] [][][][][] [] [][][][][][][][][][][][] []
  []
-
-
 
 [475]
 
@@ -4129,14 +3186,8 @@ Overfull \hbox (107.52702pt too wide) in alignment at lines 23019--23029
 Package longtable Warning: Column widths have changed
 (longtable)                in table 52.6 on input line 23029.
 
-
-
-[476]
-
-[477]
+[476] [477]
 chapter 53.
-
-
 [478
 
 ]
@@ -4154,11 +3205,7 @@ Underfull \hbox (badness 3838) in paragraph at lines 23177--23185
 []\TU/lmr/m/n/10.95 Zahlen und eine Zeiteinheit \TU/lmtt/m/n/10.95 pd.to_datetime(1, unit = None) \TU/lmr/m/n/10.95 (Standard sind
  []
 
-
-
-[479]
-
-[480]
+[479] [480]
 Overfull \hbox (82.12485pt too wide) in paragraph at lines 23297--23297
 []\TU/lmtt/m/n/10.95 DatetimeIndex([[]2017-01-01[], []2020-07-02[], []2024-01-01[]], dtype=[]datetime64[ns][], freq=None)[] 
  []
@@ -4168,13 +3215,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23308--23310
 
  []
 
-
-
-[481]
-
-[482]
-
-[483]
+[481] [482] [483]
 
 LaTeX Warning: Reference `sec-übungenzeitreihen' on page 484 undefined on input line 23491.
 
@@ -4193,7 +3234,7 @@ Overfull \hbox (44.39061pt too wide) in paragraph at lines 23517--23518
 \TU/lmr/m/n/10.95 ahead_prices_202301010000_202401010000_Hour.csv|  
  []
 
-[484]
+ignored error: Infinite glue shrinkage found in box being split [484]
 
 LaTeX Warning: Reference `wrn-SMARD' on page 485 undefined on input line 23528.
 
@@ -4202,29 +3243,17 @@ Underfull \hbox (badness 2261) in paragraph at lines 23533--23533
 []\TU/lmr/m/n/10.95 Beim der Auswahl des Zeitraums auf
  []
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/smard-accept.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/smard-accept.png>
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/smard-day-ahead-prices.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/smard-day-ahead-prices.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/smard-accept.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/smard-accept.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/smard-day-ahead-prices.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/smard-day-ahead-prices.png>
 Missing character: There is no ∅ (U+2205) in font [lmmono10-regular]:!
-
-
 [485]
 Missing character: There is no ∅ (U+2205) in font [lmmono10-regular]:!
-
-
 [486]
 Missing character: There is no ∅ (U+2205) in font [lmmono10-regular]:!
-
-
-[487]
-
-[488]
-
-[489]
+[487] [488] [489]
 Missing character: There is no ∅ (U+2205) in font [lmmono10-regular]:!
-
-
 [490]
 Overfull \hbox (1703.272pt too wide) in paragraph at lines 23866--23866
 []\TU/lmtt/m/n/10.95 MultiIndex: 8760 entries, ([]01.01.2023 00:00;01.01.2023 01:00;-5[], []17;13[], []85;-4[], []39;2[], []01;2[], []01;0[], []00;-3[], []61;119[], []32;12[], []06;18[], []09;2[], []01;0[], []03;4[], []84;-;195[], []90;13[], []31;19[]) to ([]31.12.2023 23:00;01.01.2024 00:00;2[], []44;19[], []26;3[], []17;26[], []87;26[], []87;3[], []64;3[], []17;59[], []31;9[], []35;35[], []70;26[], []87;9[], []51;7[], []44;-;106[], []12;11[], []02;14[])[] 
@@ -4317,8 +3346,6 @@ Overfull \hbox (1.64236pt too wide) in paragraph at lines 23911--23911
 [] \TU/lmtt/m/n/10.95 14  Tschechien [€/MWh] Originalauflösungen             8760 non-null   object[] 
  []
 
-
-
 [491]
 Overfull \hbox (1.64236pt too wide) in paragraph at lines 23912--23912
 [] \TU/lmtt/m/n/10.95 15  DE/AT/LU [€/MWh] Originalauflösungen               8760 non-null   object[] 
@@ -4410,8 +3437,6 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 23987--23987
 [] \TU/lmtt/m/n/10.95 9   Norwegen 2 [€/MWh] Originalauflösungen             8760 non-null   float64[] 
  []
 
-
-
 [492]
 Overfull \hbox (7.39111pt too wide) in paragraph at lines 23988--23988
 [] \TU/lmtt/m/n/10.95 10  Österreich [€/MWh] Originalauflösungen             8760 non-null   float64[] 
@@ -4456,8 +3481,6 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 23995--23995
 Overfull \hbox (7.39111pt too wide) in paragraph at lines 23996--23996
 [] \TU/lmtt/m/n/10.95 18  Ungarn [€/MWh] Originalauflösungen                 8760 non-null   float64[] 
  []
-
-
 
 [493]
 Overfull \hbox (47.63235pt too wide) in paragraph at lines 24046--24046
@@ -4565,8 +3588,6 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 24091--24091
 [] \TU/lmtt/m/n/10.95 2   Deutschland/Luxemburg [€/MWh] Originalauflösungen  8760 non-null   float64[] 
  []
 
-
-
 [494]
 Missing character: There is no ∅ (U+2205) in font [lmmono10-regular]:!
 
@@ -4644,23 +3665,13 @@ Overfull \hbox (7.39111pt too wide) in paragraph at lines 24106--24106
 [] \TU/lmtt/m/n/10.95 17  Ungarn [€/MWh] Originalauflösungen                 8760 non-null   float64[] 
  []
 
-
-
-[495]
-
-[496]
-
-[497]
+[495] [496] [497]
 
 LaTeX Warning: Reference `tip-Durchschnittspreis' on page 498 undefined on input line 24231.
-
-
 
 [498]
 
 LaTeX Warning: Reference `wrn-logicNaT' on page 499 undefined on input line 24298.
-
-
 
 [499]
 
@@ -4670,8 +3681,6 @@ LaTeX Warning: Reference `wrn-SMARD' on page 500 undefined on input line 24384.
 Overfull \hbox (163.53801pt too wide) in paragraph at lines 24384--24385
 \TU/lmr/bx/n/10.95 Aufgabe: Lesen Sie die Datei Dateipfad: ‘01-daten/Day-ahead_prices_202301010000_202401010000_Hour.csv’
  []
-
-
 
 [500]
 
@@ -4889,11 +3898,7 @@ Overfull \hbox (21.21648pt too wide) in paragraph at lines 24494--24494
 [] \TU/lmtt/m/n/10.95 18  Hungary [€/MWh] Original resolutions             8760 non-null   float64[] 
  []
 
-
-
-[501]
-
-[502]
+[501] [502]
 Overfull \hbox (68.50069pt too wide) in paragraph at lines 24510--24514
 \TU/lmr/m/n/10.95 Die Austrian Power Grid AG (APG) veröffentlicht Strommarktdaten unter [][]https://markttransparenz.apg.at/[][].
  []
@@ -4901,17 +3906,13 @@ Overfull \hbox (68.50069pt too wide) in paragraph at lines 24510--24514
 
 LaTeX Warning: Reference `wrn-Strommarkt-Austria' on page 503 undefined on input line 24523.
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/APG-erzeugungsdaten-2023-de.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/APG-erzeugungsdaten-2023-de.png>
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/english/APG-generation-data-2023-en.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/english/APG-generation-data-2023-en.png>
-
-
-[503]
-
-[504]
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/erzeugung-aut-zeitumstellung.png Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/erzeugung-aut-zeitumstellung.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/APG-erzeugungsdaten-2023-de.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/APG-erzeugungsdaten-2023-de.png>
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/english/APG-generation-data-2023-en.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/english/APG-generation-data-2023-en.png>
+[503] [504]
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/erzeugung-aut-zeitumstellung.png Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/erzeugung-aut-zeitumstellung.png>
 
 LaTeX Warning: Reference `tip-Austria' on page 505 undefined on input line 24596.
 
@@ -4960,33 +3961,11 @@ Overfull \hbox (9.71898pt too wide) in paragraph at lines 25001--25001
 []\TU/lmtt/m/n/10.95 Die Zeitverschiebung in der Spalte Zeit bis beginnt bei Indexposition: 8071[] 
  []
 
-
-
-[505]
-
-[506]
-
-[507]
-
-[508]
-
-[509]
-
-[510]
+[505] [506] [507] [508] [509] [510]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 25076.
 
-
-
-[511]
-
-[512]
-
-[513]
-
-[514]
-
-[515]
+[511] [512] [513] [514] [515]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 53.4 on input line 25098.
@@ -5238,42 +4217,12 @@ Overfull \hbox (32.44017pt too wide) in paragraph at lines 25697--25697
  [] \TU/lmtt/m/n/10.95 0   Date                               1840 non-null   datetime64[ns][] 
  []
 
-
-
-[516]
-
-[517]
-
-[518]
-
-[519]
-
-[520]
-
-[521]
-
-[522]
-
-[523]
-
-[524]
-
-[525]
-
-[526]
-
-[527]
-
-[528]
-
-[529]
+[516] [517] [518] [519] [520] [521] [522] [523] [524] [525] [526] [527] [528] [529]
 chapter 54.
 
 Overfull \hbox (220.09479pt too wide) in paragraph at lines 25779--25779
 []\TU/lmtt/m/n/10.95 [[]ToothGrowth.csv[], []Unfallorte2020_LinRef.csv[], []Unfallorte2022_LinRef.csv[], []Unterordner glob[], []hintergrund.png[]][] 
  []
-
-
 
 [530
 
@@ -5295,16 +4244,10 @@ Overfull \hbox (468.25006pt too wide) in paragraph at lines 25832--25832
  []\TU/lmtt/m/n/10.95 [[]Unfallorte2020_LinRef.csv[], []Unfallorte2022_LinRef.csv[], []Unterordner glob/Unfallorte2021_LinRef.csv[], []Unterordner glob/Unfallorte2023_LinRef.csv[]][] 
  []
 
-
-
-[531]
-
-[532]
+[531] [532]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 54.2 on input line 25935.
-
-
 
 [533]
 
@@ -5316,7 +4259,7 @@ Package longtable Warning: Column widths have changed
 
 
 Overfull \hbox (1314.68492pt too wide) in paragraph at lines 26131--26131
-[]\TU/lmtt/m/n/10.95 /var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_80936/3346728540.py:2: FutureWarning: The provided callable <built-in function sum> is currently using np.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string np.sum instead.[] 
+[]\TU/lmtt/m/n/10.95 /var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_86667/3346728540.py:2: FutureWarning: The provided callable <built-in function sum> is currently using np.sum. In a future version of pandas, the provided callable will be used directly. To keep current behavior pass the string np.sum instead.[] 
  []
 
 
@@ -5324,13 +4267,7 @@ Overfull \hbox (182.18143pt too wide) in paragraph at lines 26132--26132
 []  \TU/lmtt/m/n/10.95 print(f"Die Fläche der Regionen beträgt:\n{states.groupby([]state region[])[[]state area[]].apply(sum)}\n")[] 
  []
 
-
-
-[534]
-
-[535]
-
-[536]
+[534] [535] [536]
 
 LaTeX Warning: Reference `tip-musterloesung-unfallatlas' on page 537 undefined on input line 26154.
 
@@ -5447,42 +4384,16 @@ Overfull \hbox (1150.19118pt too wide) in alignment at lines 26535--26551
 Package longtable Warning: Column widths have changed
 (longtable)                in table 54.5 on input line 26551.
 
-
-
-[537]
-
-[538]
-
-[539]
-
-[540]
-
-[541]
-
-[542]
-
-[543]
-
-[544]
-
-[545]
-
-[546]
+[537] [538] [539] [540] [541] [542] [543] [544] [545] [546]
 chapter 55.
 
 Overfull \hbox (13.13986pt too wide) in paragraph at lines 26612--26612
 [] \TU/lmtt/m/n/10.95 Die Eingabe np.array([0, 1, np.nan], dtype = []int[]) führt zu der Fehlermeldung:[] 
  []
 
-
-
 [547
 
-]
-
-[548]
-
-[549]
+] [548] [549]
 Overfull \hbox (76.3761pt too wide) in paragraph at lines 26749--26749
 []\TU/lmtt/m/n/10.95 Wird einem maskierten Array vom Datentyp integer ein Füllwert vom Datentyp float übergeben,[] 
  []
@@ -5496,8 +4407,6 @@ Overfull \hbox (82.12485pt too wide) in paragraph at lines 26753--26753
 Overfull \hbox (24.63736pt too wide) in paragraph at lines 26758--26758
 []\TU/lmtt/m/n/10.95 Der Füllwert None bewirkt den Rückgriff auf einen datentypabhängigen Standardwert:[] 
  []
-
-
 
 [550]
 Overfull \hbox (59.12985pt too wide) in paragraph at lines 26795--26795
@@ -5519,8 +4428,6 @@ Overfull \hbox (174.10481pt too wide) in paragraph at lines 26811--26811
 []\TU/lmtt/m/n/10.95 Die Methode ma.masked_where(condition, a = array) maskiert alle Werte, für die die Bedingung condition gilt.[] 
  []
 
-
-
 [551]
 
 LaTeX Warning: Reference `tip-ma' on page 552 undefined on input line 26875.
@@ -5535,11 +4442,7 @@ Overfull \hbox (147.68895pt too wide) in paragraph at lines 26916--26916
 []\TU/lmtt/m/n/10.95 [-- 59 -- 177 -- 294 -- 412 -- 529 -- 647 -- 764 -- 882 -- 1000] Summe nicht maskierter Werte: 4764[] 
  []
 
-
-
-[552]
-
-[553]
+[552] [553]
 Overfull \hbox (122.36609pt too wide) in paragraph at lines 26954--26954
 []\TU/lmtt/m/n/10.95 unmask_me.mask = ma.nomask: [1 59 118 177 236 294 353 412 471 529 588 647 706 764 823 882 941 1000][] 
  []
@@ -5548,8 +4451,6 @@ Overfull \hbox (122.36609pt too wide) in paragraph at lines 26954--26954
 Overfull \hbox (99.3711pt too wide) in paragraph at lines 26956--26956
 []\TU/lmtt/m/n/10.95 unmask_me.mask = False: [1 59 118 177 236 294 353 412 471 529 588 647 706 764 823 882 941 1000][] 
  []
-
-
 
 [554]
 Overfull \hbox (82.12485pt too wide) in paragraph at lines 26988--26988
@@ -5565,8 +4466,6 @@ Overfull \hbox (59.12985pt too wide) in paragraph at lines 26990--26990
 Overfull \hbox (24.63736pt too wide) in paragraph at lines 27029--27029
 []\TU/lmtt/m/n/10.95 unmask_me.mask = ma.nomask: [1 59 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --][] 
  []
-
-
 
 [555]
 Overfull \hbox (1.64236pt too wide) in paragraph at lines 27031--27031
@@ -5593,18 +4492,12 @@ Overfull \hbox (18.88861pt too wide) in paragraph at lines 27067--27067
 []\TU/lmtt/m/n/10.95 Die hard mask wird nicht (!) durch eine Wertzuweisung im Indexbereich aufgehoben.[] 
  []
 
-
-
 [556]
 Underfull \hbox (badness 10000) in paragraph at lines 27111--27112
 [][][]$[][][][][] [] [] [] [][][][][] [] [][][] [] [][][] [] [][][][][][] [] [][][][][][][][][] [] [][][][][][][][][][][] [] [][][][][][][] [] [][][][] [] [][][][][][][][][][] [][] [][] [][] [][][][][][] [][]
  []
 
-
-
-[557]
-
-[558]
+[557] [558]
 
 LaTeX Warning: Reference `wrn-masked-arrays' on page 559 undefined on input line 27224.
 
@@ -5616,17 +4509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27263--27263
 
 LaTeX Warning: Reference `tip-masked-arrays' on page 559 undefined on input line 27296.
 
-
-
-[559]
-
-[560]
-
-[561]
-
-[562]
-
-[563]
+[559] [560] [561] [562] [563]
 chapter 56.
 
 Underfull \hbox (badness 1077) in paragraph at lines 27488--27498
@@ -5638,10 +4521,8 @@ Underfull \hbox (badness 2772) in paragraph at lines 27505--27510
 \TU/lmr/m/n/10.95 Ordnerstruktur, die mit der Ordnerstruktur eines Computers vergleichbar ist, und
  []
 
-File: books/m-einlesen-strukturierter-datensätze/skript/00-bilder/hdf5_structure4-by-neonscience.org.jpg Graphic file (type bmp)
-<books/m-einlesen-strukturierter-datensätze/skript/00-bilder/hdf5_structure4-by-neonscience.org.jpg>
-
-
+File: books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/hdf5_structure4-by-neonscience.org.jpg Graphic file (type bmp)
+<books/m-einlesen-strukturierter-datensaetze/skript/00-bilder/hdf5_structure4-by-neonscience.org.jpg>
 [564
 
 ]
@@ -5658,14 +4539,12 @@ Underfull \hbox (badness 1122) in paragraph at lines 27592--27596
 \TU/lmr/m/n/10.95 turn Strength, Version 2. [Indicate subset used]. Boulder, Colorado USA.
  []
 
-
-
 [565]
 Overfull \hbox (15.51286pt too wide) in paragraph at lines 27617--27618
 []\TU/lmr/m/n/10.95 Zugriffsmodus  
  []
 
-[566]
+ignored error: Infinite glue shrinkage found in box being split [566]
 
 LaTeX Warning: Reference `nte-HDFStore' on page 567 undefined on input line 27659.
 
@@ -5679,16 +4558,10 @@ Overfull \hbox (15.46773pt too wide) in paragraph at lines 27716--27716
 [] \TU/lmtt/m/n/10.95 cannot create a storer if the object is not existing nor a value are passed[] 
  []
 
-
-
-[567]
-
-[568]
+[567] [568]
 Overfull \hbox (76.3761pt too wide) in paragraph at lines 27750--27750
 []\TU/lmtt/m/n/10.95 /daten            frame_table  (typ->appendable,nrows->3,ncols->2,indexers->[index],dc->[])[] 
  []
-
-
 
 [569]
 Overfull \hbox (15.51286pt too wide) in paragraph at lines 27780--27781
@@ -5699,8 +4572,6 @@ Overfull \hbox (15.51286pt too wide) in paragraph at lines 27780--27781
 Overfull \hbox (18.88861pt too wide) in paragraph at lines 27830--27830
 []\TU/lmtt/m/n/10.95 [[]elevation[], []latitude[], []longitude[], []ancillary_data[], []instrument_parameters[]][] 
  []
-
-
 
 [570]
 Overfull \hbox (340.81854pt too wide) in paragraph at lines 27871--27871
@@ -5722,8 +4593,6 @@ Underfull \hbox (badness 1558) in paragraph at lines 27878--27883
 \TU/lmtt/m/n/10.95 ancillary_data \TU/lmr/m/n/10.95 und \TU/lmtt/m/n/10.95 instrument_parameters \TU/lmr/m/n/10.95 sind Gruppen. Der Zugriff innerhalb
  []
 
-
-
 [571]
 Overfull \hbox (92.13863pt too wide) in paragraph at lines 27930--27935
 \TU/lmr/bx/n/10.95 tatsächliche Zeit der Messung. \TU/lmr/m/n/10.95 Der Dateipfad lautet: ‘01-daten/ILATM1B_20191120_041200.ATM6AT6.h5’. 
@@ -5732,13 +4601,7 @@ Overfull \hbox (92.13863pt too wide) in paragraph at lines 27930--27935
 
 LaTeX Warning: Reference `tip-Messzeit' on page 572 undefined on input line 27936.
 
-
-
-[572]
-
-[573]
-
-[574]
+[572] [573] [574]
 Overfull \hbox (15.51286pt too wide) in paragraph at lines 28082--28083
 []\TU/lmr/m/n/10.95 Zugriffsmodus  
  []
@@ -5752,8 +4615,6 @@ Overfull \hbox (76.00383pt too wide) in paragraph at lines 28101--28105
 Underfull \hbox (badness 4205) in paragraph at lines 28120--28123
 []\TU/lmr/m/n/10.95 Die wesentlichen Informationen können mit der print-Funktion ausgegeben werden
  []
-
-
 
 [575]
 
@@ -5774,24 +4635,10 @@ Overfull \hbox (107.4477pt too wide) in paragraph at lines 28302--28302
 []\TU/lmtt/m/n/10.95 float32 HRFC_OTD_DE(DE_By_Threshold, DE_Local_Hour, DE_LowRes_Latitude, DE_LowRes_Longitude)[] 
  []
 
-
-
-[576]
-
-[577]
-
-[578]
-
-[579]
-
-[580]
-
-[581]
+[576] [577] [578] [579] [580] [581]
 Overfull \hbox (271.83356pt too wide) in paragraph at lines 28451--28451
 []\TU/lmtt/m/n/10.95 [[]NCProperties[], []OTD_Date_Window_Start[], []OTD_Date_Window_End[], []OTD_Threshold_Level_Used[], []Conventions[], []history[], []NCO[]][] 
  []
-
-
 
 [582]
 Overfull \hbox (1.64236pt too wide) in paragraph at lines 28470--28470
@@ -5842,8 +4689,6 @@ Overfull \hbox (110.86858pt too wide) in paragraph at lines 28480--28480
 Overfull \hbox (13.13986pt too wide) in paragraph at lines 28481--28481
 []\TU/lmtt/m/n/10.95 Fri Dec 09 16:42:21 2016: ncrename -a global@_NCProperties,NCProperties test.nc3[] 
  []
-
-
 
 [583]
 Overfull \hbox (478.78851pt too wide) in paragraph at lines 28510--28510
@@ -5910,45 +4755,31 @@ Overfull \hbox (90.85197pt too wide) in paragraph at lines 28544--28552
 \TU/lmtt/m/n/10.95 wird. Eine zweidimensionale Datenstruktur lässt sich so anlegen:\TU/lmr/m/n/10.95 Dataset.createVariable(‘Name
  []
 
-
-
 [584]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 56.4 on input line 28572.
-
-
 
 [585]
 Overfull \hbox (36.13486pt too wide) in paragraph at lines 28630--28630
 []    \TU/lmtt/m/n/10.95 source: berechnet aus IceBridge ATM L1B Elevation and Return Strength, Version 2[] 
  []
 
-
-
 [586]
 Overfull \hbox (2.99648pt too wide) in paragraph at lines 28700--28701
 \TU/lmr/bx/n/10.95 Greifen Sie in der Datei unter dem Pfad ‘01-daten/LISOTD_HRFC_V2.3.2015.nc’
  []
 
-
-
 [587]
 
 LaTeX Warning: Reference `tip-netCDF' on page 588 undefined on input line 28713.
-
-
 
 [588]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 28805.
 
-
-
 [589]
 chapter 57.
-
-
 [590
 
 
@@ -5963,37 +4794,23 @@ Underfull \hbox (badness 2707) in paragraph at lines 28877--28880
 []\TU/lmr/m/n/10.95 Welche Argumente müssen der Pandas-Funktion \TU/lmtt/m/n/10.95 pd.read_csv(filepath_or_buffer =
  []
 
-
-
 [591
 
-]
-
-[592]
-
-[593]
-
-[594]
+] [592] [593] [594]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 58.2 on input line 29133.
-
-
 
 [595]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 58.3 on input line 29165.
 
-
-
 [596]
 part IX.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 29167.
-
-
 [597
 
 ]
@@ -6014,17 +4831,11 @@ Overfull \hbox (36.13486pt too wide) in paragraph at lines 29211--29211
 [] \TU/lmtt/m/n/10.95 url={https://github.com/bausteine-der-datenanalyse/m-datenfitting-und-optimierung}}[] 
  []
 
-
-
 [598
 
-]
+] [599
 
-[599
-
-]
-
-[600
+] [600
 
 ]
 chapter 59.
@@ -6050,30 +4861,14 @@ Overfull \hbox (448.63707pt too wide) detected at line 29510
 [][]
  []
 
-
-
 [601
 
-]
-
-[602]
-
-[603]
-
-[604]
-
-[605]
-
-[606]
-
-[607]
+] [602] [603] [604] [605] [606] [607]
 chapter 60.
 
 Underfull \hbox (badness 1354) in paragraph at lines 29619--29622
 []\TU/lmr/m/n/10.95 Im Gegensatz dazu versucht Extrapolation, Werte außerhalb des bekannten Bereichs
  []
-
-
 
 [608
 
@@ -6082,8 +4877,6 @@ Underfull \hbox (badness 1231) in paragraph at lines 29687--29690
 []\TU/lmr/m/n/10.95 Mit Polynomen können beliebige Funktionen angenommen werden, siehe [][]Taylor-
  []
 
-
-
 [609]
 Underfull \hbox (badness 2042) in paragraph at lines 29754--29758
 []\TU/lmr/m/n/10.95 Die Auswertung des Polynoms an einem Punkt oder einem Array erfolgt mit der
@@ -6091,44 +4884,24 @@ Underfull \hbox (badness 2042) in paragraph at lines 29754--29758
 
 File: books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-7-output-1.png>
-
-
-[610]
-
-[611]
-
-[612]
+[610] [611] [612]
 File: books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-11-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-11-output-1.png>
-
-
-[613]
-
-[614]
+[613] [614]
 File: books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-12-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-12-output-1.png>
-
-
 [615]
 Overfull \hbox (50.31519pt too wide) in paragraph at lines 30028--30034
 []\TU/lmr/m/n/10.95 In Python kann das Interpolationsproblem mit der [][]Funktion \TU/lmtt/m/n/10.95 numpy.polynomial.polynomial.polyfit()[][]
  []
 
-
-
 [616]
 File: books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-17-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-17-output-1.png>
-
-
 [617]
 File: books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-18-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/interpolation_files/figure-pdf/cell-18-output-1.png>
-
-
-[618]
-
-[619]
+[618] [619]
 chapter 61.
 
 Overfull \hbox (0.68977pt too wide) in paragraph at lines 30131--30135
@@ -6137,56 +4910,34 @@ Overfull \hbox (0.68977pt too wide) in paragraph at lines 30131--30135
 
 File: books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-3-output-1.png>
-
-
 [620
 
 ]
 File: books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-4-output-1.png>
-
-
 [621]
 File: books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/fitting_files/figure-pdf/cell-6-output-1.png>
-
-
-[622]
-
-[623]
+[622] [623]
 chapter 62.
-
-
 [624
 
-]
-
-[625]
+] [625]
 File: books/m-datenfitting-und-optimierung/skript/splines_files/figure-pdf/cell-6-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/splines_files/figure-pdf/cell-6-output-1.png>
-
-
 [626]
 File: books/m-datenfitting-und-optimierung/skript/splines_files/figure-pdf/cell-9-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/splines_files/figure-pdf/cell-9-output-1.png>
-
-
 [627]
 chapter 63.
 File: books/m-datenfitting-und-optimierung/skript/glaetten_files/figure-pdf/cell-3-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/glaetten_files/figure-pdf/cell-3-output-1.png>
-
-
 [628
 
-]
-
-[629]
+] [629]
 chapter 64.
 File: books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-4-output-1.png>
-
-
 [630
 
 ]
@@ -6196,28 +4947,16 @@ LaTeX Warning: Reference `tip-musterloesung-ballon' on page 631 undefined on inp
 Missing character: There is no ö ("F6) in font lmmi8!
 File: books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-8-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-8-output-1.png>
-
-
-[631]
-
-[632]
-
-[633]
+[631] [632] [633]
 File: books/m-datenfitting-und-optimierung/skript/00-bilder/balkenverformung-universität-der-bundeswehr.jpeg Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/00-bilder/balkenverformung-universität-der-bundeswehr.jpeg>
-
-
 [634]
 
 LaTeX Warning: Reference `tip-musterloesung-balken' on page 635 undefined on input line 30620.
 
 File: books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-10-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-10-output-1.png>
-
-
-[635]
-
-[636]
+[635] [636]
 
 LaTeX Warning: Reference `tip-musterloesung-neutronen' on page 637 undefined on input line 30695.
 
@@ -6225,21 +4964,11 @@ File: books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell
 <books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-12-output-1.png>
 File: books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-14-output-1.png Graphic file (type bmp)
 <books/m-datenfitting-und-optimierung/skript/uebungen_files/figure-pdf/cell-14-output-1.png>
-
-
-[637]
-
-[638]
-
-[639]
-
-[640]
+[637] [638] [639] [640]
 part X.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
 (scrkbase)              on input line 30809.
-
-
 [641
 
 ]
@@ -6255,17 +4984,11 @@ Overfull \hbox (496.03476pt too wide) in paragraph at lines 30850--30850
 [] \TU/lmtt/m/n/10.95 author={Arnold, Lukas and Arnold, Simone and Bagemihl, Florian and Baitsch, Matthias and Fehr, Marc and Hollmann, Franca and Poetzsch, Maik and Seipel, Sebastian},[] 
  []
 
-
-
 [642
 
-]
+] [643
 
-[643
-
-]
-
-[644
+] [644
 
 ]
 chapter 65.
@@ -6285,13 +5008,9 @@ Underfull \hbox (badness 3657) in paragraph at lines 31028--31028
 
 File: books/m-sensordatenanalyse/skript/00-bilder/Britain-fractal-coastline-50km-CCBYSA3.0vonMaksim.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/Britain-fractal-coastline-50km-CCBYSA3.0vonMaksim.png>
-
-
 [645
 
-]
-
-[646]
+] [646]
 
 LaTeX Warning: Reference `imp-Beispiel' on page 647 undefined on input line 31056.
 
@@ -6303,11 +5022,7 @@ File: books/m-sensordatenanalyse/skript/00-bilder/Spring_scale-von-Amada44-CC-BY
 <books/m-sensordatenanalyse/skript/00-bilder/Spring_scale-von-Amada44-CC-BY-SA-3.0unported.jpg>
 File: books/m-sensordatenanalyse/skript/00-bilder/observe-the-moon-NASA.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/observe-the-moon-NASA.png>
-
-
-[647]
-
-[648]
+[647] [648]
 File: books/m-sensordatenanalyse/skript/00-bilder/Genauigkeit.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/Genauigkeit.png>
 File: books/m-sensordatenanalyse/skript/00-bilder/Präzision.png Graphic file (type bmp)
@@ -6316,8 +5031,6 @@ File: books/m-sensordatenanalyse/skript/00-bilder/Präzision.png Graphic file (t
 Underfull \hbox (badness 1789) in paragraph at lines 31179--31181
 \TU/lmr/m/n/10.95 Wert. Die Genauigkeit ist nur bestimm-
  []
-
-
 
 [649]
 
@@ -6328,35 +5041,17 @@ Underfull \hbox (badness 1939) in paragraph at lines 31251--31254
 []\TU/lmr/m/n/10.95 In der Stochastik werden Formeln häufig auch mit griechischen Buchstaben
  []
 
-
-
-[650]
-
-[651]
+[650] [651]
 File: books/m-sensordatenanalyse/skript/einleitung_files/figure-pdf/cell-4-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/einleitung_files/figure-pdf/cell-4-output-1.png>
-
-
-[652]
-
-[653]
-
-[654]
+[652] [653] [654]
 File: books/m-sensordatenanalyse/skript/einleitung_files/figure-pdf/cell-8-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/einleitung_files/figure-pdf/cell-8-output-1.png>
-
-
 [655]
 
 LaTeX Warning: Reference `tip-loesungkenngrößen' on page 656 undefined on input line 31514.
 
-
-
-[656]
-
-[657]
-
-[658]
+[656] [657] [658]
 chapter 66.
 
 LaTeX Warning: Reference `nte-wuerfel' on page 659 undefined on input line 31600.
@@ -6367,26 +5062,12 @@ File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-4
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-4-output-2.png>
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-5-output-2.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-5-output-2.png>
-
-
 [659
 
-]
-
-[660]
-
-[661]
-
-[662]
-
-[663]
+] [660] [661] [662] [663]
 File: books/m-sensordatenanalyse/skript/00-bilder/lter_penguins_allison_horst_CC0.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/lter_penguins_allison_horst_CC0.png>
-
-
-[664]
-
-[665]
+[664] [665]
 
 LaTeX Warning: Reference `nte-normalverteilungdarstellen' on page 666 undefined on input line 31859.
 
@@ -6397,19 +5078,13 @@ Overfull \hbox (10.96184pt too wide) in paragraph at lines 31868--31869
 [] 
  []
 
-
-
-[666]
-
-[667]
+[666] [667]
 Underfull \vbox (badness 10000) detected at line 31935
  []
 
 
 Underfull \vbox (badness 10000) detected at line 31935
  []
-
-
 
 [668]
 
@@ -6458,27 +5133,9 @@ File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-1
 Missing character: There is no μ (U+03BC) in font [lmmono10-regular]:!
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-19-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-19-output-1.png>
-
-
-[669]
-
-[670]
-
-[671]
-
-[672]
-
-[673]
-
-[674]
-
-[675]
-
-[676]
+[669] [670] [671] [672] [673] [674] [675] [676]
 
 LaTeX Warning: Reference `nte-histogram' on page 677 undefined on input line 32200.
-
-
 
 [677]
 
@@ -6487,11 +5144,7 @@ LaTeX Warning: Reference `nte-normalverteilungdarstellen' on page 678 undefined 
 Missing character: There is no μ (U+03BC) in font [lmmono10-regular]:!
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-21-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-21-output-1.png>
-
-
-[678]
-
-[679]
+[678] [679]
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-23-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-23-output-1.png>
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-24-output-1.png Graphic file (type bmp)
@@ -6508,15 +5161,7 @@ File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-2
 
 LaTeX Warning: Float too large for page by 210.55156pt on input line 32398.
 
-
-
-[680]
-
-[681]
-
-[682]
-
-[683]
+[680] [681] [682] [683]
 
 LaTeX Warning: Reference `nte-statistik' on page 684 undefined on input line 32569.
 
@@ -6526,31 +5171,19 @@ File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-3
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-31-output-1.png>
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-32-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-32-output-1.png>
-
-
-[684]
-
-[685]
-
-[686]
+[684] [685] [686]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line 32678.
-
-
 
 [687]
 
 LaTeX Warning: Reference `imp-freiheitsgrad' on page 688 undefined on input line 32698.
-
-
 
 [688
 
 ]
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-34-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-34-output-1.png>
-
-
 [689]
 Overfull \hbox (12.86604pt too wide) in paragraph at lines 32831--32833
 []\TU/lmtt/m/n/10.95 scipy.stats.t.ppf(q = alpha/2, df = n - 1, loc = stichprobenmittelwert,
@@ -6564,8 +5197,6 @@ Overfull \hbox (35.86104pt too wide) in paragraph at lines 32833--32834
 
 LaTeX Warning: Reference `tip-t' on page 690 undefined on input line 32837.
 
-
-
 [690]
 File: books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-37-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/normalverteilung_files/figure-pdf/cell-37-output-1.png>
@@ -6574,33 +5205,19 @@ Overfull \hbox (10.96184pt too wide) in paragraph at lines 32887--32888
 [] 
  []
 
-
-
-[691]
-
-[692]
+[691] [692]
 Underfull \vbox (badness 10000) detected at line 32965
  []
 
 
 Underfull \vbox (badness 10000) detected at line 32965
  []
-
-
 
 [693]
 
 LaTeX Warning: Reference `tip-pinguinaufgabe' on page 694 undefined on input line 32979.
 
-
-
-[694]
-
-[695]
-
-[696]
-
-[697]
+[694] [695] [696] [697]
 chapter 67.
 
 Underfull \hbox (badness 1320) in paragraph at lines 33161--33166
@@ -6609,31 +5226,21 @@ Underfull \hbox (badness 1320) in paragraph at lines 33161--33166
 
 File: books/m-sensordatenanalyse/skript/00-bilder/aufbau.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/aufbau.png>
-
-
 [698
 
-]
-
-[699]
+] [699]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 67.1 on input line 33260.
 
-[700]
+ignored error: Infinite glue shrinkage found in box being split [700]
 
 Package longtable Warning: Column widths have changed
 (longtable)                in table 67.2 on input line 33306.
 
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-7-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-7-output-1.png>
-
-
-[701]
-
-[702]
-
-[703]
+[701] [702] [703]
 
 LaTeX Warning: Reference `imp-ausreißer' on page 704 undefined on input line 33409.
 
@@ -6641,30 +5248,18 @@ LaTeX Warning: Reference `imp-ausreißer' on page 704 undefined on input line 33
 Package longtable Warning: Column widths have changed
 (longtable)                in table 67.3 on input line 33480.
 
-[704]
-
-[705]
+ignored error: Infinite glue shrinkage found in box being split [704] [705]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-11-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-11-output-1.png>
-
-
 [706]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-12-output-2.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-12-output-2.png>
-
-
 [707]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-13-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-13-output-1.png>
-
-
-[708]
-
-[709]
+[708] [709]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-15-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-15-output-1.png>
-
-
 [710]
 
 LaTeX Warning: Reference `nte-ols' on page 711 undefined on input line 33711.
@@ -6683,17 +5278,7 @@ Overfull \hbox (448.63707pt too wide) detected at line 33903
 [][]
  []
 
-
-
-[711]
-
-[712]
-
-[713]
-
-[714]
-
-[715]
+[711] [712] [713] [714] [715]
 Underfull \hbox (badness 1796) in paragraph at lines 33990--33996
 []\TU/lmr/m/n/10.95 Die Funktionen dafür stellen sowohl das Paket \TU/lmtt/m/n/10.95 numpy.polynomial \TU/lmr/m/n/10.95 bzw. für Poly-
  []
@@ -6702,8 +5287,6 @@ Underfull \hbox (badness 1796) in paragraph at lines 33990--33996
 Underfull \hbox (badness 6252) in paragraph at lines 33990--33996
 \TU/lmr/m/n/10.95 nomfunktionen dessen Modul \TU/lmtt/m/n/10.95 numpy.polynomial.polynomial \TU/lmr/m/n/10.95 als auch das Modul
  []
-
-
 
 [716]
 
@@ -6716,35 +5299,21 @@ Overfull \hbox (170.68394pt too wide) in paragraph at lines 34073--34073
 
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-23-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-23-output-1.png>
-
-
-[717]
-
-[718]
+[717] [718]
 
 LaTeX Warning: Reference `nte-polyfit' on page 719 undefined on input line 34125.
-
-
 
 [719]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-27-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-27-output-1.png>
-
-
 [720]
 Underfull \hbox (badness 2368) in paragraph at lines 34258--34260
 []\TU/lmtt/m/n/10.95 scipy.stats.t.ppf(q = 1 - alpha/2, df = n - 2) \TU/lmr/m/n/10.95 für die obere Intervall-
  []
 
-
-
-[721]
-
-[722]
+[721] [722]
 File: books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-29-output-1.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/lineare-parameterschätzung_files/figure-pdf/cell-29-output-1.png>
-
-
 [723]
 Overfull \hbox (1088.15579pt too wide) in paragraph at lines 34376--34376
 []\TU/lmtt/m/n/10.95 LinregressResult(slope=np.float64(33.01899550918018), intercept=np.float64(0.05753158907970102), rvalue=np.float64(0.9927907555799099), pvalue=np.float64(4.115211719827623e-104), stderr=np.float64(0.37837320019327897), intercept_stderr=np.float64(0.0506707972676925))[] 
@@ -6754,8 +5323,6 @@ Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
 Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
 Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
 Missing character: There is no ≤ (U+2264) in font [lmmono10-regular]:!
-
-
 [724]
 chapter 68.
 
@@ -6764,14 +5331,10 @@ LaTeX Warning: Reference `sec-normalverteilung' on page 725 undefined on input l
 
 LaTeX Warning: Reference `sec-hooke' on page 725 undefined on input line 34471.
 
-
-
 [725
 
 ]
 Missing character: There is no ツ (U+30C4) in font [lmroman10-regular]:mapping=tex-text;!
-
-
 [726]
 Underfull \hbox (badness 1648) in paragraph at lines 34548--34550
 []\TU/lmr/m/n/10.95 Zufällige Messabweichungen: statistische Streuung der Messwerte um ihren Er-
@@ -6780,13 +5343,9 @@ Underfull \hbox (badness 1648) in paragraph at lines 34548--34550
 
 LaTeX Warning: Reference `tip-umgangmitfehlern' on page 727 undefined on input line 34592.
 
-
-
 [727]
 File: books/m-sensordatenanalyse/skript/00-bilder/fehlerarten-nach-DIN-1319.png Graphic file (type bmp)
 <books/m-sensordatenanalyse/skript/00-bilder/fehlerarten-nach-DIN-1319.png>
-
-
 [728]
 
 LaTeX Warning: Reference `imp-messabweichung' on page 729 undefined on input line 34684.
@@ -6799,13 +5358,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 34703--34707
 
 LaTeX Warning: Reference `imp-messunsicherheit' on page 729 undefined on input line 34731.
 
-
-
 [729]
 
 LaTeX Warning: Reference `sec-einleitung' on page 730 undefined on input line 34763.
-
-
 
 [730]
 
@@ -6814,8 +5369,6 @@ LaTeX Warning: Reference `nte-unsicherheit' on page 731 undefined on input line 
 
 LaTeX Warning: Reference `sec-normalverteilung' on page 731 undefined on input line 34847.
 
-
-
 [731]
 
 LaTeX Warning: Reference `wrn-notation1' on page 732 undefined on input line 34876.
@@ -6823,15 +5376,9 @@ LaTeX Warning: Reference `wrn-notation1' on page 732 undefined on input line 348
 
 LaTeX Warning: Reference `imp-DIN1319' on page 732 undefined on input line 34890.
 
-
-
-[732]
-
-[733]
+[732] [733]
 
 LaTeX Warning: Reference `wrn-notation' on page 734 undefined on input line 35006.
-
-
 
 [734]
 
@@ -6840,15 +5387,9 @@ LaTeX Warning: Reference `tip-welcherfehler' on page 735 undefined on input line
 
 LaTeX Warning: Reference `imp-signif' on page 735 undefined on input line 35081.
 
-
-
-[735]
-
-[736]
+[735] [736]
 
 LaTeX Warning: Reference `wrn-formelzeichen' on page 737 undefined on input line 35219.
-
-
 
 [737]
 
@@ -6867,11 +5408,11 @@ it was not a recognized image format.
 
  
 Here is how much of TeX's memory you used:
- 42183 strings out of 470375
- 956241 string characters out of 5487227
- 1624721 words of memory out of 5000000
- 69821 multiletter control sequences out of 15000+600000
- 633360 words of font info for 103 fonts, out of 8000000 for 9000
+ 42298 strings out of 470108
+ 960119 string characters out of 5474834
+ 1633004 words of memory out of 5000000
+ 70201 multiletter control sequences out of 15000+600000
+ 635356 words of font info for 105 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 108i,13n,114p,11227b,1663s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,13n,114p,11227b,1659s stack positions out of 10000i,1000n,20000p,200000b,200000s
 Output written on index.pdf (737 pages).

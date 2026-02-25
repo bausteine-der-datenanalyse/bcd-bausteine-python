@@ -83,10 +83,10 @@ book:
         - books/m-numerik/index.qmd
         - books/m-numerik/skript/intro_integrale.qmd
         - books/m-numerik/skript/intro_ableitungen.qmd
-    - part: "m-einlesen-strukturierter-datensätze"
+    - part: "m-einlesen-strukturierter-datensaetze"
       chapters:
-        - books/m-einlesen-strukturierter-datensätze/index.qmd
-        - books/m-einlesen-strukturierter-datensätze/skript/einlesen-strukturierter-datensaetze.qmd
+        - books/m-einlesen-strukturierter-datensaetze/index.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze.qmd
     - part: "m-datenfitting-und-optimierung"
       chapters:
         - books/m-datenfitting-und-optimierung/index.qmd
