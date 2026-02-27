@@ -34,3 +34,6 @@
 [submodule "books/m-einlesen-strukturierter-datensaetze"]
 	path = books/m-einlesen-strukturierter-datensaetze
 	url = https://github.com/bausteine-der-datenanalyse/m-einlesen-strukturierter-datensaetze
+[submodule "books/a-analyse-von-zeitdaten"]
+	path = books/a-analyse-von-zeitdaten
+	url = https://github.com/bausteine-der-datenanalyse/a-analyse-von-zeitdaten

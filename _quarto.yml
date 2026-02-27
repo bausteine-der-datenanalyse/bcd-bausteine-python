@@ -2,7 +2,7 @@ project:
   type: book
   output-dir: output/book/
 book:
-  title: "Vorlesung Ingenieurinformatik"
+  title: "Bausteine Python"
   author: 
     - Lukas Arnold
     - Simone Arnold
@@ -14,11 +14,11 @@ book:
   date: today
   language: de-DE
   downloads: [pdf]
-  repo-url: "https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik"
+  repo-url: "https://github.com/FireDynamics/bcd-bausteine-python"
   repo-actions: [source]
   favicon: books/shared-media/logo/favicon.svg
   sidebar:
-    title: "Vorlesung Ingenieurinformatik"
+    title: "Bausteine Python"
     logo: books/shared-media/logo/logo_with_text.svg
   chapters:
     - index.qmd
@@ -106,6 +106,20 @@ book:
         - books/m-sensordatenanalyse/skript/übung-hooke.qmd
         - books/m-sensordatenanalyse/skript/kalibrierung.qmd
         - books/m-sensordatenanalyse/skript/beispiel-eiskochen.qmd 
+    - part: "a-analyse-von-zeitdaten"   
+      chapters: 
+        - books/a-analyse-von-zeitdaten/index.qmd
+        - books/a-analyse-von-zeitdaten/skript/01-einleitung.qmd 
+        - books/a-analyse-von-zeitdaten/skript/02-vorverarbeitung-validierung.qmd 
+        - books/a-analyse-von-zeitdaten/skript/03-resampling-alignment.qmd 
+        - books/a-analyse-von-zeitdaten/skript/04-glaettung.qmd 
+        - books/a-analyse-von-zeitdaten/skript/05-trend-saison.qmd 
+        - books/a-analyse-von-zeitdaten/skript/06-lags-autokorrelation.qmd 
+        - books/a-analyse-von-zeitdaten/skript/07-anomalien.qmd 
+        - books/a-analyse-von-zeitdaten/skript/08-forecasting-baselines.qmd 
+        - books/a-analyse-von-zeitdaten/skript/09-lernzielkontrolle.qmd 
+        - books/a-analyse-von-zeitdaten/skript/10-uebung.qmd 
+        - books/a-analyse-von-zeitdaten/skript/11-klausurfragen.qmd
     - part: "a-energiedatenanalyse"
       chapters:
         - books/a-energiedatenanalyse/index.qmd
