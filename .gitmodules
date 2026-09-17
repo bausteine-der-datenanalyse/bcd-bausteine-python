@@ -37,3 +37,6 @@
 [submodule "books/m-analyse-von-zeitdaten"]
 	path = books/m-analyse-von-zeitdaten
 	url = https://github.com/bausteine-der-datenanalyse/m-analyse-von-zeitdaten.git
+[submodule "books/shared-media"]
+	path = books/shared-media
+	url = https://github.com/bausteine-der-datenanalyse/shared-media-and-workflows.git
