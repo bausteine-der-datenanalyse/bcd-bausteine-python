@@ -9,8 +9,8 @@ project:
   type: book
   output-dir: output/book/
 book:
-  title: "Vorlesung Ingenieurinformatik"
-  author: 
+  title: "Bausteine Python"
+  author:
     - Lukas Arnold
     - Simone Arnold
     - Florian Bagemihl
@@ -21,17 +21,17 @@ book:
   date: today
   language: de-DE
   downloads: [pdf]
-  repo-url: "https://github.com/FireDynamics/Vorlesung_Ingenieurinformatik"
+  repo-url: "https://github.com/bausteine-der-datenanalyse/bcd-bausteine-python"
   repo-actions: [source]
   favicon: books/shared-media/logo/favicon.svg
   sidebar:
-    title: "Vorlesung Ingenieurinformatik"
+    title: "Bausteine Python"
     logo: books/shared-media/logo/logo_with_text.svg
   chapters:
     - index.qmd
 EOF
 
-# Define the order of submodules
+# Define the order of submodules (pedagogical order, not alphabetical)
 SUBMODULES_ORDER=(
   "books/w-pseudocode"
   "books/w-python-minimal"
@@ -40,9 +40,10 @@ SUBMODULES_ORDER=(
   "books/w-pandas"
   "books/w-python-matplotlib"
   "books/m-numerik"
-  "books/m-einlesen-strukturierter-datensätze"
+  "books/m-einlesen-strukturierter-datensaetze"
   "books/m-datenfitting-und-optimierung"
   "books/m-sensordatenanalyse"
+  "books/m-analyse-von-zeitdaten"
   "books/a-energiedatenanalyse"
   "books/a-auswertung-fds-daten"
 )
@@ -51,10 +52,28 @@ SUBMODULES_ORDER=(
 for ITEM in "${SUBMODULES_ORDER[@]}"; do
   SUBMODULE="$ITEM"  # Define SUBMODULE from ITEM
   PART_NAME=$(basename "$SUBMODULE")  # Dynamically use folder name as part title
+
+  # w-pseudocode is a single-document project (no book/chapters section) — special-case it
+  if [[ "$PART_NAME" == "w-pseudocode" ]]; then
+    echo "    - part: \"$PART_NAME\"" >> $OUTPUT_YAML
+    echo "      chapters:" >> $OUTPUT_YAML
+    echo "        - $SUBMODULE/Pseudocode.qmd" >> $OUTPUT_YAML
+    continue
+  fi
+
+  # Prefer the 'full' profile config if present, otherwise fall back to the plain _quarto.yml
   YAML_PATH="${SUBMODULE}/_quarto-full.yml"
+  if [[ ! -f "$YAML_PATH" ]]; then
+    YAML_PATH="${SUBMODULE}/_quarto.yml"
+  fi
 
   if [[ -f "$YAML_PATH" ]]; then
     CHAPTERS=$(yq eval '.book.chapters[]' "$YAML_PATH")
+
+    if [[ -z "$CHAPTERS" ]]; then
+      echo "No book.chapters found in $YAML_PATH, skipping..."
+      continue
+    fi
 
     echo "    - part: \"$PART_NAME\"" >> $OUTPUT_YAML
     echo "      chapters:" >> $OUTPUT_YAML
@@ -62,7 +81,7 @@ for ITEM in "${SUBMODULES_ORDER[@]}"; do
       echo "        - $SUBMODULE/$CHAPTER" >> $OUTPUT_YAML
     done <<< "$CHAPTERS"
   else
-    echo "No _quarto.yml in $SUBMODULE, skipping..."
+    echo "No _quarto-full.yml or _quarto.yml in $SUBMODULE, skipping..."
   fi
 done
 
@@ -77,10 +96,6 @@ format:
 
 execute:
   freeze: auto
-
 EOF
 
 echo "Combined _quarto.yml with parts and chapters from submodules generated."
-
-    
- 

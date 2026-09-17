@@ -3,7 +3,7 @@ project:
   output-dir: output/book/
 book:
   title: "Bausteine Python"
-  author: 
+  author:
     - Lukas Arnold
     - Simone Arnold
     - Florian Bagemihl
@@ -14,7 +14,7 @@ book:
   date: today
   language: de-DE
   downloads: [pdf]
-  repo-url: "https://github.com/FireDynamics/bcd-bausteine-python"
+  repo-url: "https://github.com/bausteine-der-datenanalyse/bcd-bausteine-python"
   repo-actions: [source]
   favicon: books/shared-media/logo/favicon.svg
   sidebar:
@@ -59,17 +59,10 @@ book:
         - books/w-python-numpy/skript/array_read_n_write.qmd
         - books/w-python-numpy/skript/array_images.qmd
         - books/w-python-numpy/skript/assessment.qmd
+        - books/w-python-numpy/skript/daswichtigste.qmd
         - books/w-python-numpy/uebungen/uebung.qmd
         - books/w-python-numpy/klausurfragen/klausurfragen.qmd
-    - part: "w-python-matplotlib"
-      chapters:
-        - books/w-python-matplotlib/index.qmd
-        - books/w-python-matplotlib/skript/introduction.qmd
-        - books/w-python-matplotlib/skript/basic_plot_types.qmd
-        - books/w-python-matplotlib/skript/adapting_plots.qmd
-        - books/w-python-matplotlib/skript/advanced_techniques.qmd
-        - books/w-python-matplotlib/skript/scientific_plotting.qmd
-    - part: "w-python-pandas"
+    - part: "w-pandas"
       chapters:
         - books/w-pandas/index.qmd
         - books/w-pandas/skript/einleitung.qmd
@@ -78,15 +71,36 @@ book:
         - books/w-pandas/skript/datentypen.qmd
         - books/w-pandas/skript/datetime.qmd
         - books/w-pandas/skript/dateien.qmd
+    - part: "w-python-matplotlib"
+      chapters:
+        - books/w-python-matplotlib/index.qmd
+        - books/w-python-matplotlib/skript/introduction.qmd
+        - books/w-python-matplotlib/skript/basic_plot_types.qmd
+        - books/w-python-matplotlib/skript/adapting_plots.qmd
+        - books/w-python-matplotlib/skript/advanced_techniques.qmd
+        - books/w-python-matplotlib/skript/scientific_plotting.qmd
+        - books/w-python-matplotlib/skript/daswichtigste.qmd
     - part: "m-numerik"
       chapters:
         - books/m-numerik/index.qmd
+        - books/m-numerik/skript/einleitung.qmd
         - books/m-numerik/skript/intro_integrale.qmd
         - books/m-numerik/skript/intro_ableitungen.qmd
+        - books/m-numerik/skript/daswichtigste.qmd
     - part: "m-einlesen-strukturierter-datensaetze"
       chapters:
         - books/m-einlesen-strukturierter-datensaetze/index.qmd
-        - books/m-einlesen-strukturierter-datensaetze/skript/einlesen-strukturierter-datensaetze.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/einleitung.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/grundlagen.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/datentypoperationen.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/numpy-pandas.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/zeitreihen.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/marktdaten-oesterreich.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/modul-glob.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/maskierte-arrays.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/dateiformate.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/daswichtigste.qmd
+        - books/m-einlesen-strukturierter-datensaetze/skript/lernzielkontrolle.qmd
     - part: "m-datenfitting-und-optimierung"
       chapters:
         - books/m-datenfitting-und-optimierung/index.qmd
@@ -96,7 +110,8 @@ book:
         - books/m-datenfitting-und-optimierung/skript/splines.qmd
         - books/m-datenfitting-und-optimierung/skript/glaetten.qmd
         - books/m-datenfitting-und-optimierung/skript/uebungen.qmd
-    - part: "a-energiedatenanalyse"
+        - books/m-datenfitting-und-optimierung/skript/daswichtigste.qmd
+    - part: "m-sensordatenanalyse"
       chapters:
         - books/m-sensordatenanalyse/index.qmd
         - books/m-sensordatenanalyse/skript/einleitung.qmd
@@ -105,31 +120,32 @@ book:
         - books/m-sensordatenanalyse/skript/fehlerrechnung.qmd
         - books/m-sensordatenanalyse/skript/übung-hooke.qmd
         - books/m-sensordatenanalyse/skript/kalibrierung.qmd
-        - books/m-sensordatenanalyse/skript/beispiel-eiskochen.qmd 
-    - part: "a-analyse-von-zeitdaten"   
-      chapters: 
-        - books/a-analyse-von-zeitdaten/index.qmd
-        - books/a-analyse-von-zeitdaten/skript/01-einleitung.qmd 
-        - books/a-analyse-von-zeitdaten/skript/02-vorverarbeitung-validierung.qmd 
-        - books/a-analyse-von-zeitdaten/skript/03-resampling-alignment.qmd 
-        - books/a-analyse-von-zeitdaten/skript/04-glaettung.qmd 
-        - books/a-analyse-von-zeitdaten/skript/05-trend-saison.qmd 
-        - books/a-analyse-von-zeitdaten/skript/06-lags-autokorrelation.qmd 
-        - books/a-analyse-von-zeitdaten/skript/07-anomalien.qmd 
-        - books/a-analyse-von-zeitdaten/skript/08-forecasting-baselines.qmd 
-        - books/a-analyse-von-zeitdaten/skript/09-lernzielkontrolle.qmd 
-        - books/a-analyse-von-zeitdaten/skript/10-uebung.qmd 
-        - books/a-analyse-von-zeitdaten/skript/11-klausurfragen.qmd
+        - books/m-sensordatenanalyse/skript/beispiel-eiskochen.qmd
+    - part: "m-analyse-von-zeitdaten"
+      chapters:
+        - books/m-analyse-von-zeitdaten/index.qmd
+        - books/m-analyse-von-zeitdaten/skript/01-einleitung.qmd
+        - books/m-analyse-von-zeitdaten/skript/02-vorverarbeitung-validierung.qmd
+        - books/m-analyse-von-zeitdaten/skript/03-resampling-alignment.qmd
+        - books/m-analyse-von-zeitdaten/skript/04-glaettung.qmd
+        - books/m-analyse-von-zeitdaten/skript/05-trend-saison.qmd
+        - books/m-analyse-von-zeitdaten/skript/06-lags-autokorrelation.qmd
+        - books/m-analyse-von-zeitdaten/skript/07-anomalien.qmd
+        - books/m-analyse-von-zeitdaten/skript/08-forecasting-baselines.qmd
+        - books/m-analyse-von-zeitdaten/skript/09-lernzielkontrolle.qmd
+        - books/m-analyse-von-zeitdaten/skript/10-uebung.qmd
+        - books/m-analyse-von-zeitdaten/skript/11-klausurfragen.qmd
     - part: "a-energiedatenanalyse"
       chapters:
         - books/a-energiedatenanalyse/index.qmd
-        - books/a-energiedatenanalyse/skript/energiedatenanalyse.qmd    
+        - books/a-energiedatenanalyse/skript/energiedatenanalyse.qmd
     - part: "a-auswertung-fds-daten"
       chapters:
         - books/a-auswertung-fds-daten/index.qmd
         - books/a-auswertung-fds-daten/skript/introduction.qmd
         - books/a-auswertung-fds-daten/skript/aset.qmd
         - books/a-auswertung-fds-daten/skript/fdsreader.qmd
+        - books/a-auswertung-fds-daten/skript/daswichtigste.qmd
         - books/a-auswertung-fds-daten/uebungen/uebung.qmd
         - books/a-auswertung-fds-daten/klausurfragen/klausurfragen.qmd
 format:
@@ -142,4 +158,3 @@ format:
 
 execute:
   freeze: auto
-
